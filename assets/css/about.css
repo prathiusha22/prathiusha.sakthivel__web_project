@@ -1,0 +1,73 @@
+body{
+    margin: 0px;   
+}
+
+header{
+    background-color: rgb(108, 145, 53);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+}
+.logo{
+    margin-left: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 60px;
+    width: 200px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+.navi{
+    text-decoration: none;
+    color: white;
+}
+.navi:hover{
+    font-size: 35px;
+    color: black;
+}
+.hd1{
+    float: right;
+    color: white;
+    word-spacing: 35px;
+    font-size: 25px;
+    margin-right: 150px;
+    margin-top: 40px;  
+}
+.terrace{
+    margin-top: 120px;
+}
+.subpart1{
+    display: flex;
+    flex-direction: column;
+    margin:80px 30px;
+}
+.part1{
+    display: flex;
+    flex-direction: row;
+}
+.parag{
+    font-size: 20px;
+}
+h3{
+    font-size: 30px;
+}
+.part2{
+    height: 1000px;
+    margin-left: 80px;
+    margin-top: 150px;
+    
+}
+.wp{
+    margin-top: -60px;
+    margin-left: 20px;
+}
+.ig{
+    margin-left: 330px;
+    margin-top: -330px;
+}
+.image{
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+ 
+ 
