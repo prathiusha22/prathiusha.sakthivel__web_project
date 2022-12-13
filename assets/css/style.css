@@ -22,7 +22,7 @@ header {
 }
 
 .menu-bar {
-    margin-left: 250px;
+    margin-left: 100px;
     margin-top: 40px;
 }
 
@@ -300,110 +300,37 @@ a {
 }
 
 
-.foot {
-    background-color: rgb(233, 243, 218);
-    height: 200px;
-    width: 100%;
 
-
-}
-
-.foot1 {
+.footer {
+    background-color: white;
+    color: rgb(108, 145, 53);
     display: flex;
-    justify-content: space-evenly;
-    position: relative;
-  
+    justify-content: space-around;
+    line-height: 2;
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
 }
-.foot1 a{
-    color: black;
-    font-weight: 400;
+
+.footer1 {
+    display: flex;
+    align-items: center;
 }
 
-.lastfooter {
+.footerone {
+    padding-left: 30px;
+}
+
+.footertwo {
+    display: flex;
+    align-items: center;
+}
+
+.foot {
     background-color: rgb(108, 145, 53);
     height: 50px;
     width: 100%;
-    margin: 0;
-    padding: 0;
-}
 
-#copyright {
-    margin-left: 615px;
-    margin-top: 10px;
-}
-
-.copy {
-    margin-left: 650px;
-    margin-top: -32px;
-    font-size: 25px;
-    font-weight: 600;
-    color: black;
-}
-
-p {
-    font-size: 25px;
-}
-
-.parag {
-    color: black;
-}
-
-.facebook {
-    position: relative;
-    left: 70px;
-    top: 20px;
-    transition: 0.5s;
-}
-
-.facebook:hover {
-    transform: scale(1.05);
-}
-
-.twitter {
-    position: relative;
-    left: 70px;
-    top: 20px;
-    transition: 0.5s;
-
-}
-
-.twitter:hover {
-    transform: scale(1.05);
-}
-
-.whatsapp {
-    position: relative;
-    left: 70px;
-    top: 20px;
-    transition: 0.5s;
-
-}
-
-.whatsapp:hover {
-    transform: scale(1.05);
-}
-
-.instagram {
-    position: relative;
-    left: 70px;
-    top: 20px;
-    transition: 0.5s;
-
-}
-
-.instagram:hover {
-    transform: scale(1.05);
-}
-
-.youtube {
-    position: relative;
-    left: 70px;
-    top: 20px;
-    transition: 0.5s;
-
-}
-
-.youtube:hover {
-    transform: scale(1.05);
 }

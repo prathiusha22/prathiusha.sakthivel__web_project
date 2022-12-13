@@ -1,5 +1,7 @@
 body {
     overflow-x: hidden;
+    margin: 0%;
+    padding: 0%;
 }
 
 header {
@@ -12,6 +14,33 @@ header {
     display: flex;
 }
 
+.menu-bar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+
+}
+
+.menu-bar {
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.hdg{
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    font-weight: 700;
+}
+
+.menu-bar ul li {
+    padding-left: 70px;
+}
 
 .logo {
     margin-left: 50px;
@@ -31,15 +60,6 @@ header {
 .navi:hover {
     font-size: 35px;
     color: black;
-}
-
-.hd1 {
-    float: right;
-    color: white;
-    word-spacing: 35px;
-    font-size: 25px;
-    margin-right: 50px;
-    margin-top: 40px;
 }
 
 a {
@@ -122,4 +142,40 @@ a {
 
 #star {
     color: gold
+}
+.footer {
+    background-color: white;
+    color: rgb(108, 145, 53);
+    display: flex;
+    justify-content: space-around;
+    line-height: 2;
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+
+}
+hr{
+    margin-top: 250px;
+}
+.footer1 {
+    display: flex;
+    align-items: center;
+}
+
+.footerone {
+    padding-left: 30px;
+}
+
+.footertwo {
+    display: flex;
+    align-items: center;
+}
+
+.foot {
+    background-color: rgb(108, 145, 53);
+    height: 50px;
+    width: 100%;
+
 }

@@ -59,7 +59,7 @@ a {
     flex-direction: column;
     position: relative;
     top: 200px;
-    left: 240px;
+    left: 300px;
 }
 
 .heading1 {
@@ -135,7 +135,7 @@ i:hover {
     color: rgb(248, 10, 10);
 }
 
-.heading2{
+.heading2 {
     border: 2px solid white;
     box-shadow: -10px 10px 30px 10px rgb(218, 207, 207);
     border-radius: 100px;
@@ -145,16 +145,62 @@ i:hover {
     margin-left: 140px;
     background-color: rgb(245, 242, 238);
 }
-h3{
+
+h3 {
     text-align: center;
     color: red;
     font-size: 35px;
 }
-li{
+
+li {
     font-size: 20px;
     margin-left: 80px;
 }
-ul li{
+
+ul li {
     font-size: 20px;
     margin-left: 200px;
+}
+
+hr {
+    margin-top: 50px;
+}
+
+.footer{
+    background-color: white;
+    color: rgb(108, 145, 53);
+    display: flex;
+    justify-content: space-around;
+    line-height: 2;
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.h31{
+    color: rgb(108, 145, 53);
+    font-size: 20px;
+}
+
+.footer1 {
+    display: flex;
+    align-items: center;
+}
+
+.footerone {
+    padding-left: 30px;
+}
+
+.footertwo {
+    display: flex;
+    align-items: center;
+}
+
+.foot {
+    background-color: rgb(108, 145, 53);
+    height: 50px;
+    width: 100%;
+
 }

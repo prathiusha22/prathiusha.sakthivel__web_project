@@ -141,3 +141,40 @@ a {
 #star {
     color: gold
 }
+.footer {
+    background-color: white;
+    color: rgb(108, 145, 53);
+    display: flex;
+    justify-content: space-around;
+    line-height: 2;
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+
+}
+hr{
+    margin-top: 250px;
+}
+
+.footer1 {
+    display: flex;
+    align-items: center;
+}
+
+.footerone {
+    padding-left: 30px;
+}
+
+.footertwo {
+    display: flex;
+    align-items: center;
+}
+
+.foot {
+    background-color: rgb(108, 145, 53);
+    height: 50px;
+    width: 100%;
+
+}
