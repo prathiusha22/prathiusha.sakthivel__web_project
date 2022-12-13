@@ -28,7 +28,7 @@
     margin-bottom: 20px;
     position: relative;
     animation: text 3s 1;
-    margin-top: 70px;
+    margin-top: 150px;
     margin-left: 120px;
 }
 
@@ -61,4 +61,15 @@
 @keyframes make{
     0%{transform: scale(1,1);}
     50%{transform: scale(1.5,1.5);}
+}
+
+.last{
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.last a{
+    
+    font-size: 20px;
+    text-decoration: none;
+    color: green;
 }
