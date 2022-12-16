@@ -5,14 +5,13 @@
 
 body {
     overflow-x: hidden;
-
 }
-
+/* header */
 header {
 
     background-color: rgb(108, 145, 53);
     height: 100px;
-    width: 100%;
+    width: 99%;
     position: fixed;
     z-index: 2;
     display: flex;
@@ -28,8 +27,8 @@ header {
 }
 
 .menu-bar {
-    margin-left: 100px;
-    margin-top: 40px;
+    margin-left: -180px;
+    margin-top: 230px;
 }
 
 a {
@@ -80,6 +79,7 @@ a {
     margin-top: 40px;
 
 }
+/* main */
 
 .heading {
     position: relative;
@@ -94,7 +94,12 @@ a {
     position: relative;
     top: 200px;
     left: 150px;
+    transition: 0.5s;
 }
+.container:hover {
+    transform: scale(1.05);
+}
+
 
 .para1 {
     margin-left: 380px;
@@ -140,8 +145,14 @@ h3 {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+    transition: 0.5s;
 
 }
+
+.benefit1:hover {
+    transform: scale(1.05);
+}
+
 
 .benefit2 {
     border: 2px solid rgb(218, 224, 220);
@@ -156,7 +167,11 @@ h3 {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+    transition: 0.5s;
 
+}
+.benefit2:hover {
+    transform: scale(1.05);
 }
 
 .benefit3 {
@@ -172,7 +187,11 @@ h3 {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+    transition: 0.5s;
 
+}
+.benefit3:hover {
+    transform: scale(1.05);
 }
 
 .benefit4 {
@@ -188,7 +207,11 @@ h3 {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+    transition: 0.5s;
 
+}
+.benefit4:hover {
+    transform: scale(1.05);
 }
 
 .benefit5 {
@@ -204,7 +227,11 @@ h3 {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
+    transition: 0.5s;
 
+}
+.benefit5:hover {
+    transform: scale(1.05);
 }
 
 .sub-benefit1 {
@@ -315,7 +342,7 @@ h1 {
 .sunlightpara {
     font-size: 20px;
     position: relative;
-    top: 100px;
+    /* top: 100px; */
     left: 320px;
     top: -200px;
 }
@@ -359,7 +386,9 @@ hr{
     display: flex;
     align-items: center;
 }
-
+.heading3{
+    color:  rgb(108, 145, 53);
+}
 .foot {
     background-color: rgb(108, 145, 53);
     height: 50px;

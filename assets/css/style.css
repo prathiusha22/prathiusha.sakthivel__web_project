@@ -157,7 +157,7 @@ a {
     border: 0px solid rgb(108, 145, 53);
 }
 
-.bor {
+.borderimages {
     border: 2px solid white;
     height: 90px;
     width: 1400px;
@@ -180,8 +180,7 @@ a {
 
 }
 
-.mpage1 {
-    margin-top: 100px;
+.subpage1 {
     width: 620px;
     height: 350px;
     display: flex;
@@ -197,13 +196,11 @@ a {
     transition: 0.5s;
 }
 
-.mpage1:hover {
+.subpage1:hover {
     transform: scale(1.05);
 }
 
-.mpage2 {
-    margin-top: 100px;
-    margin-left: 50px;
+.subpage2 {
     width: 620px;
     height: 350px;
     display: flex;
@@ -219,7 +216,7 @@ a {
     transition: 0.5s;
 }
 
-.mpage2:hover {
+.subpage2:hover {
     transform: scale(1.05);
 }
 
@@ -237,7 +234,7 @@ a {
     border-radius: 40px;
 }
 
-.fv {
+.freshvegetables {
     font-size: 40px;
     margin-left: -220px;
     color: green;
@@ -246,8 +243,8 @@ a {
 
 }
 
-.but,
-.but1 {
+.button,
+.button1 {
     color: gray;
     font-size: 30px;
     margin-left: -220px;
@@ -261,21 +258,21 @@ a {
     text-decoration: none;
 }
 
-.but:hover {
+.button:hover {
     transform: scale(1.1);
     color: white;
     background-color: rgb(108, 145, 53);
 
 }
 
-.but1:hover {
+.button1:hover {
     transform: scale(1.1);
     color: white;
     background-color: rgb(108, 145, 53);
 
 }
 
-.ff {
+.freshfruits {
     font-size: 40px;
     margin-left: -200px;
     color: green;
@@ -283,7 +280,7 @@ a {
     font-weight: 500;
 }
 
-.bg {
+.background{
     display: flex;
     flex-direction: row;
     height: 900px;
