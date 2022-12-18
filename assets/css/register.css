@@ -20,16 +20,16 @@ h1 {
     margin-left: 475px;
     position: relative;
     top: 40px;
-    
- 
+
+
 }
 
 fieldset {
     border: 2px solid white;
     color: white;
-    font-weight:800;
+    font-weight: 800;
     font-size: 22px;
-    background-color:transparent;
+    background-color: transparent;
     height: 700px;
     width: 500px;
     margin-top: 60px;
@@ -41,10 +41,6 @@ fieldset {
     margin-left: 100px;
 }
 
-input {
-    margin-left: 15px;
-}
-
 a {
     text-decoration: none;
     color: black;
@@ -53,19 +49,56 @@ a {
 .next {
     margin-left: 350px;
     margin-top: 10px;
-   
+
 
 }
-#nextbutton{
+
+#nextbutton {
     height: 30px;
     width: 150px;
     font-size: 15px;
 
 }
-#backbutton{
+
+#backbutton {
     height: 30px;
     width: 150px;
     font-size: 15px;
     margin-left: -250px;
-    
+
+}
+
+#first-name {
+    margin-left: 50px;
+    width: 200px;
+}
+#E-mail{
+    margin-left: 40px;
+    width: 200px;
+}
+#Password{
+    margin-left: 15px;
+    width: 200px;
+
+}
+#age{
+    margin-left: 70px;
+    width: 200px;
+}
+#address{
+    margin-left: 35px;
+    width: 200px;
+
+}
+#location{
+    margin-left: 30px;
+    width: 200px;
+}
+#City{
+    margin-left: 70px;
+    width: 200px;
+}
+#num{
+    margin-left: 37px;
+    width: 200px;
 }

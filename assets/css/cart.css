@@ -1,45 +1,119 @@
+body{
+    font-weight: 600;
+    font-size: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color:rgb(193, 215, 224);
+    
+}
 .logo {
     position: relative;
     left: 640px;
     border-radius: 30px;
 }
 .borderbox{
-    border: 2px solid black;
-    height: 400px;
+    background-color: white;
+    border: 0px solid white;
+    border-radius: 100px;
+    height: 500px;
     width: 1200px;
     position: relative;
-    top: 180px;
+    top: 100px;
     left: 130px;
+}
+h3{
+    margin-left: 50px;
+    font-size: 25px;
+    position: relative;
+    top: 30px;
 }
 h4{
     position: relative;
     left: 300px;
-    top: -120px;
+    top: -140px;
+    font-size: 20px;
 }
 h5{
     position: relative;
     left: 300px;
-    top: -170px;
+    top: -260px;
+    font-size: 20px;
 }
 .tomato{
     position: relative;
     left: 20px;
+    top: 20px;
 
 }
 .grapes{
     position: relative;
-    top: -50px;
+    top: -110px;
     left: 20px;
+}
+.remove{
+    position: relative;
+    left: 722px;
+    top: -320px;
 }
 #number1{
     position: relative;
     left: 600px;
-    top: -180px;
+    top: -220px;
 
 }
 #number2{
     position: relative;
     left: 600px;
-    top: -230px;
+    top: -350px;
 
+}
+.content1{
+    position: relative;
+    left: 900px;
+    top: -270px;
+}
+.content2{
+    position: relative;
+    left: 900px;
+    top: -420px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.line{
+
+    position:relative;
+    top:-515px;
+    left: 300px;
+    height:1.5px;
+    width:800px;
+    background-color: grey;
+}
+button{
+    
+    border: 0px solid rgb(193, 215, 224);
+    position: relative;
+    top: -500px;
+    left: 550px;
+    height: 30px;
+    width: 200px;
+    color: black;
+    font-size: 17px;
+    border-radius: 50px;
+}
+#rupee{
+    position: relative;
+    top: -500px;
+    left: 725px;
+}
+p{
+    position: relative;
+    top: -548px;
+    left: 950px;
+}
+.exit{
+    position: relative;
+    top: 650px;
+    left: 300px;
 }

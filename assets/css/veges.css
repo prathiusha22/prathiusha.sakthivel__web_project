@@ -66,8 +66,18 @@ a {
     color: white;
 }
 
+.part1{
+    text-align: center;
+    position: relative;
+    top: 160px;
+    border: 2px solid rgb(218, 224, 220);
+    box-shadow: -5px 5px 10px 5px rgb(255, 170, 170);
+    border-radius: 50px;
+    height: 420px;
+    width: 270px;
+    margin-left: 80px;
 
-.part1,
+}
 .part2,
 .part3,
 .part4,
