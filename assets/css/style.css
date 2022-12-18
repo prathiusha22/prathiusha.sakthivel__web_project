@@ -2,6 +2,7 @@ body {
     overflow-x: hidden;
 }
 
+/* header */
 header {
 
     background-color: rgb(108, 145, 53);
@@ -20,6 +21,7 @@ header {
     text-decoration: none;
 
 }
+
 .menu-bar .main {
     list-style: none;
     display: flex;
@@ -28,6 +30,7 @@ header {
     text-decoration: none;
 
 }
+
 .menu-bar {
     margin-left: 100px;
     margin-top: 40px;
@@ -65,7 +68,7 @@ a {
 
 .img1 {
     margin-top: -90px;
-    background-image:url("../image/background1.jpg");
+    background-image: url("../image/background1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 1000px;
@@ -130,6 +133,7 @@ a {
     transition: 0.7s;
 }
 
+/* content */
 .para {
     font-size: 90px;
     color: white;
@@ -297,17 +301,18 @@ a {
 
 /* background */
 .background1 {
-    background-image:linear-gradient(rgb(4, 9, 34, 0.3), rgb(4, 9, 34, 0.3)), url("../image/imp.jfif");
+    background-image: linear-gradient(rgb(4, 9, 34, 0.3), rgb(4, 9, 34, 0.3)), url("../image/imp.jfif");
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
     width: 100%;
     margin-top: -430px;
 }
-h1{
+
+h1 {
     color: white;
     position: relative;
-    left:  250px;
+    left: 250px;
     top: 330px;
     font-size: 90px;
     font-weight: 800;
@@ -412,5 +417,5 @@ h1{
     height: 50px;
     width: 100%;
 
-   
+
 }

@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.container{
+
+.container {
     border: 2px solid white;
     border-radius: 40px;
     box-shadow: -5px 5px 18px 5px rgb(162, 164, 163);
@@ -12,9 +13,10 @@
     font-size: 20px;
     margin-left: 550px;
     margin-top: 150px;
-    
+
 }
-h1{
+
+h1 {
     text-align: center;
     color: white;
     font-size: 50px;
@@ -22,31 +24,37 @@ h1{
     position: relative;
     top: 70px;
 }
-.details{
+
+.details {
     margin-left: 20px;
 }
-.background{
+
+.background {
     background-image: url(../image/register.jpg);
     height: 892px;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.rupay{
+
+.rupay {
     position: relative;
     top: 23px;
 }
-.razor{
+
+.razor {
     position: relative;
     top: 23px;
 }
-.submit{
+
+.submit {
     position: relative;
     top: 10px;
     height: 25px;
     width: 150px;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }

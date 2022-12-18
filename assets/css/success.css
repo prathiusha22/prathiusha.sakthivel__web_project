@@ -17,6 +17,7 @@ i {
     transform: translate(-50%, -50%);
 }
 
+
 .container span {
     color: rgb(40, 175, 20);
     text-transform: uppercase;
@@ -56,7 +57,7 @@ i {
     }
 }
 
-i{
+i {
     animation-name: make;
     animation-duration: 3s;
     animation-iteration-count: infinite;

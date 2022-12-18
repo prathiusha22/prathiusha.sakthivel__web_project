@@ -1,17 +1,19 @@
-body{
+body {
     font-weight: 600;
     font-size: 20px;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color:rgb(193, 215, 224);
-    
+    background-color: rgb(212, 231, 239);
+
 }
+
 .logo {
     position: relative;
     left: 640px;
     border-radius: 30px;
 }
-.borderbox{
+
+.borderbox {
     background-color: white;
     border: 0px solid white;
     border-radius: 100px;
@@ -21,77 +23,93 @@ body{
     top: 100px;
     left: 130px;
 }
-h3{
+
+h3 {
     margin-left: 50px;
     font-size: 25px;
     position: relative;
     top: 30px;
+    color: brown;
 }
-h4{
+
+h4 {
     position: relative;
     left: 300px;
     top: -140px;
-    font-size: 20px;
+    font-size: 22px;
+    color: darkgreen;
 }
-h5{
+
+h5 {
     position: relative;
     left: 300px;
     top: -260px;
-    font-size: 20px;
+    font-size: 22px;
+    color: darkgreen;
 }
-.tomato{
-    position: relative;
-    left: 20px;
-    top: 20px;
 
+.tomato {
+    position: relative;
+    left: 30px;
+    top: 20px;
 }
-.grapes{
+
+.grapes {
     position: relative;
     top: -110px;
-    left: 20px;
+    left: 30px;
 }
-.remove{
+
+.remove {
     position: relative;
     left: 722px;
     top: -320px;
+    color: red;
 }
-#number1{
+
+#number1 {
     position: relative;
     left: 600px;
     top: -220px;
 
 }
-#number2{
+
+#number2 {
     position: relative;
     left: 600px;
     top: -350px;
 
 }
-.content1{
+
+.content1 {
     position: relative;
     left: 900px;
     top: -270px;
 }
-.content2{
+
+.content2 {
     position: relative;
     left: 900px;
     top: -420px;
 }
-a{
-    text-decoration: none;
-    color: black;
-}
-.line{
 
-    position:relative;
-    top:-515px;
+a {
+    text-decoration: none;
+    color: rgb(204, 86, 42);
+}
+
+.line {
+
+    position: relative;
+    top: -515px;
     left: 300px;
-    height:1.5px;
-    width:800px;
+    height: 1.5px;
+    width: 800px;
     background-color: grey;
 }
-button{
-    
+
+button {
+
     border: 0px solid rgb(193, 215, 224);
     position: relative;
     top: -500px;
@@ -102,17 +120,21 @@ button{
     font-size: 17px;
     border-radius: 50px;
 }
-#rupee{
+
+#rupee {
     position: relative;
     top: -500px;
     left: 725px;
 }
-p{
+
+p {
     position: relative;
     top: -548px;
     left: 950px;
+
 }
-.exit{
+
+.exit {
     position: relative;
     top: 650px;
     left: 300px;

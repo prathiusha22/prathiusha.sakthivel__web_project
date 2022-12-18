@@ -3,7 +3,7 @@ body {
     margin: 0%;
     padding: 0%;
 }
-
+/* header */
 header {
 
     background-color: rgb(108, 145, 53);
@@ -23,11 +23,13 @@ header {
 
 }
 
+
 .menu-bar {
     margin-left: 100px;
     margin-top: 40px;
 }
-.hdg{
+
+.hdg {
     font-size: 25px;
 }
 
@@ -65,19 +67,20 @@ a {
     text-decoration: none;
     color: white;
 }
-
-.part1{
+/* content */
+.part1 {
     text-align: center;
     position: relative;
     top: 160px;
     border: 2px solid rgb(218, 224, 220);
-    box-shadow: -5px 5px 10px 5px rgb(255, 170, 170);
+    box-shadow: -5px 5px 10px 5px rgb(196, 229, 186);
     border-radius: 50px;
     height: 420px;
     width: 270px;
     margin-left: 80px;
 
 }
+
 .part2,
 .part3,
 .part4,
@@ -173,6 +176,7 @@ a {
 #star {
     color: gold
 }
+
 .footer {
     background-color: white;
     color: rgb(108, 145, 53);
@@ -183,13 +187,14 @@ a {
     font-size: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
-    
+
 
 }
-hr{
+
+hr {
     margin-top: 250px;
 }
-
+/* footer */
 .footer1 {
     display: flex;
     align-items: center;

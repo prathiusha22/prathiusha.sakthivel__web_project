@@ -9,6 +9,7 @@ body {
     overflow-y: scroll;
 }
 
+/* header */
 header {
 
     background-color: rgb(108, 145, 53);
@@ -96,6 +97,7 @@ a {
     top: 200px;
 }
 
+/* content */
 .container {
     border: 2px solid rgb(218, 224, 220);
     box-shadow: -10px 10px 30px 10px rgb(218, 224, 220);
@@ -131,6 +133,7 @@ h3 {
     color: rgb(6, 133, 137);
 }
 
+/* benefits */
 .benefits {
     display: flex;
     flex-direction: row;
@@ -232,6 +235,7 @@ h3 {
     left: 450px;
 }
 
+/* tools */
 .toolheading {
     position: relative;
     top: -60px;
@@ -269,6 +273,7 @@ ul li {
     left: 200px;
 }
 
+/* soil */
 .soil {
     position: relative;
     top: 600px;
@@ -293,6 +298,7 @@ h1 {
     left: 50px;
 }
 
+/* water */
 .watering {
     position: relative;
     top: 750px;
@@ -311,6 +317,7 @@ h1 {
     top: -200px;
 }
 
+/* sunlight */
 .sunlight {
     position: relative;
     top: 700px;
@@ -328,9 +335,11 @@ h1 {
     left: 320px;
     top: -200px;
 }
-h1{
+
+h1 {
     color: rgb(21, 21, 88);
 }
+
 .plantimages {
     position: relative;
     top: 700px;

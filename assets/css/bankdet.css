@@ -60,11 +60,12 @@ h4 {
 .but {
     height: 35px;
     width: 220px;
-    border: 0px solid   rgb(108, 145, 53);
-    background-color:  rgb(108, 145, 53);
+    border: 0px solid rgb(108, 145, 53);
+    background-color: rgb(108, 145, 53);
     border-radius: 10px;
 }
-a{
+
+a {
     text-decoration: none;
     font-size: 17px;
     color: white;
