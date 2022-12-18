@@ -65,7 +65,7 @@ a {
 
 .img1 {
     margin-top: -90px;
-    background-image: url("../image/background1.jpg");
+    background-image:url("../image/background1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 1000px;

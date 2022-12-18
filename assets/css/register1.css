@@ -1,6 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .container{
-    border: 1px solid black;
-    height: 300px;
-    width: 300px;
+    border: 2px solid white;
+    border-radius: 40px;
+    box-shadow: -5px 5px 18px 5px rgb(162, 164, 163);
+    height: 550px;
+    width: 400px;
+    background-color: white;
+    font-size: 20px;
+    margin-left: 550px;
+    margin-top: 150px;
     
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    position: relative;
+    top: 70px;
+}
+.details{
+    margin-left: 20px;
+}
+.background{
+    background-image: url(../image/register.jpg);
+    height: 892px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.rupay{
+    position: relative;
+    top: 23px;
+}
+.razor{
+    position: relative;
+    top: 23px;
+}
+.submit{
+    position: relative;
+    top: 10px;
+    height: 25px;
+    width: 150px;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
