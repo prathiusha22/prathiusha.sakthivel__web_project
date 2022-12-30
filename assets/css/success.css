@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+.logo {
+    position: relative;
+    left: 660px;
+    border-radius: 30px;
+}
+
 i {
     margin-left: 700px;
     margin-top: 220px;

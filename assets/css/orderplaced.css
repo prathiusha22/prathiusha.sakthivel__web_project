@@ -8,6 +8,12 @@
     margin-top: 220px;
 }
 
+.logo {
+    position: relative;
+    left: 660px;
+    border-radius: 30px;
+}
+
 .container {
     text-align: center;
     position: absolute;
