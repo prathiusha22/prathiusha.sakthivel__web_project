@@ -434,50 +434,11 @@ h1 {
         left: -400%;
     }
 }
+@media screen and (max-width:400px) {
+    
+    
+}
 
-/* responsive */
-/* @media screen and (max-width:1200px) {
-    .content{
-        width: 100%;
-        text-align: center;
-    }
-    .image{
-        width: 100%;
-        position:absolute;
-        bottom: -5%;
-        display: flex;
-        justify-content: center;
-    }
-    img{
-        width: 20rem;
-    } */
-    /* } */
-    
-/* @media screen and (max-width:576px) {
-    .content{
-        width: 100%;
-        text-align: center;
-    }
-    .image{
-        width: 100%;
-        position:absolute;
-        bottom: -5%;
-        display: flex;
-        justify-content: center;
-    }
-    img{
-        width: 20rem;
-    }
-    a{
-        position: relative;
-        left: -150px;
-    }
-    .bor{
-        width: 20rem;
-       
-    }
-    
-} */
 /* footer */
 
 .footer {
