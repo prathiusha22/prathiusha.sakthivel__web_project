@@ -344,6 +344,11 @@ h1 {
     top: 700px;
     left: 150px;
 }
+@media screen and (max-width:400px) {
+    header{
+        width: 100%;
+    }
+}
 
 /* footer */
 

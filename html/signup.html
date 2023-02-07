@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="../assets/css/signup.css">
+</head>
+
+<body>
+    <form id="registration">
+        <!-- whole content starts -->
+        <div class="hle">
+            <!-- msin content starts -->
+            <div class="signupp">
+                <!-- leftside of main content starts -->
+                <div class="left">
+                    <img src="../assets/image/sign-uppagebg.jpeg" alt="signup-img">
+                </div>
+                <!-- left side of main content ends -->
+                <!-- Right side of main content starts -->
+                <div class="right">
+                    <h1>Sign Up</h1>
+                    <br><br><br>
+                    <label><input name="firstname" type="text" placeholder="First Name..."></label><br>
+                    <label><input name="lastname" type="text" placeholder="Last Name..."></label><br>
+                    <label><input name="email" type="text" placeholder="Email..."></label><br>
+                    <label><input name="phonenumber" type="number" placeholder="Phone Number..."></label><br>
+                    <label><input name="username" type="text" placeholder="Username..."></label><br>
+                    <label><input name="password" type="password" placeholder="Password..."></label><br>
+                    <label><input name="conformpassword" type="password" placeholder=" Conform Password..."></label>
+                    <br>
+                    <br>
+                    <!-- <div class="fl">
+                    <input type="checkbox"> <label for="box">I am agree with <strong>Terms of user</strong></label>
+                </div> -->
+                    <br><br>
+                    <div class="btn">
+                        <button type="submit">Sign Up</button>
+                        <!-- <p>Do You already have an account?</p> -->
+                        <p><a href="../html/login1.html">Log-in→</a></p>
+                    </div>
+                </div>
+                <!-- rightside of main content ends -->
+            </div>
+            <!-- main content ends -->
+        </div>
+        
+        </form>
+        <!-- whole content ends -->
+
+
+        <script>
+
+            const registrationform = document.getElementById("registration");
+
+            registrationform.onsubmit = e => {
+
+                const fnameInput = registrationform["firstname"].value;
+                const lnameInput = registrationform["lastname"].value;
+                const emailInput = registrationform["email"].value;
+                const phonenumberInput = registrationform["phonenumber"].value;
+                const usernameInput = registrationform["username"].value;
+                const passwordInput = registrationform["password"].value;
+
+                const usersList = [];
+                const user = {};
+
+                user["firstname"] = fnameInput;
+                user["lastname"] = lnameInput;
+                user["email"] = emailInput;
+                user["phonenumber"] = phonenumberInput;
+                user["username"] = usernameInput;
+                user["password"] = passwordInput;
+
+                const users = JSON.parse(localStorage.getItem("usersList")) || usersList;
+
+                users.push(user);
+
+                localStorage.setItem("usersList", JSON.stringify(users));
+            }
+
+        </script>
+
+</body>
+
+</html>

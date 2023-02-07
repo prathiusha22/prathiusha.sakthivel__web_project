@@ -53,3 +53,9 @@ a {
     margin-left: 20px;
     margin-top: 10px;
 }
+@media screen and (max-width:400px) {
+    fieldset{
+        width: 350px;
+        margin-left: 20px;
+    }
+}

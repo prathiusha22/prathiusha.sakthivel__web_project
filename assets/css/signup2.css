@@ -1,0 +1,107 @@
+body {
+    background-color: rgb(220, 236, 251); 
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+    background-repeat: no-repeat;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.signupp {
+    height: 790px;
+    width: 1000px;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 250px;
+    border-radius: 30px;
+}
+
+.left {
+    width: 600px;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 6px 6px grey;
+}
+
+.left img {
+    width: 600px;
+    height: 700px;
+}
+
+.right {
+    width:550%; 
+    height: 700px;
+    background-color: white;
+    box-shadow: 0px 0px 7px 7px grey;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+label input {
+    width: 300px;
+    border-width: 0px 0px 1.5px 0px;
+    height: 30px;
+    margin-left: 40px;
+}
+
+.fl {
+    display: flex;
+    margin-left: 40px;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 13px;
+}
+
+button {
+    height: 35px;
+    width: 170px;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    background-image: radial-gradient(farthest-corner at 30px 40px,
+            rgb(140, 220, 233) 40%,
+            rgb(85, 172, 230) 60%);
+    font-size: 20px;
+    margin-top: -15px;
+}
+
+button a {
+    color:black;
+    font-weight: 550;
+    /* margin-top: -30px; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    /* margin-top: -50px; */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 35px;
+}
+/* .btn p{
+    margin-right: 50px;
+} */
+/* .btn a{
+    margin-right: 20px;
+} */
+
+p a{
+    font-size: 20px;
+}

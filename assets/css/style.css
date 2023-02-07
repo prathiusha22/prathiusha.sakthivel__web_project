@@ -351,6 +351,7 @@ a {
     padding-top: 30px;
 }
 
+
 /* background */
 .background1 {
     background-image: linear-gradient(rgb(4, 9, 34, 0.3), rgb(4, 9, 34, 0.3)), url("../image/imp.jfif");
@@ -393,41 +394,41 @@ h1 {
 #slider figure img {
     float: left;
     width: 800px;
-    margin-left: 350px;
+    margin-left: 500px;
     object-fit: cover;
 }
 
 @keyframes slider {
     0% {
-        left: 0;
+        left: 0%;
     }
 
     20% {
-        left: 0;
+        left: -20%;
     }
 
     25% {
-        left: -100%;
+        left: -120%;
     }
 
     45% {
-        left: -100%;
+        left: -120%;
     }
 
     50% {
-        left: -200%;
+        left: -230%;
     }
 
     70% {
-        left: -200%;
+        left: -230%;
     }
 
     75% {
-        left: -300%;
+        left: -340%;
     }
 
     95% {
-        left: -300%;
+        left: -340%;
     }
 
     100% {
@@ -435,9 +436,9 @@ h1 {
     }
 }
 
+
 @media screen and (max-width:400px) {
     body {
-        overflow: hidden;
         width: 100%;
     }
 
@@ -449,7 +450,7 @@ h1 {
     .logo {
         border: 2px solid white;
         border-radius: 20px;
-        height: 60px;
+        height: 80px;
         width: 170px;
         margin-left: 130px;
         margin-top: 50px;
@@ -459,25 +460,36 @@ h1 {
         background-size: cover;
         background-repeat: no-repeat;
         /* width: 110%; */
-        width: 1480px;
+        width: 1590px;
         height: 800px;
     }
-    .mainpage2,.mainpage3{
+
+    .mainpage2,
+    .mainpage3 {
         display: flex;
         justify-content: center;
     }
-    .mpage1,.mpage2{
+
+    .mpage1 {
         margin-left: -40px;
         width: 800px;
     }
+
+    .mpage2 {
+        margin-left: -40px;
+        width: 800px;
+        margin-top: -250px;
+    }
+
     .para {
-        font-size: 60px;
+        font-size: 90px;
         text-align: center;
     }
+
     .shop {
         position: relative;
-        top: -300px;
-        left: 120px;
+        top: -380px;
+        left: 630px;
         font-size: 25px;
         height: 40px;
         padding: 10px 40px 10px 40px;
@@ -496,21 +508,21 @@ h1 {
 
     .menu-bar .main {
         list-style: none;
-         display: flex;
+        display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
-        /* justify-content: space-around; */
+        /* flex-wrap: nowrap; */
+        justify-content: space-around;
         text-decoration: none;
-        margin-left: -460px;
-        margin-top: 85px;
+        margin-left: 200px;
+        margin-top: 60px;
 
     }
 
     .menu-bar .main a {
-        font-size: 20px;
+        font-size: 30px;
     }
 
-    .menu-bar .main .about {
+    /* .menu-bar .main .about {
         margin-left: -50px;
     }
 
@@ -524,58 +536,75 @@ h1 {
 
     .menu-bar .main .register {
         margin-left: -50px;
-    }
-    .bg{
+    } */
+
+    .bg {
         /* border: 2px solid black; */
         width: 1480px;
-        height:1235px;
+        height: 1235px;
         display: grid;
-        grid-template-columns:repeat(1,1fr);
-        
+        grid-template-columns: repeat(1, 1fr);
+
     }
-    .features{
-        height:700px;
+
+    .features {
+        height: 700px;
+        width: 1590px;
+        margin-top: -300px;
+
+    }
+
+    .features .box {
+        margin-left: -100px;
+    }
+
+    .box1 {
+        display: flex;
+    }
+
+    .box2 {
+        display: flex;
+    }
+
+    .background1 {
+        margin-top: 0px;
+        width: 1590px;
+    }
+
+    #slider {
+        margin-top: 100px;
+        margin-left: 0px;
+        width: 1235px;
+    }
+
+    .footlogo {
+        margin-left: 100px;
+    }
+
+    .footer {
         width: 1480px;
-        margin-top: 200px;
-
     }
-    .features .box{
-        margin-left:-100px ;
-    }
-    .box1{
-        display: flex;
-    }
-    .box2{
-        display: flex;
-    }
-   .background1{
-    margin-top: 0px;
 
-    width: 1480px;
-   }
-   #slider{
-    margin-top: 100px;
-    margin-left: 0px;
-    width: 1235px;
-   }
+    .footer1 {
+        margin-left: -210px;
+        margin-bottom: 200px;
+    }
 
-   .footlogo{
-    margin-left: 100px;
-   }
+    .footer2 {
+        margin-left: -100px;
+    }
 
-   .footer{
-   width: 1480px;
-}
-.footer1 {
-    margin-left: -100px;
-   margin-bottom: 200px;
-}
-.footer2{
-    margin-left: 100px;
-}
-.footerthird{
-    margin-left: 100px;
-}
+    .footerthird {
+        margin-left: -110px;
+    }
+
+    .foot {
+        display: none;
+    }
+
+    #Slider img {
+        width: 80%;
+    }
 }
 
 /* footer */
