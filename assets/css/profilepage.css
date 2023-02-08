@@ -1,0 +1,48 @@
+input{
+    font-size: 20px;
+    font-style: bold;
+    
+}
+.container{
+    border: 1.5px solid black;
+    height: 800px;
+    width: 520px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.profile_img img{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: -180px;
+    left: -40px;
+    
+}
+.profile_img button{
+   position: relative;
+   top: -210px;
+   width: 120px;
+   height: 30px;
+   font-size: 16px;
+}
+h1{
+  position: relative;
+  top: -350px;
+  left: 250px;
+}
+.user_details{
+    margin-right: 100px;
+    margin-top: 80px;
+    font-size: 18px;
+}
+.main{
+    margin-left: 480px;
+    margin-top: 40px;
+}
+.next{
+    margin-left: 120px;
+    margin-top: -22px;
+   
+}
