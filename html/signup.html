@@ -17,20 +17,20 @@
             <div class="signupp">
                 <!-- leftside of main content starts -->
                 <div class="left">
-                    <img src="../assets/image/sign-uppagebg.jpeg" alt="signup-img">
+                    <img src="../assets/image/signup.jpeg" alt="signup-img">
                 </div>
                 <!-- left side of main content ends -->
                 <!-- Right side of main content starts -->
                 <div class="right">
                     <h1>Sign Up</h1>
                     <br><br><br>
-                    <label><input name="firstname" type="text" placeholder="First Name..."></label><br>
-                    <label><input name="lastname" type="text" placeholder="Last Name..."></label><br>
-                    <label><input name="email" type="text" placeholder="Email..."></label><br>
-                    <label><input name="phonenumber" type="number" placeholder="Phone Number..."></label><br>
-                    <label><input name="username" type="text" placeholder="Username..."></label><br>
-                    <label><input name="password" type="password" placeholder="Password..."></label><br>
-                    <label><input name="conformpassword" type="password" placeholder=" Conform Password..."></label>
+                    <label><input name="firstname" type="text" placeholder="First Name..." required></label><br>
+                    <label><input name="lastname" type="text" placeholder="Last Name..." required></label><br>
+                    <label><input name="email" type="text" placeholder="Email..."required></label><br>
+                    <label><input name="phonenumber" type="number" placeholder="Phone Number..." required></label><br>
+                    <label><input name="username" type="text" placeholder="Username..." required></label><br>
+                    <label><input name="password" type="password" placeholder="Password..." required></label><br>
+                    <label><input name="conformpassword" type="password" placeholder=" Conform Password..." required></label>
                     <br>
                     <br>
                     <!-- <div class="fl">
@@ -47,42 +47,42 @@
             </div>
             <!-- main content ends -->
         </div>
-        
-        </form>
-        <!-- whole content ends -->
+
+    </form>
+    <!-- whole content ends -->
 
 
-        <script>
+    <script>
 
-            const registrationform = document.getElementById("registration");
+        const registrationform = document.getElementById("registration");
 
-            registrationform.onsubmit = e => {
+        registrationform.onsubmit = e => {
 
-                const fnameInput = registrationform["firstname"].value;
-                const lnameInput = registrationform["lastname"].value;
-                const emailInput = registrationform["email"].value;
-                const phonenumberInput = registrationform["phonenumber"].value;
-                const usernameInput = registrationform["username"].value;
-                const passwordInput = registrationform["password"].value;
+            const fnameInput = registrationform["firstname"].value;
+            const lnameInput = registrationform["lastname"].value;
+            const emailInput = registrationform["email"].value;
+            const phonenumberInput = registrationform["phonenumber"].value;
+            const usernameInput = registrationform["username"].value;
+            const passwordInput = registrationform["password"].value;
 
-                const usersList = [];
-                const user = {};
+            const usersList = [];
+            const user = {};
 
-                user["firstname"] = fnameInput;
-                user["lastname"] = lnameInput;
-                user["email"] = emailInput;
-                user["phonenumber"] = phonenumberInput;
-                user["username"] = usernameInput;
-                user["password"] = passwordInput;
+            user["firstname"] = fnameInput;
+            user["lastname"] = lnameInput;
+            user["email"] = emailInput;
+            user["phonenumber"] = phonenumberInput;
+            user["username"] = usernameInput;
+            user["password"] = passwordInput;
 
-                const users = JSON.parse(localStorage.getItem("usersList")) || usersList;
+            const users = JSON.parse(localStorage.getItem("usersList")) || usersList;
 
-                users.push(user);
+            users.push(user);
 
-                localStorage.setItem("usersList", JSON.stringify(users));
-            }
+            localStorage.setItem("usersList", JSON.stringify(users));
+        }
 
-        </script>
+    </script>
 
 </body>
 

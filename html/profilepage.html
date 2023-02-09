@@ -13,47 +13,54 @@
     <!-- profileimage -->
     <form>
         <div class="main">
+
             <div class="container">
+
                 <div class="heading">
                     <h1>MyProfile</h1>
                 </div>
+
                 <div class="profile_img">
                     <img src="../assets/image/profile.jpg" alt="image">
                     <p><button>Edit Profile</button> </p>
                 </div>
 
                 <div class="user_details">
-                    <label>FirstName:<input name="firstname" type="text"></label><br><br>
-                    <label>LastName:<input name="lastname" type="text"></label><br><br>
-                    <label>Email:<input name="email" type="text"></label><br><br>
-                    <label>Phonenumber:<input name="phonenumber" type="number"></label><br><br>
-                    <label>Username:<input name="username" type="text"></label><br><br>
+                    <label>FirstName:<input id="fname" name="firstname" type="text"></label><br><br>
+                    <label>LastName:<input id="lname" name="lastname" type="text"></label><br><br>
+                    <label>Email:<input id="email" name="email" type="text"></label><br><br>
+                    <label>Phonenumber:<input id="pnumber" name="phonenumber" type="number"></label><br><br>
+                    <label>Username:<input id="username" name="username" type="text"></label><br><br>
                     <label>Password:<input name="password" type="password"></label><br><br>
                     <label>Conformpassword:<input name="conformpassword" type="password"></label><br><br>
                     <label>Occupation:<input name="occupation" type="text"></label><br><br>
                     <label>Address:<input name="address" type="text"></label><br><br>
+
                     <div class="home">
                         <button>Back to home</button>
                     </div>
+
                     <div class="next">
                         <button>Next</button>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
     </form>
+
+
     <script>
 
-        let users = JSON.parse(localStorage.getItem('profileData'));
+        let users = JSON.parse(localStorage.getItem('usersList'));
         for (let i = 0; i <= users.length; i++) {
-            document.getElementById("name").value = users[i]["name"]; //users[1][name]
+            document.getElementById("fname").value = users[i]["firstname"];
+            document.getElementById("lname").value = users[i]["lastname"];
             document.getElementById("email").value = users[i]["email"];
+            document.getElementById("pnumber").value = users[i]["phonenumber"];
+            document.getElementById("username").value = users[i]["username"];
         }
 
     </script>
-</body>
 
+</body>
 </html>

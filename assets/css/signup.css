@@ -1,7 +1,7 @@
 body {
-    background-color: rgb(220, 236, 251); 
-    font-family: 'Poppins', sans-serif;
+    background-image:  linear-gradient(rgba(246, 246, 246, 0.464), rgba(246, 246, 249, 0.475)),url(../image/loginbg.jpeg);
     background-size: cover;
+    font-family: 'Poppins', sans-serif;
     background-position: center;
     overflow-y: hidden;
     background-repeat: no-repeat;
@@ -26,11 +26,11 @@ body {
     height: 700px;
     background-size: cover;
     background-position: center;
-    box-shadow: 0px 0px 6px 6px grey;
+    box-shadow: 0px 0px 15px 15px rgb(248, 238, 238);
 }
 
 .left img {
-    width: 600px;
+    width: 640px;
     height: 700px;
 }
 
@@ -38,7 +38,7 @@ body {
     width:550%; 
     height: 700px;
     background-color: white;
-    box-shadow: 0px 0px 7px 7px grey;
+    box-shadow: 0px 0px 10px 10px rgb(248, 238, 238);
 }
 
 label {
@@ -72,8 +72,8 @@ button {
     border-radius: 20px;
     border: none;
     background-image: radial-gradient(farthest-corner at 30px 40px,
-            rgb(140, 220, 233) 40%,
-            rgb(85, 172, 230) 60%);
+            rgb(4, 183, 37) 40%,
+            rgb(51, 133, 31) 60%);
     font-size: 20px;
     margin-top: -15px;
 }
