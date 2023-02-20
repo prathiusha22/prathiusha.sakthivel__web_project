@@ -37,11 +37,11 @@
                     <label>Address:<input name="address" type="text"></label><br><br>
 
                     <div class="home">
-                        <button>Back to home</button>
+                        <button><a href="../index.html">Back to home</a></button>
                     </div>
 
                     <div class="next">
-                        <button>Next</button>
+                        <button><a href="../html/veges.html">Next</a></button>
                     </div>
                 </div>
             </div>
@@ -50,9 +50,9 @@
 
 
     <script>
-
-        let users = JSON.parse(localStorage.getItem('usersList'));
-        for (let i = 0; i <= users.length; i++) {
+        
+        let users = JSON.parse(localStorage.getItem('user_records'));
+        for (let i = 0; i < users.length; i++) {
             document.getElementById("fname").value = users[i]["firstname"];
             document.getElementById("lname").value = users[i]["lastname"];
             document.getElementById("email").value = users[i]["email"];
