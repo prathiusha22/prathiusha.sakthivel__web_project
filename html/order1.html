@@ -40,7 +40,7 @@
           <!-- </div> -->
         </div>
 
-        <li><a class="hdg" href="../html/login.html">Login</a></li>
+        <li><a class="hdg" href="../html/signup.html">Sign-up</a></li>
 
         <li><a class="hdg" href="../html/register.html">Register</a></li>
 
@@ -50,24 +50,27 @@
     </div>
   </header>
   <!-- content -->
-  <main>
-    <div class="box">
-      <img src="../assets/image/offer.png" height="70px" width="70px" alt="img">
+   <main>
+     <div class="mainbox"> 
+  
+    <!-- <div class="box">
+      <img class="offimg" src="../assets/image/offer.png">
       <img class="tomato" src="../assets/image/tomato.jpg" height="350px" width="350px" alt="img">
       <div class="heading1">
         <h2>Fresh Organic Tomato</h2>
         <h4>₹10 Per kg</h4>
-        <i id="star1" class="fa-sharp fa-solid fa-star"></i>
-        <i id="star2" class="fa-sharp fa-solid fa-star"></i>
-        <i id="star3" class="fa-sharp fa-solid fa-star"></i>
-        <i id="star4" class="fa-sharp fa-solid fa-star"></i><br><br>
+        <i id="star" class="fa-sharp fa-solid fa-star"></i>
+        <i id="star" class="fa-sharp fa-solid fa-star"></i>
+        <i id="star" class="fa-sharp fa-solid fa-star"></i>
+        <i id="star" class="fa-sharp fa-solid fa-star"></i><br><br>
         <input type="number" class="quantity" name="quantity" min="1" max="50" placeholder="Select Quantity"><br><br>
         <button id="cartbutton"><a href="../html/cart.html">Add to Cart</a></button><br><br>
         <button id="buybutton"><a href="./buynow.html"> Buy Now</a></button><br><br>
       </div>
-    </div>
+    </div> -->
+  </div>
     <!-- benefits of tomato -->
-
+  <!-- 
     <div class="heading2">
       <h3>Benifits of Tomato</h3>
       <ul>
@@ -89,9 +92,9 @@
         <li> Fat: 0.2 grams</li>
       </ul>
     </div>
-    <!-- variety of tomato -->
-    <div class="varieties">
-      <div class="cheerytomato">
+    <-- variety of tomato -->
+  <!-- <div class="product-list-container"> -->
+    <!-- <div class="cheerytomato">
         <img src="../assets/image/cherry tomato.jfif" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -103,9 +106,9 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div>
-      <!-- camparitomato -->
-      <div class="camparitomato">
+      </div> -->
+    <!-- camparitomato -->
+    <!-- <div class="camparitomato">
         <img src="../assets/image/campari tomato.jpg" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -118,10 +121,10 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div>
+      </div> -->
 
-      <!-- romatomato -->
-      <div class="romatomato">
+    <!-- romatomato -->
+    <!-- <div class="romatomato">
         <img src="../assets/image/roma tomato.jfif" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -133,9 +136,9 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div>
-      <!-- jubileetomato -->
-      <div class="jubileetomato">
+      </div> -->
+    <!-- jubileetomato -->
+    <!-- <div class="jubileetomato">
         <img src="../assets/image/jubileetomato.png" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -146,8 +149,8 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div>
-    </div>
+      </div> -->
+  <!-- </div> -->
 
   </main>
   <hr>
@@ -237,9 +240,145 @@
 
 
   </footer>
+  <!-- 
+     <script src="../assets/js/order1.js"></script> -->
+  <script>
+    let product_details = [
+      //0
+      {
+      "product_image": {
+        "source": "../assets/image/tomato.jpg",
+        "alt": "image of tomato veggie"
+      },
+      "product_name": "FreshOrganicTomato",
+
+      "price": "₹50",
+      "rating": 4
+    },
+    //1
+    {
+      "product_image": {
+        "source": "../assets/image/beetroot.jpg",
+        "alt": "image of tomato veggie"
+      },
+     
+      "product_name": "FreshOrganicBeetroot",
+      "price": "₹75",
+      "rating": 4
+    },
+    //2
+    {
+    "product_image": {
+            "source": "../assets/image/potato.jpg",
+            "alt": "image of tomato veggie"
+    },
+
+        "product_name": "FreshOrganicPotato",
+
+        "price": 60,
+
+        "rating": 4
+  },
+  {
+        "product_image": {
+            "source": "../assets/image/kohlrabi.jfif",
+            "alt": "image of tomato veggie"
+        },
+
+        "product_name": "FreshOrganicKohlrabi",
+
+        "price": 80,
+
+        "rating": 4
+
+    },
+
+    ]
+
+    let url = window.location.search;  //?name=FreshOrganicTomato
+    console.log(url)
+    let urls = new URLSearchParams(url)
+    console.log(urls)//"name":"FreshOrganicTomato"
+    let name = urls.get("name")
+    console.log(name)//"FreshOrganicTomato"
+
+    let result;
+    product_details.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
+      if (e["product_name"] == name) {
+        return result=e;
+      }
+    })
+    console.log(result)
+    
+
+   //div creation//
+    let box=document.createElement("div");
+    box.setAttribute("class","box");
+  
+    let image1=document.createElement("img");
+    image1.setAttribute("class","offimg")
+    image1.setAttribute("src","../assets/image/offer.png")
+    box.append(image1)
+
+    //image//
+    let image = document.createElement("img");
+    image.setAttribute("class","tomato")
+    image.setAttribute("src", result["product_image"]["source"]);
+
+    //heading div//
+    let heading1_div=document.createElement("div");
+    heading1_div.setAttribute("class","heading1")
+    box.append(image)
+    box.append(heading1_div)
+
+    //product name//
+    let heading2=document.createElement("h2");
+    heading2.innerText=result["product_name"]
+    heading1_div.append(heading2)
+
+    //price//
+    let heading3=document.createElement("h4");
+    heading3.innerText=result["price"]
+    heading1_div.append(heading3)
+
+    //star//
+    let star = "";
+    for (let j = 0; j < result["rating"]; j++) {
+        star += "⭐";
+    }
+    heading1_div.append(star);
+
+    //quantity//
+    let inputbox=document.createElement("input");
+    inputbox.setAttribute("class","quantity")
+    inputbox.setAttribute("placeholder", "select quantity");
+    heading1_div.append(inputbox)
+
+    //add to cart//
+    add_to_cart = document.createElement("button");
+    add_to_cart.setAttribute("id", "cartbutton")
+    add_to_cart.innerText = "Add to Cart";
+    heading1_div.append(add_to_cart);
+    
+
+    //buynow//
+    buy_now = document.createElement("button");
+    buy_now.setAttribute("href", "#");
+    buy_now.setAttribute("id", "buybutton")
+    buy_now.innerText = "Buy Now";
+    heading1_div.append(buy_now);
+    document.querySelector(".mainbox").append(box)
+   
+
+    
+    
 
 
 
+
+
+
+  </script>
 </body>
 
 </html>

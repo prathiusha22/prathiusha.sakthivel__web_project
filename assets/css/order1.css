@@ -10,6 +10,7 @@ header {
     height: 100px;
     width: 100%;
     position: fixed;
+    top: 0;
     z-index: 2;
     display: flex;
 }
@@ -77,21 +78,30 @@ main {
 
 .box {
     border: 2px solid white;
-    height: 450px;
-    width: 900px;
+    height: 400px;
+    width: 850px;
     box-shadow: -10px 10px 30px 10px rgb(218, 224, 220);
-    border-radius: 20px;
+    border-radius: 0px;
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 200px;
     left: 300px;
+    top: 200px;
 }
+/* .box img{
+    height: 340px;
+    width: 350px;
 
+} */
+.offimg{
+    height: 70px;
+    width: 70px;
+}
 .heading1 {
     position: relative;
-    margin-left: 450px;
-    margin-top: -430px;
+    margin-left: 400px;
+    margin-top: -370px;
+    font-size: 35px;
 
 }
 
@@ -107,12 +117,10 @@ h4 {
     left: 30px;
 }
 
-#star1,
-#star2,
-#star3,
-#star4{
+
+#star{
     color: gold;
-    font-size: 25px;
+    font-size: 16px;
 }
 
 .quantity {
@@ -122,10 +130,28 @@ h4 {
     color: rgb(108, 145, 53);
     text-align: center;
     font-size: 20px;
+    position: relative;
+    top: 50px;
+    right: 190px;
 }
 
-#cartbutton,
+
 #buybutton {
+    font-size: 18px;
+    font-weight: 600;
+    height: 38px;
+    width: 195px;
+    border: 0px solid rgb(108, 145, 53);
+    border-radius: 40px;
+    background-color: rgb(108, 145, 53);
+    color: white;
+    position: relative;
+    top: 60px;
+    right: 200px;
+
+}
+
+#cartbutton{
     font-size: 18px;
     font-weight: 600;
     height: 40px;
@@ -134,9 +160,10 @@ h4 {
     border-radius: 40px;
     background-color: rgb(108, 145, 53);
     color: white;
-
+    position: relative;
+    top: 120px;
+    
 }
-
 i {
     padding-right: 10px;
 
@@ -177,7 +204,7 @@ hr {
     margin-top: 50px;
 }
 
-.varieties {
+.product-list-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -262,4 +289,8 @@ hr {
     height: 50px;
     width: 100%;
 
+}
+.tomato{
+    height: 300px;
+    width: 300px;
 }

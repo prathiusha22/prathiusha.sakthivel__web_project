@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create page</title>
+    <link rel="stylesheet" href="../assets/css/create.css">
+</head>
+
+<body>
+    <header>
+        <div class="hd">
+            <img class="logo" src="../assets/image/mainlogo.png" height="70px" width="150px" alt="img">
+        </div>
+        <hr>
+    </header>
+
+    <main>
+        <div class="container">
+            <form action="">
+                <label for="img">Image url:<input type="text" id="image" /></label><br /><br />
+                <label for="Tittle"> Title:<input type="text" id="titlename" /></label><br /><br />
+                <label for="price">Price:<input id="price" /></label><br /><br />
+                <label for="rate">Rating:<input type="text" id="ratings" /></label><br /><br />
+                <button onclick="createproduct()">Create</button><br /><br />
+                <button onclick="delete_product()">Delete</button><br /><br />
+                <button onclick="update_product()">Update</button><br /><br />
+            </form>
+        </div>
+
+        <script>
+            function createproduct() {
+                product_create = {}
+                let product = JSON.parse(localStorage.getItem('create_product')) ?? []
+
+                const image = document.getElementById("image").value
+                const titlename = document.getElementById("titlename").value
+                const price = document.getElementById("price").value
+                const ratings = document.getElementById("ratings").value
+
+                product_create["image"] = image;
+                product_create["titlename"] = titlename;
+                product_create["price"] = price;
+                product_create["ratings"] = ratings;
+                
+                product.push(product_create);
+                localStorage.setItem("create_product", JSON.stringify(product))
+            }
+
+
+            function delete_product() {
+                let user_pdt = JSON.parse(localStorage.getItem("create_product"));
+                for (let i = 0; i < user_pdt.length; i++) {
+                    if (document.getElementById("titlename").value == user_pdt[i]["titlename"]) {
+                        user_pdt.splice(i, 1)
+                        localStorage.setItem("create_product", JSON.stringify(user_pdt));
+                    }
+                }
+            }
+            
+        </script>
+
+</body>
+
+</html>

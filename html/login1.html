@@ -17,7 +17,9 @@
         <!-- background -->
 
         <form id="loginpage" action="">
+
             <div class="mhd">
+
                 <img class="img" src="../assets/image/mainlogo.png" height="150px" width="250px" alt="img"><br><br>
                 <p class="para"> Username</p>
                 </label><input name="username" type="text" id="username" required>
@@ -26,11 +28,12 @@
                 <p class="para2"> Password</p>
                 <input name="password" type="password" id="password" required>
                 <button class="but" type="submit">Log-in</button>
+                
                 <div class="or">
                     <p>Don't have an Account? <a href="../html/signup.html">Sign-up→</a></p>
-                    </div>
+                </div>
 
-               
+
                 <!-- icon -->
                 <div class="icon">
                     <i class="fa-brands fa-facebook"></i>
@@ -46,43 +49,45 @@
 
         // converting string into array of objects
 
-        const checklogin= document.getElementById("loginpage");
+        const checklogin = document.getElementById("loginpage");
 
         checklogin.onsubmit = e => {
 
             e.preventDefault();
 
-            const username= document.getElementById("username").value;
-            const email= document.getElementById("email").value;
-            const password= document.getElementById("password").value;
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            let data={
+                "Firstname":username,
+                "email":email,
+                "password":password
+            }
 
             const localdata = JSON.parse(localStorage.getItem("user_records"))
 
-            if(!localdata) {
+            if (!localdata) {
                 alert("login failure");
                 return;
             }
 
-            let success=false;
-            for(let i=0; i<localdata.length; i++){
-                if((localdata[i]["Firstname"]===username) && (localdata[i]["email"]===email) && (localdata[i]["password"]===password)){
-                    success=true;
+            let success = false;
+            for (let i = 0; i < localdata.length; i++) {
+                if ((localdata[i]["email"] === email) && (localdata[i]["password"] === password)) {
+                    success = true;
                     break;
                 }
             }
 
-            if(success){
+            if (success) {
                 alert("login successful");
-                window.location.href="../html/profilepage.html";
-            }else{
+                localStorage.setItem('data',JSON.stringify(data))
+                window.location.href = "../html/profilepage.html";
+            } else {
                 alert("login failure");
             }
 
         }
-        
-
-
-
     </script>
 
 

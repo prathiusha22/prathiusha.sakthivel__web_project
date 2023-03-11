@@ -1,59 +1,122 @@
+body{
+    background-color: rgb(159, 215, 54);
+    overflow: hidden;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.outer_container{
+    background-color: white;
+    border: 1px solid white;
+    height: 750px;
+    width: 1200px;
+    margin-left: 140px;
+    margin-top: 70px;
 
-input{
-    font-size: 20px;
+}
+.header_container{
+    background-color:rgb(159, 215, 54);
+    border: 1px solid rgb(159, 215, 54);
+    height: 50px;
+    width: 1100px;
+    margin-left: 45px;
+    margin-top: 30px;
+
+}
+.header_container a{
+    font-size: 25px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: black;
     font-style: bold;
+}
+.details p{
+    font-size: 25px;
+    position: relative;
+    left: 60px;
+    top: 30px;
+    padding-top: 20px;
     
 }
-.container{
-    border: 1.5px solid black;
-    height: 800px;
-    width: 520px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.profile_img img{
-    height: 200px;
+
+button{
+    height: 40px;
     width: 200px;
     position: relative;
-    top: -180px;
-    left: -40px;
+    left: 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border-color: rgb(235, 232, 225);
+    background-color: white;
+   
+}
+button:hover{
+    color: white;
+    background-color: green;
+}
+.profile_image img{
+    height: 250px;
+    width: 250px;
+}
+label{
+    font-size: 20px;
     
 }
-.profile_img button{
-   position: relative;
-   top: -210px;
-   width: 120px;
-   height: 30px;
-   font-size: 16px;
+input{
+    height: 40px;
+    width: 300px;
+    border-radius: 20px;
+    border-color: rgb(235, 232, 225);
+    outline: none;
 }
-h1{
-  position: relative;
-  top: -350px;
-  left: 250px;
-}
-.user_details{
-    margin-right: 100px;
-    margin-top: 80px;
-    font-size: 18px;
-}
-.main{
-    margin-left: 480px;
-    margin-top: 40px;
-}
-.next{
-    margin-left: 120px;
-    margin-top: -22px;
-   
-   
-}
-.home a{
-    text-decoration: none;
-    color: black;
+input:focus{
+    outline: none;
+    border-color: rgb(49, 146, 194);
+    box-shadow: 1px 1px 1px 1px rgb(49, 146, 194);
 }
 
-.next a{
-    text-decoration: none;
-    color: black;
+h1{
+    position: relative;
+    left: 350px;
+    top: -450px;
+}
+.profile_form{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 150px;
+    top: -430px;
+}
+.email_container{
+    position: relative;
+    left: 345px;
+    top: -400px;
+}
+.email_container input{
+    height:40px ;
+    width: 805px;
+}
+.profile_form2{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 150px;
+    top: -380px;
+}
+
+.address_container{
+    position: relative;
+    left: 345px;
+    top: -350px;
+}
+.address_container input{
+    height:60px ;
+    width: 805px;
+}
+.profile_form3{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    left: 150px;
+    top: -310px;
 }

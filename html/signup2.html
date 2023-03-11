@@ -8,43 +8,167 @@
     <link rel="stylesheet" href="../assets/css/signup2.css">
 </head>
 <body>
-      <!-- whole content starts -->
-      <div class="hle">
-        <!-- msin content starts -->
-        <div class="signupp">
-            <!-- leftside of main content starts -->
-            <div class="left">
-                <img src="../assets/image/sign-uppagebg.jpeg" alt="signup-img">
-            </div>
-            <!-- left side of main content ends -->
-            <!-- Right side of main content starts -->
-            <div class="right">
-                <h1>Sign Up</h1>
-                <br><br><br>
-                <label><input type="text" placeholder="First Name..."></label><br>
-                <label><input type="text" placeholder="Last Name..."></label><br>
-                <label><input type="text" placeholder="Email..."></label><br>
-                <label><input type="number" placeholder="Phone Number..."></label><br>
-                <label><input type="text" placeholder="Username..."></label><br>
-                <label><input type="password" placeholder="Password..."></label><br>
-                <label><input type="password" placeholder=" Conform Password..."></label>
-                <br>
-                <br>
-                <!-- <div class="fl">
-                    <input type="checkbox"> <label for="box">I am agree with <strong>Terms of user</strong></label>
-                </div> -->
-                <br><br>
-                <div class="btn">
-                    <button><a href="../index.html">Sign Up</a></button>
-                    <!-- <p>Do You already have an account?</p> -->
-                    <p><a href="../html/login2.html">Log-in→</a></p>
-                </div>
-            </div>
-            <!-- rightside of main content ends -->
+    <div class="container">
+        <img src="../assets/image/mainlogo.png" alt="logaimage">
+
+        <div class="header">
+            <h1>Create Account</h1>
         </div>
-        <!-- main content ends -->
+
+        <form class="form" id="form" onsubmit="checkinput()">
+
+
+            <div class="form-control">
+                <label>First name</label>
+                <input type="text" placeholder="" id="firstname" title="Firstname cannot contain space" required="true"
+                    pattern="[A-Za-z]{1,32}">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+
+            <div class="form-control">
+                <label>Last name</label>
+                <input type="text" placeholder="" id="lastname" title="Lastname cannot contain space" required="true"
+                    pattern="[A-Za-z]{1,32}">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+
+            <div class="form-control">
+                <label>Email</label>
+                <input type="email" placeholder="" id="email" required="true">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" placeholder="" id="password" required="true" pattern="[A-Za-z0-9]{8,32}"
+                    minlenght="6">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+
+            <div class="form-control">
+                <label>confirm Password</label>
+                <input type="password" placeholder="" id="password2" required="true" pattern="[A-Za-z0-9]{8,32}"
+                    minlenght="6" title="Password cannot contain space">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <button type="submit">Submit</button>
+
+            <p>Already have an Account? <a href="../html/login1.html">Log-in→</a></p>
+
+        </form>
     </div>
-    <!-- whole content ends -->
+
+
+    <script>
+        const form = document.getElementById("form");
+        const firstname = document.getElementById("firstname");
+        const lastname = document.getElementById("lastname");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const password2 = document.getElementById("password2");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            checkInput();
+        });
+
+
+
+        function checkInput() {
+            const firstnamevalue = firstname.value.trim();
+            const lastnamenamevalue = lastname.value.trim();
+            const emailvalue = email.value.trim();
+            const passwordvalue = password.value.trim();
+            const password2value = password2.value.trim();
+
+
+
+            if (firstnamevalue === '') {
+                setError(firstname, 'Firstname cannot be blank');
+            }
+            else {
+                setSucess(firstname);
+            }
+
+            if (lastnamenamevalue === '') {
+                setError(lastname, 'Lastname cannot be blank');
+            }
+            else {
+                setSucess(lastname);
+            }
+
+            if (emailvalue === '') {
+                setError(email, 'Email cannot be blank');
+            }
+
+
+            else {
+                setSucess(email);
+            }
+
+            if (passwordvalue === '') {
+                setError(password, 'Password cannot be blank');
+            }
+            else {
+                setSucess(password);
+            }
+
+
+            if (passwordvalue !== password2value) {
+                setError(password2, 'Password does not match')
+            }
+            else {
+                setSucess(password2);
+            }
+            let userList = JSON.parse(localStorage.getItem("user_records")) ?? [];
+
+            const user = {
+                "Firstname": firstnamevalue,
+                "lastname": lastnamenamevalue,
+                "email": emailvalue,
+                "password": passwordvalue
+            };
+
+            let success = true;
+
+            if (userList !== null) {
+
+                for (let i = 0; i < userList.length; i++) {
+
+                    if (userList[i].email == emailvalue) {
+                        success = false;
+                        break;
+                    }
+                }
+            }
+            if (success) {
+                userList.push(user);
+                localStorage.setItem("user_records", JSON.stringify(userList))
+                window.location.href = "../html/veges.html"
+            }
+            else {
+                alert("You Already have an account")
+            }
+        }
+
+        function setError(input, message) {
+            const formcontrol = input.parentElement;
+            const small = formcontrol.querySelector('small');
+            formcontrol.classname = 'form-control error';
+            small.innerText = message;
+        }
+
+        function setSucess(input) {
+            const formcontrol = input.parentElement;
+            formcontrol.className = 'form-control success';
+        }
+
+    </script>
 
 </body>
 </html>

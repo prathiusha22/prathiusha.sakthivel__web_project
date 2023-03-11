@@ -1,0 +1,65 @@
+body {
+    font-size: 20px;
+    background-color: rgb(244, 244, 223);
+    font-size: 25px;
+    
+}
+
+.logo {
+    position: relative;
+    left: 640px;
+    border-radius: 30px;
+}
+input{
+    height: 30px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+button{
+    height: 35px;
+    width: 220px;
+    border: 0px solid rgb(108, 145, 53);
+    background-color: rgb(108, 145, 53);
+    border-radius: 10px;
+    font-size: 17px;
+    color: white;
+    margin-left: 180px;
+    
+}
+
+.container{
+    padding-left: 30px;
+    border: 3px solid rgb(247, 246, 246);
+    box-shadow: -5px 5px 10px 5px  rgb(218, 214, 214);
+    border-radius: 30px;
+    background-color: white;
+    height: 550px;
+    width: 600px;
+    margin-left: 450px;
+    margin-top: 100px;
+    
+}
+input:focus{
+    border-radius: 30px;
+    outline: none;
+    border-color: rgb(56, 86, 9);
+    box-shadow: 1px 1px 1px 1px rgb(108, 145, 53);
+}
+#image{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+#titlename{
+    margin-top: 30px;
+    margin-left: 65px;
+}
+#price{
+    margin-top: 30px;
+    margin-left: 60px;
+}
+#ratings{
+    margin-top: 30px;
+    margin-left: 45px;
+}
+

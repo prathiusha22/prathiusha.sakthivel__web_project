@@ -130,6 +130,8 @@
             else {
                 setSucess(password2);
             }
+
+            
             let userList = JSON.parse(localStorage.getItem("user_records")) ?? [];
 
             const user = {
@@ -137,6 +139,7 @@
                 "lastname": lastnamenamevalue,
                 "email": emailvalue,
                 "password": passwordvalue
+
             };
 
             let success = true;
@@ -154,7 +157,7 @@
             if (success) {
                 userList.push(user);
                 localStorage.setItem("user_records", JSON.stringify(userList))
-                window.location.href = "../index.html"
+                window.location.href = "../html/login1.html"
             }
             else {
                 alert("You Already have an account")

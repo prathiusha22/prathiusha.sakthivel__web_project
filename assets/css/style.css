@@ -641,6 +641,7 @@ h1 {
     background-color: rgb(108, 145, 53);
     height: 50px;
     width: 100%;
+    bottom: 0;
 
 
 }

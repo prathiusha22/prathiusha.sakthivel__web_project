@@ -10,57 +10,147 @@
 </head>
 
 <body>
-    <!-- profileimage -->
-    <form>
-        <div class="main">
+    <!-- outer_container -->
+    <div class="outer_container">
+        <!-- header_container -->
+        <div class="header_container">
+            <a href="../index.html">Home</a>
+        </div>
+        <!-- right_container -->
+        <div class="right_container">
+            <div class="profile_image">
+                <img src="../assets/image/userprofileimg.jpg" alt="profile_image">
+            </div>
+            <!-- Edit-Profile -->
+            <div class="edit">
+                <button>Edit-Profile</button>
+            </div>
+            <br><br>
+            <!-- Delete Account -->
+            <div class="details">
+                <button id="delete">Delete Account</button>
+            </div>
+            <br><br>
+            <!-- Save -->
+            <div>
+                <button id="save">Save</button>
+            </div>
+        </div>
 
-            <div class="container">
 
-                <div class="heading">
-                    <h1>MyProfile</h1>
-                </div>
+        <form>
+            <div class="form_div">
+                <!-- heading -->
+                <h1>Account</h1>
 
-                <div class="profile_img">
-                    <img src="../assets/image/profile.jpg" alt="image">
-                    <p><button>Edit Profile</button> </p>
-                </div>
+                <!-- fname and lname -->
+                <div class="profile_form">
 
-                <div class="user_details">
-                    <label>FirstName:<input id="fname" name="firstname" type="text"></label><br><br>
-                    <label>LastName:<input id="lname" name="lastname" type="text"></label><br><br>
-                    <label>Email:<input id="email" name="email" type="text"></label><br><br>
-                    <label>Phonenumber:<input id="pnumber" name="phonenumber" type="number"></label><br><br>
-                    <label>Username:<input id="username" name="username" type="text"></label><br><br>
-                    <label>Password:<input name="password" type="password"></label><br><br>
-                    <label>Conformpassword:<input name="conformpassword" type="password"></label><br><br>
-                    <label>Occupation:<input name="occupation" type="text"></label><br><br>
-                    <label>Address:<input name="address" type="text"></label><br><br>
-
-                    <div class="home">
-                        <button><a href="../index.html">Back to home</a></button>
+                    <div class="fname_container">
+                        <label>Firstname</label><br>
+                        <input type="text" placeholder="" id="firstname">
                     </div>
 
-                    <div class="next">
-                        <button><a href="../html/veges.html">Next</a></button>
+                    <div class="lname_container">
+                        <label>Lasttname</label><br>
+                        <input type="text" placeholder="" id="lastname">
+                    </div>
+                </div>
+
+                <!-- email -->
+
+                <div class="email_container">
+                    <label>Email</label><br>
+                    <input type="email" placeholder="" id="email" disabled>
+                </div>
+
+
+                <!-- city and country -->
+
+                <div class="profile_form2">
+
+                    <div class="city_container">
+                        <label>City</label><br>
+                        <input type="text" placeholder="" id="city">
+                    </div>
+
+                    <div class="country_container">
+                        <label>Country</label><br>
+                        <input type="text" placeholder="" id="country">
+                    </div>
+                </div>
+
+                <!-- address -->
+                <div class="address_container">
+                    <label>Address</label><br>
+                    <input type="text" placeholder="" id="address">
+                </div>
+
+                <!-- occupation and phonenumber -->
+
+
+                <div class="profile_form3">
+
+                    <div class="occupation_container">
+                        <label>Occupation</label><br>
+                        <input type="text" placeholder="" id="occupation">
+                    </div>
+
+                    <div class="number_container">
+                        <label>MobileNumber</label><br>
+                        <input type="telephone" placeholder="" id="number">
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+
+        </form>
+
+    </div>
+
 
 
     <script>
-        
+
         let users = JSON.parse(localStorage.getItem('user_records'));
+        let profile_arr = JSON.parse(localStorage.getItem('data'));
         for (let i = 0; i < users.length; i++) {
-            document.getElementById("fname").value = users[i]["firstname"];
-            document.getElementById("lname").value = users[i]["lastname"];
+            document.getElementById("firstname").value = users[i]["Firstname"];
+            document.getElementById("lastname").value = users[i]["lastname"];
             document.getElementById("email").value = users[i]["email"];
-            document.getElementById("pnumber").value = users[i]["phonenumber"];
-            document.getElementById("username").value = users[i]["username"];
         }
 
+
+        let check;
+        users.find(userobj => {
+            if (userobj["email"] == profile_arr["email"] && userobj["password"] == profile_arr["password"]) {
+                firstname.value = userobj["Firstname"]
+                lastname.value = userobj["lastname"]
+                document.getElementById("email").value = userobj["email"]
+                return check = userobj;
+            }
+        })
+
+        document.getElementById("save").addEventListener("click", (e) => {
+            console.log(check)
+
+            check["Firstname"] = document.getElementById("firstname").value;
+            check["lastname"] = document.getElementById("lastname").value;
+            console.log(check)
+
+        
+            localStorage.setItem("user_records", JSON.stringify(users));
+            console.log(users);
+        })
+
+        document.getElementById("delete").addEventListener("click", (e) => {
+            let num = users.indexOf(check);
+            users.splice(num, 1);
+            localStorage.setItem("user_records", JSON.stringify(users));
+
+
+        })
     </script>
 
 </body>
+
 </html>
