@@ -373,7 +373,6 @@ for (let i = 0; i < products.length; i++) {
 
     product_image = document.createElement("img");
     product_image.setAttribute("src", products[i]["image"]);
-    // product_image.setAttribute("alt", products[i]["product_image"]["alt"]);
     prdouct_link.append(product_image);
 
     product_name = document.createElement("p");

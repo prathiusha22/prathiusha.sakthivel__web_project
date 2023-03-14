@@ -70,7 +70,7 @@
     </div> -->
   </div>
     <!-- benefits of tomato -->
-  <!-- 
+  
     <div class="heading2">
       <h3>Benifits of Tomato</h3>
       <ul>
@@ -90,11 +90,11 @@
         <li> Sugar: 2.6 grams</li>
         <li> Fiber: 1.2 grams</li>
         <li> Fat: 0.2 grams</li>
-      </ul>
+      </ul> 
     </div>
-    <-- variety of tomato -->
-  <!-- <div class="product-list-container"> -->
-    <!-- <div class="cheerytomato">
+    <!-- variety of tomato  -->
+  <div class="product-list-container">
+    <div class="cheerytomato">
         <img src="../assets/image/cherry tomato.jfif" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -106,9 +106,9 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div> -->
+      </div> 
     <!-- camparitomato -->
-    <!-- <div class="camparitomato">
+    <div class="camparitomato">
         <img src="../assets/image/campari tomato.jpg" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -121,10 +121,10 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div> -->
+      </div> 
 
     <!-- romatomato -->
-    <!-- <div class="romatomato">
+    <div class="romatomato">
         <img src="../assets/image/roma tomato.jfif" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -136,9 +136,9 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div> -->
+      </div> 
     <!-- jubileetomato -->
-    <!-- <div class="jubileetomato">
+    <div class="jubileetomato">
         <img src="../assets/image/jubileetomato.png" height="200px" width="200px" alt="img">
         <div class="con1">
           <h5>Fresh Organic<br> CheeryTomato</h5>
@@ -149,7 +149,7 @@
           <button id="but"><a href="../html/buynow.html">Buy Now</a></button><br><br>
           <button id="but"><a href="../html/cart.html">Add to Cart</a></button>
         </div>
-      </div> -->
+      </div> 
   <!-- </div> -->
 
   </main>
@@ -240,8 +240,7 @@
 
 
   </footer>
-  <!-- 
-     <script src="../assets/js/order1.js"></script> -->
+
   <script>
     let product_details = [
       //0
@@ -321,6 +320,7 @@
     box.append(image1)
 
     //image//
+    
     let image = document.createElement("img");
     image.setAttribute("class","tomato")
     image.setAttribute("src", result["product_image"]["source"]);
@@ -368,17 +368,23 @@
     buy_now.innerText = "Buy Now";
     heading1_div.append(buy_now);
     document.querySelector(".mainbox").append(box)
-   
 
     
+
+    //benefits//
+
+    // let div_benefits=document.createElement("div");
+    // div_benefits.setAttribute("class","heading2");
+
+    // let heading_name=document.createElement("h3");
+    // heading_name.innerText="Benefits of Tomato"
+    // div_benefits.append(heading_name)
+
+
+
     
-
-
-
-
-
-
   </script>
 </body>
 
 </html>
+

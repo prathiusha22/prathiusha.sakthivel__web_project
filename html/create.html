@@ -31,6 +31,7 @@
         </div>
 
         <script>
+            //create product//
             function createproduct() {
                 product_create = {}
                 let product = JSON.parse(localStorage.getItem('create_product')) ?? []
@@ -49,16 +50,19 @@
                 localStorage.setItem("create_product", JSON.stringify(product))
             }
 
-
+             
+            //delete product//
             function delete_product() {
-                let user_pdt = JSON.parse(localStorage.getItem("create_product"));
-                for (let i = 0; i < user_pdt.length; i++) {
-                    if (document.getElementById("titlename").value == user_pdt[i]["titlename"]) {
-                        user_pdt.splice(i, 1)
-                        localStorage.setItem("create_product", JSON.stringify(user_pdt));
+                let user_product = JSON.parse(localStorage.getItem("create_product"));
+                for (let i = 0; i < user_product.length; i++) {
+                    if (document.getElementById("titlename").value == user_product[i]["titlename"]) {
+                        user_product.splice(i, 1)
+                        localStorage.setItem("create_product", JSON.stringify(user_product));
                     }
                 }
             }
+
+
             
         </script>
 
