@@ -291,6 +291,32 @@
         "rating": 4
 
     },
+    {
+        "product_image": {
+            "source": "../assets/image/kohlrabi.jfif",
+            "alt": "image of tomato veggie"
+        },
+
+        "product_name": "FreshOrganicKohlrabi",
+
+        "price": 150,
+
+        "rating": 5.0
+
+    },
+    {
+        "product_image": {
+            "source": "../assets/image/brinjal.jfif",
+            "alt": "image of tomato veggie"
+        },
+
+        "product_name": "FreshOrganicBrinjal",
+
+        "price": 150,
+
+        "rating": 5.0
+
+    }
 
     ]
 
@@ -304,7 +330,11 @@
     let result;
     product_details.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
       if (e["product_name"] == name) {
+        console.log(e)
         return result=e;
+      }
+      else{
+        console.log("chvn")
       }
     })
     console.log(result)
@@ -358,18 +388,20 @@
     add_to_cart = document.createElement("button");
     add_to_cart.setAttribute("id", "cartbutton")
     add_to_cart.innerText = "Add to Cart";
+    // add_to_cart.setAttribute("href","../html/cart.html");
     heading1_div.append(add_to_cart);
     
 
     //buynow//
     buy_now = document.createElement("button");
-    buy_now.setAttribute("href", "#");
+    buy_now.setAttribute("href", "../html/buynow.html");
     buy_now.setAttribute("id", "buybutton")
     buy_now.innerText = "Buy Now";
+    // buy_now.setAttribute("href","../html/buynow.html");
     heading1_div.append(buy_now);
     document.querySelector(".mainbox").append(box)
 
-    
+     
 
     //benefits//
 
@@ -380,9 +412,6 @@
     // heading_name.innerText="Benefits of Tomato"
     // div_benefits.append(heading_name)
 
-
-
-    
   </script>
 </body>
 
