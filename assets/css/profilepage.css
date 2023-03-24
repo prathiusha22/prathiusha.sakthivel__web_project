@@ -120,3 +120,7 @@ h1{
     left: 150px;
     top: -310px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
