@@ -1,6 +1,6 @@
 body {
     font-size: 20px;
-    background-color: rgb(244, 244, 223);
+    /* background-color: rgb(244, 244, 223); */
     font-size: 25px;
     
 }
@@ -62,4 +62,14 @@ input:focus{
     margin-top: 30px;
     margin-left: 45px;
 }
+table td img{
+    width: 150px;
+    height: 150px;
+}
 
+
+table {
+    margin-left: -300px;
+    margin-top: 150px;
+    padding: 30px;
+}
