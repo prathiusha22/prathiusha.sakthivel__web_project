@@ -34,13 +34,13 @@ function delete_product() {
 
 //update product//
 let output = "";
-let append_div = document.querySelector(".table-body");
+let append_div = document.querySelector(".table_product");
 
-product.forEach(item => {
+   product.forEach(item => {
+   output += `
 
-    output += `
 <tr>
-<td>${item.product_id}</td>
+   <td>${item.product_id}</td>
    <td>${item.titlename}</td>
    <td class="td-img"><img src="${item.image}"></td>
    <td>${item.price}</td>
@@ -49,9 +49,7 @@ product.forEach(item => {
     append_div.innerHTML = output;
 });
 
-
 function product_update(id) {
-
     product.find(function (obj) {
 
         if (obj.product_id == id) {
@@ -69,7 +67,7 @@ function updateproduct() {
     const price = document.getElementById("price").value;
     const rating = document.getElementById("ratings").value;
 
-    product.find(function (obj) {
+      product.find(function (obj) {
 
         if (title == obj.titlename) {
 
@@ -79,5 +77,8 @@ function updateproduct() {
             obj.ratings = rating;
         }
     })
+
     localStorage.setItem("create_product", JSON.stringify(product));
+    
 }
+
