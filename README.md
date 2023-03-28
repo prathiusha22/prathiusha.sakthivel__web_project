@@ -55,7 +55,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
     - Expected Result:
         - The user can view the details of the selected product.
 
-### Buy a product(yet to start)
+### Buy a product
 - Scenario 1: Successfully purchase a product
     - Steps:
         1. Log in as a buyer.
@@ -69,12 +69,5 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - Your order was placed sucessfully.
 
 
-### Add product  to cart(yet to start)
-- Scenario 1: Successfully add product to cart
-    - Steps:
-        1. Log in as a buyer.
-        2. Navigate to the product listing page.
-        3. Select a product to add to cart.
-        4. Click the "Add to Cart" button.
-    - Expected Result:
-        - The product is added to the user's cart.
+   Buy a Product-Yet to start
+   Add to Cart-Yet to start
