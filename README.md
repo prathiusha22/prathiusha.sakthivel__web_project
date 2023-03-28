@@ -17,7 +17,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
 
 ## Buyer
 
-### Create an account(completed)
+### Create an account(completed :white_check_mark:)
 -Steps:
  1 .Navigate to the sign-in page.
  2. Fill the required information such as Name, email, and password.
@@ -26,7 +26,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
   1.The user is redirected to the login page.
 
 
-### Create an account(completed)
+### Create an account(completed :white_check_mark:)
 - Scenario 1: Successfully login in to account
     - Steps:
         1. Navigate to the login page.
@@ -36,7 +36,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - The user is redirected to the user profile page.
 
 
-### View products(completed)
+### View products(completed :white_check_mark:)
 - Scenario 1: Successfully view products
     - Steps:
         1. Log in as a buyer.
@@ -46,7 +46,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - The user can view the list of products available.
 
 
-### View product details(completed)
+### View product details(completed :white_check_mark:)
 - Scenario 1: Successfully view product details
     - Steps:
         1. Log in as a buyer.
