@@ -12,3 +12,69 @@ Market Research:https://docs.google.com/document/d/1addm4zxAxVOA_jVlRcDHY0tgTHCN
 userflow:https://drive.google.com/file/d/1A74aQOd3qClHgO3zmY9PHo1Vnm2wjKYr/view?usp=sharing
 
 Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6JS
+
+# E-commerce
+
+## Buyer
+
+### Create an account
+-Steps:
+ 1 .Navigate to the sign-in page.
+ 2. Fill the required information such as Name, email, and password.
+ 3. Click the "Create Account" button.
+ - Expected Result:
+  1.The user is redirected to the login page.
+
+
+### Create an account
+- Scenario 1: Successfully login in to account
+    - Steps:
+        1. Navigate to the login page.
+        2. Fill the required information such as email, and password.
+        3. Click the "login" button.
+    - Expected Result:
+        - The user is redirected to the user profile page.
+
+
+### View products
+- Scenario 1: Successfully view products
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the product listing page.
+        3. View the list of available products.
+    - Expected Result:
+        - The user can view the list of products available.
+
+
+### View product details
+- Scenario 1: Successfully view product details
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the product listing page.
+        3. Select a product to view its details.
+    - Expected Result:
+        - The user can view the details of the selected product.
+
+### Buy a product
+- Scenario 1: Successfully purchase a product
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the product listing page.
+        3. Select a product to view its details.
+        4. Click the "Buy Now" button.
+        5. Confirm the shipping address and payment method.
+        6. Click the "Place Order" button.
+    - Expected Result:
+        - The user is redirected to the order confirmation page.
+        - Your order was placed sucessfully.
+
+
+### Add product  to cart
+- Scenario 1: Successfully add product to cart
+    - Steps:
+        1. Log in as a buyer.
+        2. Navigate to the product listing page.
+        3. Select a product to add to cart.
+        4. Click the "Add to Cart" button.
+    - Expected Result:
+        - The product is added to the user's cart.
