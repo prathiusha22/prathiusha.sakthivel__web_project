@@ -17,7 +17,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
 
 ## Buyer
 
-### Create an account
+### Create an account(completed)
 -Steps:
  1 .Navigate to the sign-in page.
  2. Fill the required information such as Name, email, and password.
@@ -26,7 +26,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
   1.The user is redirected to the login page.
 
 
-### Create an account
+### Create an account(completed)
 - Scenario 1: Successfully login in to account
     - Steps:
         1. Navigate to the login page.
@@ -36,7 +36,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - The user is redirected to the user profile page.
 
 
-### View products
+### View products(completed)
 - Scenario 1: Successfully view products
     - Steps:
         1. Log in as a buyer.
@@ -46,7 +46,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - The user can view the list of products available.
 
 
-### View product details
+### View product details(completed)
 - Scenario 1: Successfully view product details
     - Steps:
         1. Log in as a buyer.
@@ -55,7 +55,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
     - Expected Result:
         - The user can view the details of the selected product.
 
-### Buy a product
+### Buy a product(yet to start)
 - Scenario 1: Successfully purchase a product
     - Steps:
         1. Log in as a buyer.
@@ -69,7 +69,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - Your order was placed sucessfully.
 
 
-### Add product  to cart
+### Add product  to cart(yet to start)
 - Scenario 1: Successfully add product to cart
     - Steps:
         1. Log in as a buyer.
