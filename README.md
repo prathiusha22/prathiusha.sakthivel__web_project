@@ -55,7 +55,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
     - Expected Result:
         - The user can view the details of the selected product.
 
-### Buy a product
+### Buy a product(yet to start :x: )
 - Scenario 1: Successfully purchase a product
     - Steps:
         1. Log in as a buyer.
@@ -69,5 +69,5 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - Your order was placed sucessfully.
 
 
-   Buy a Product-Yet to start
-   Add to Cart-Yet to start
+   Buy a Product-(yet to start :x: )
+   Add to Cart-(yet to start :x: )
