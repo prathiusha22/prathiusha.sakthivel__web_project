@@ -29,11 +29,11 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
 ### Create an account(completed :white_check_mark:)
 - Scenario 1: Successfully login in to account
     - Steps:
-          1. Navigate to the login page.
-          2. Fill the required information such as username,email and password.
-          3. Click the "login" button.
+         1. Navigate to the login page.
+         2. Fill the required information such as username,email and password.
+         3. Click the "login" button.
     - Expected Result:
-          - The user is redirected to the user profile page.
+         - The user is redirected to the user profile page.
 
 
 ### View products(completed :white_check_mark:)
