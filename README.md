@@ -18,19 +18,19 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
 ## Buyer
 
 ### Create an account(completed :white_check_mark:)
--Steps:
- 1 .Navigate to the sign-in page.
- 2. Fill the required information such as Name, email, and password.
- 3. Click the "Create Account" button.
- - Expected Result:
-  1.The user is redirected to the login page.
+ -Steps:
+     1. Navigate to the sign-up page.
+     2. Fill the required information such as firstname,lastname, email,password and conform password.
+     3. Click the "submit" button.
+  - Expected Result:
+     1.The user is redirected to the login page.
 
 
 ### Create an account(completed :white_check_mark:)
 - Scenario 1: Successfully login in to account
     - Steps:
         1. Navigate to the login page.
-        2. Fill the required information such as email, and password.
+        2. Fill the required information such as username,email and password.
         3. Click the "login" button.
     - Expected Result:
         - The user is redirected to the user profile page.
