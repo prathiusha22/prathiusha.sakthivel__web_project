@@ -18,12 +18,12 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
 ## Buyer
 
 ### Create an account(completed :white_check_mark:)
- -Steps:
+ - Steps:
      1. Navigate to the sign-up page.
      2. Fill the required information such as firstname,lastname, email,password and conform password.
      3. Click the "submit" button.
   - Expected Result:
-     1.The user is redirected to the login page.
+      1. The user is redirected to the login page.
 
 
 ### Create an account(completed :white_check_mark:)
@@ -32,8 +32,8 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
          1. Navigate to the login page.
          2. Fill the required information such as username,email and password.
          3. Click the "login" button.
-    - Expected Result:
-         - The user is redirected to the user profile page.
+    -  Expected Result:
+         -  The user is redirected to the user profile page.
 
 
 ### View products(completed :white_check_mark:)
