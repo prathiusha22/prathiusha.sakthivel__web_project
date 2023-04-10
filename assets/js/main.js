@@ -1,5 +1,5 @@
 
-let create_product =[
+let create_product = [
     {
         "image": "https://iili.io/HNNp0k7.jpg",
         "titlename": "FreshorganicTomato",
@@ -78,10 +78,13 @@ let create_product =[
         "product_id": 11
     }
 ];
-if (localStorage.getItem("create_product")){
- console.log("pro")
+
+if (localStorage.getItem("create_product")) {
+    console.log("pro");
 }
-else{
+
+else {
     localStorage.setItem("create_product", JSON.stringify(create_product));
     console.log("yes");
+
 }
