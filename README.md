@@ -17,26 +17,26 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
 
 ## Buyer
 
-### Create an account
--Steps:
- 1 .Navigate to the sign-in page.
- 2. Fill the required information such as Name, email, and password.
- 3. Click the "Create Account" button.
- - Expected Result:
-  1.The user is redirected to the login page.
+### Create an account(completed :white_check_mark:)
+ - Steps:
+     1. Navigate to the sign-up page.
+     2. Fill the required information such as firstname,lastname, email,password and conform password.
+     3. Click the "submit" button.
+  - Expected Result:
+      1. The user is redirected to the login page.
 
 
-### Create an account
+### Create an account(completed :white_check_mark:)
 - Scenario 1: Successfully login in to account
     - Steps:
-        1. Navigate to the login page.
-        2. Fill the required information such as email, and password.
-        3. Click the "login" button.
-    - Expected Result:
-        - The user is redirected to the user profile page.
+         1. Navigate to the login page.
+         2. Fill the required information such as username,email and password.
+         3. Click the "login" button.
+    -  Expected Result:
+         -  The user is redirected to the user profile page.
 
 
-### View products
+### View products(completed :white_check_mark:)
 - Scenario 1: Successfully view products
     - Steps:
         1. Log in as a buyer.
@@ -46,7 +46,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - The user can view the list of products available.
 
 
-### View product details
+### View product details(completed :white_check_mark:)
 - Scenario 1: Successfully view product details
     - Steps:
         1. Log in as a buyer.
@@ -55,7 +55,7 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
     - Expected Result:
         - The user can view the details of the selected product.
 
-### Buy a product
+### Buy a product(yet to start :x: )
 - Scenario 1: Successfully purchase a product
     - Steps:
         1. Log in as a buyer.
@@ -69,12 +69,5 @@ Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6
         - Your order was placed sucessfully.
 
 
-### Add product  to cart
-- Scenario 1: Successfully add product to cart
-    - Steps:
-        1. Log in as a buyer.
-        2. Navigate to the product listing page.
-        3. Select a product to add to cart.
-        4. Click the "Add to Cart" button.
-    - Expected Result:
-        - The product is added to the user's cart.
+   Buy a Product-(yet to start :x: )
+   Add to Cart-(yet to start :x: )
