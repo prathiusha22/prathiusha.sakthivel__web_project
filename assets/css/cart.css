@@ -48,10 +48,12 @@ h5 {
     color: darkgreen;
 }
 
-.tomato {
+.tomato1 {
     position: relative;
     left: 30px;
     top: 20px;
+    height: 160px;
+    width: 160px;
 }
 
 .grapes {

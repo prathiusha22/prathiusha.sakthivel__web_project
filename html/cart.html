@@ -22,13 +22,17 @@
         <hr>
     </header>
     <!-- borderbox -->
-    <div class="borderbox">
+
+    <div class="outer_div" id="outer_div">
+
+    </div>
+    <!-- <div class="borderbox">
         <h3>Shopping cart</h3>
         <div class="tomato">
-            <img class="tomato" src="../assets/image/tomato.jpg" height="150px" width="150px" alt="img">
+            <img class="tomato1" src="../assets/image/tomato.jpg" height="150px" width="150px" alt="img">
             <h4>Fresh Organic Tomato</h4>
-            <h4>₹10 Per kg</h4>
-            <label><input type="number" id="number1" name="number"></label>
+            <h5>₹10 Per kg</h5>
+            <input type="number" id="number1" name="number">
 
             <a class="remove" href="#">Remove all</a><br>
             <div class="content1">
@@ -38,9 +42,9 @@
             </div>
 
 
-        </div>
-        <!-- grapes -->
-        <div class="grapes">
+        </div> -->
+    <!-- grapes -->
+    <!-- <div class="grapes">
             <img class="grapes" src="../assets/image/grapes.jpg" height="150px" width="150px" alt="img">
             <h5>Fresh Organic grapes</h5>
             <h5>₹10 Per kg</h5>
@@ -60,14 +64,53 @@
         <i id="rupee" class="fa-solid fa-indian-rupee-sign"></i>
         <p>150</p><br><br>
 
-    </div>
+    </div> -->
     <!-- exitbutton -->
     <div class="exit">
         <button><a href="../index.html">Exit</a></button>
         <button><a href="../html/buynow.html">Continue</a></button>
     </div>
 
+    <script>
+
+        let outer_div = document.getElementById("outer_div")
+
+        let border_box = document.createElement("div");
+        border_box.setAttribute("class", "borderbox");
+        outer_div.append(border_box)
+
+        let heading3 = document.createElement("h3");
+        heading3.innerHTML = "Shopping cart";
+        border_box.append(heading3)
+
+        let image_div = document.createElement("div");
+        image_div.setAttribute("class", "tomato");
+        heading3.append(image_div)
+
+        let image = document.createElement("img");
+        image.setAttribute("class", "tomato1");
+        image.setAttribute("src", "../assets/image/tomato.jpg")
+        image_div.append(image)
+
+        let heading4 = document.createElement("h4");
+        heading4.innerHTML = "Fresh Organic Tomato";
+        border_box.append(heading4)
+
+        let heading5 = document.createElement("h5");
+        heading5.innerHTML = "₹10 Per kg";
+        border_box.append(heading5)
+
+        let inputbox = document.createElement("input");
+        inputbox.setAttribute("id", "number1")
+        inputbox.setAttribute("placeholder", "Quantity");
+        border_box.append(inputbox)
+
+        let remove = document.createElement("a");
+        remove.setAttribute("href", "o");
+        border_box.append(prdouct_link);
+        
+        
+    </script>
 
 </body>
-
 </html>

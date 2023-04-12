@@ -422,34 +422,24 @@
       inputbox.setAttribute("class", "quantity")
       inputbox.setAttribute("placeholder", "select quantity");
       heading1_div.append(inputbox)
-
-      //add to cart//
+      
+      // add to cart//
       add_to_cart = document.createElement("button");
       add_to_cart.setAttribute("id", "cartbutton")
-      add_to_cart.innerText = "Add to Cart";
-      // add_to_cart.setAttribute("href","../html/cart.html");
+  
+      let anchor=document.createElement("a");
+      anchor.setAttribute("href","../html/cart.html")
+      anchor.innerText = "Add to Cart";
+      add_to_cart.append(anchor)
       heading1_div.append(add_to_cart);
-
-
+      
       //buynow//
       buy_now = document.createElement("button");
-      buy_now.setAttribute("href", "../html/buynow.html");
       buy_now.setAttribute("id", "buybutton")
       buy_now.innerText = "Buy Now";
-      // buy_now.setAttribute("href","../html/buynow.html");
       heading1_div.append(buy_now);
       document.querySelector(".mainbox").append(box)
-
-
-
-      //benefits//
-
-      // let div_benefits=document.createElement("div");
-      // div_benefits.setAttribute("class","heading2");
-
-      // let heading_name=document.createElement("h3");
-      // heading_name.innerText="Benefits of Tomato"
-      // div_benefits.append(heading_name)
+      
     }
   </script>
 </body>
