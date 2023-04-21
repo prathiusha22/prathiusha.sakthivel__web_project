@@ -14,33 +14,125 @@
 </head>
 
 <body>
-    <!-- header -->
-    <header>
-        <div class="hd">
-            <img class="logo" src="../assets/image/mainlogo.png" height="70px" width="150px" alt="img">
-        </div>
-        <hr>
-    </header>
-    <!-- details -->
-    <main>
-        <div class="mainpage">
-            <div class="borderbox">
-                <h2>Add Address Details</h2>
-                <div class="label">
-                    <label for="first-name">Full Name:<input type="text" name="fname" class="box" required></label><br>
-                    <label for="Phonenumber">Phonenumber:<input type="number" name="fname" class="box"
-                            required></label><br>
-                    <label for="address">House No,Building Name:<input type="text" name="fname" class="box"
-                            required></label><br>
-                    <label for="city">City:<input type="text" required class="box" name="fname" required></label><br>
-                    <label for="state">State:<input type="text" required class="box" name="fname" required></label><br>
-                    <label for="Pincode">Pincode:<input type="number" required class="box" name="fname"
-                            required></label><br>
-                    <button class="next"><a href="bankdet.html">Next</a></button>
+
+    <div class="container">
+    
+        <form id="payment_details">
+    
+            <div class="row">
+    
+                <div class="col">
+    
+                    <h3 class="title">billing address</h3>
+    
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input id="fullname" type="text" title="Firstname cannot contain number or space" required="true"    pattern="[A-Za-z]{1,32}">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input id="email" type="email" pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters." required="true">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input id="address" type="text"title="Fill the address field" required="true"    >
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input id="city" type="text" title="City field cannot be empty" required="true"    pattern="[A-Za-z]{1,32}">
+                    </div>
+    
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input id="state" type="text" title="State field cannot be empty" required="true"    pattern="[A-Za-z]{1,32}">
+                        </div>
+                        <div class="inputBox">
+                            <span>Pincode :</span>
+                            <input id="pincode" type="number" minlength="5" maxlength="7"  title="Firstname cannot contain space" required="true">
+                        </div>
+                    </div>
+    
                 </div>
+    
+                <div class="col">
+    
+                    <h3 class="title">payment</h3>
+    
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <img src="../assets/image/card_img.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input id="name_on_card" type="text" required="true">
+                    </div>
+                    <div class="inputBox">
+                        <span>credit card number :</span>
+                        <input id="creditcard" type="number" required="true">
+                    </div>
+                    <div class="inputBox">
+                        <span>Branch Name:</span>
+                        <input id="branchname" type="text" required="true">
+                    </div>
+                    <div class="inputBox">
+                        <span>Mobile Number:</span>
+                        <input id="mobilenumber" type="number" required="true">
+                    </div>
+    
+                </div>
+        
             </div>
-        </div>
-    </main>
-</body>
+    
+            <!-- <input type="submit" value="proceed to checkout" class="submit-btn" > -->
+            <button class="submit-btn" type="submit">proceed to checkout</button>   
+        </form>
+    
+    </div>    
+        
+    <script>
+        let getdetails=document.getElementById("payment_details");
+        getdetails.addEventListener("submit",function (e) {
+        e.preventDefault();
+        getdata()
+    })
+        
+        let get_buyerdetails=JSON.parse(localStorage.getItem("buyerdetails"))??[];
+
+        function getdata(){
+            let name=document.getElementById("fullname").value;
+            let email=document.getElementById("email").value;
+            let address=document.getElementById("address").value;
+            let city=document.getElementById("city").value;
+            let state=document.getElementById("state").value;
+            let pincode=document.getElementById("pincode").value;
+            let name_on_card=document.getElementById("name_on_card").value;
+            let creditcard=document.getElementById("creditcard").value;
+            let branchname=document.getElementById("branchname").value;
+            let mobilenumber=document.getElementById("mobilenumber").value;
+
+            get_buyerdetails.push({
+                "fullname": name,
+                "email":email,
+                "address":address,
+                "city":city,
+                "state":state,
+                "pincode":pincode,
+                "name_on_card":name_on_card,
+                "creditcard":creditcard,
+                "branchname":branchname,
+                "mobilenumber":mobilenumber
+            })
+        
+        localStorage.setItem("buyerdetails",JSON.stringify(get_buyerdetails));
+        window.location.href="../html/bankdet.html";
+        }
+        
+
+
+    </script>
+
+    </body>
 
 </html>
+

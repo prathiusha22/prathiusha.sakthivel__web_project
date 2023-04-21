@@ -34,70 +34,54 @@
             <h5>₹10 Per kg</h5>
             <input type="number" id="number1" name="number">
 
-            <a class="remove" href="#">Remove all</a><br>
+           
             <div class="content1">
-                <i class="fa-solid fa-indian-rupee-sign"></i>10<br><br>
-                <a href="#">Save for later</a><br><br>
-                <a href="#">Remove</a>
+                <i class="fa-solid fa-trash"></i>
             </div>
-
-
         </div> -->
-    <!-- grapes -->
-    <!-- <div class="grapes">
-            <img class="grapes" src="../assets/image/grapes.jpg" height="150px" width="150px" alt="img">
-            <h5>Fresh Organic grapes</h5>
-            <h5>₹10 Per kg</h5>
-            <label><input type="number" id="number2" name="number"></label>
-            <div class="content2">
-                <i class="fa-solid fa-indian-rupee-sign"></i>140<br><br>
-                <a href="#">Save for later</a><br><br>
-                <a href="#">Remove</a>
-            </div>
 
 
-        </div>
-        <div class="line">
-
-        </div>
-        <button>Total</button>
-        <i id="rupee" class="fa-solid fa-indian-rupee-sign"></i>
-        <p>150</p><br><br>
-
-    </div> -->
     <!-- exitbutton -->
     <div class="exit">
         <button><a href="../index.html">Exit</a></button>
         <button><a href="../html/buynow.html">Continue</a></button>
     </div>
 
+
     <script>
 
+        let cart_sample = JSON.parse(localStorage.getItem("cart"))
+        let user = JSON.parse(localStorage.getItem("active_user"))
+
+        cart_sample.find(e =>{
+            if(e["email"] == user["email"]){
+
+           
         let outer_div = document.getElementById("outer_div")
 
         let border_box = document.createElement("div");
         border_box.setAttribute("class", "borderbox");
         outer_div.append(border_box)
 
-        let heading3 = document.createElement("h3");
-        heading3.innerHTML = "Shopping cart";
-        border_box.append(heading3)
+        // let heading3 = document.createElement("h3");
+        // heading3.innerHTML = "Shopping cart";
+        // border_box.append(heading3)
 
         let image_div = document.createElement("div");
         image_div.setAttribute("class", "tomato");
-        heading3.append(image_div)
+        border_box.append(image_div)
 
         let image = document.createElement("img");
         image.setAttribute("class", "tomato1");
-        image.setAttribute("src", "../assets/image/tomato.jpg")
+        image.setAttribute("src", e ["image"])
         image_div.append(image)
 
         let heading4 = document.createElement("h4");
-        heading4.innerHTML = "Fresh Organic Tomato";
+        heading4.innerHTML = e["titlename"];
         border_box.append(heading4)
 
         let heading5 = document.createElement("h5");
-        heading5.innerHTML = "₹10 Per kg";
+        heading5.innerHTML = e["price"];
         border_box.append(heading5)
 
         let inputbox = document.createElement("input");
@@ -105,11 +89,16 @@
         inputbox.setAttribute("placeholder", "Quantity");
         border_box.append(inputbox)
 
-        let remove = document.createElement("a");
-        remove.setAttribute("href", "o");
-        border_box.append(prdouct_link);
-        
-        
+        let second_div=document.createElement("div");
+        second_div.setAttribute("class","content1")
+        border_box.append(second_div)
+
+        let delete_icon=document.createElement("i");
+        delete_icon.setAttribute("class","fa-solid fa-trash")
+        second_div.append(delete_icon)
+    }
+    });
+
     </script>
 
 </body>

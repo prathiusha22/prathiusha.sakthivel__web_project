@@ -28,7 +28,7 @@ header {
 
 
 .menu-bar {
-    margin-left: 100px;
+    margin-left: 270px;
     margin-top: 40px;
 }
 
@@ -44,7 +44,8 @@ header a {
 }
 
 .menu-bar ul li {
-    padding-left: 70px;
+    padding-left: 90px;
+    margin-top: -50px;
 }
 
 .logo {
@@ -64,6 +65,12 @@ header a {
 .navi:hover {
     font-size: 35px;
     color: black;
+}
+#search{
+    margin-left: -230px;
+    height: 40px;
+    width: 250px;
+    /* border-radius: 30px; */
 }
 
 

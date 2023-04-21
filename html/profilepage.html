@@ -12,52 +12,48 @@
 <body>
     <!-- outer_container -->
     <div class="outer_container">
-        <!-- header_container -->
-        <div class="header_container">
-            <a href="../index.html">Home</a>
-        </div>
-        <!-- right_container -->
-        <div class="right_container">
-            <div class="profile_image">
-                <img src="../assets/image/userprofileimg.jpg" alt="profile_image">
+
+        <form id="profile_form">
+
+            <!-- right_container -->
+            <div class="right_container">
+                <div class="profile_image">
+                    <img src="../assets/image/userprofileimg.jpg" id="photo" alt="profile_image">
+                    <input type="file" id="file">
+                    <label for="file" id="uploadbtn">Change Profile</label>
+                </div>
+                <!-- Edit-Profile -->
+                <div class="edit">
+                    <button id="edit">Edit-Profile</button>
+                </div>
+                <br><br>
+                <!-- Save -->
+                <div>
+                    <button type="submit" id="save_button">Save</button>
+                </div>
+                <br><br>
+                <div>
+                    <button id="next"><a href="../index.html">Log-out</a></button>
+                </div>
             </div>
-            <!-- Edit-Profile -->
-            <div class="edit">
-                <button>Edit-Profile</button>
-            </div>
-            <br><br>
-            <!-- Delete Account -->
-            <div class="details">
-                <button id="delete">Delete Account</button>
-            </div>
-            <br><br>
-            <!-- Save -->
-            <div>
-                <button id="save">Save</button>
-            </div>
-            <br><br>
-            <div>
-                <button id="next"><a href="../html/veges.html">Next</a></button>
-            </div>
-        </div>
 
 
-        <form>
+
             <div class="form_div">
                 <!-- heading -->
-                <h1>Account</h1>
+                <h1>My Account</h1>
 
                 <!-- fname and lname -->
                 <div class="profile_form">
 
                     <div class="fname_container">
                         <label>Firstname</label><br>
-                        <input type="text" placeholder="" id="firstname">
+                        <input disabled type="text" id="firstname">
                     </div>
 
                     <div class="lname_container">
                         <label>Lasttname</label><br>
-                        <input type="text" placeholder="" id="lastname">
+                        <input disabled type="text" id="lastname">
                     </div>
                 </div>
 
@@ -65,7 +61,7 @@
 
                 <div class="email_container">
                     <label>Email</label><br>
-                    <input type="email" placeholder="" id="email" disabled>
+                    <input disabled type="email" id="email" disabled>
                 </div>
 
 
@@ -75,19 +71,19 @@
 
                     <div class="city_container">
                         <label>City</label><br>
-                        <input type="text" placeholder="" id="city">
+                        <input type="text" id="city">
                     </div>
 
                     <div class="country_container">
                         <label>Country</label><br>
-                        <input type="text" placeholder="" id="country">
+                        <input disabled type="text" id="country">
                     </div>
                 </div>
 
                 <!-- address -->
                 <div class="address_container">
                     <label>Address</label><br>
-                    <input type="text" placeholder="" id="address">
+                    <input disabled type="text" id="address">
                 </div>
 
                 <!-- occupation and phonenumber -->
@@ -97,12 +93,12 @@
 
                     <div class="occupation_container">
                         <label>Occupation</label><br>
-                        <input type="text" placeholder="" id="occupation">
+                        <input disabled type="text" id="occupation">
                     </div>
 
                     <div class="number_container">
                         <label>MobileNumber</label><br>
-                        <input type="telephone" placeholder="" id="number">
+                        <input disabled type="telephone" id="number" maxlength="10" minlength="10">
                     </div>
                 </div>
             </div>
@@ -111,47 +107,119 @@
 
     </div>
 
-
-
     <script>
 
-        let users = JSON.parse(localStorage.getItem('user_records'));
-        let profile_arr = JSON.parse(localStorage.getItem('data'));
-        for (let i = 0; i < users.length; i++) {
-            document.getElementById("firstname").value = users[i]["Firstname"];
-            document.getElementById("lastname").value = users[i]["lastname"];
-            document.getElementById("email").value = users[i]["email"];
-        }
+        let user_data = JSON.parse(localStorage.getItem("user_records")) ?? [];// this is user object
 
+        let profile_form = document.getElementById("profile_form");
 
-        let check;
-        users.find(userobj => {
-            if (userobj["email"] == profile_arr["email"] && userobj["password"] == profile_arr["password"]) {
-                firstname.value = userobj["Firstname"]
-                lastname.value = userobj["lastname"]
-                document.getElementById("email").value = userobj["email"]
-                return check = userobj;
+        let profile_arr = localStorage.getItem('data');
+
+        user_data.find(function (obj) {
+
+            if (obj.email == profile_arr) {
+
+                document.getElementById("firstname").value = obj["Firstname"];
+                document.getElementById("lastname").value = obj["lastname"];
+                document.getElementById("email").value = obj["email"];
+
+                if (obj.communication != null) {
+
+                    document.getElementById("city").value = obj.communication["city"];
+                    document.getElementById("country").value = obj.communication["country"];
+                    document.getElementById("address").value = obj.communication["address"];
+                    document.getElementById("occupation").value = obj.communication["occupation"];
+                    document.getElementById("number").value = obj.communication["mobile_number"];
+                }
             }
         })
 
-        document.getElementById("save").addEventListener("click", (e) => {
-            console.log(check)
+        let save_button = document.getElementById("save_button")
 
-            check["Firstname"] = document.getElementById("firstname").value;
-            check["lastname"] = document.getElementById("lastname").value;
-            console.log(check)
+        let editbutton = document.getElementById("edit");
 
-        
-            localStorage.setItem("user_records", JSON.stringify(users));
-            console.log(users);
+
+        let inputs = document.querySelectorAll("input");
+
+        editbutton.addEventListener("click", e => {
+
+            e.preventDefault()
+
+            inputs.forEach(input => {
+                if (input.type == "email") {
+                    input.disabled = true;
+                } else {
+                    input.disabled = false;
+                }
+            })
+        });
+
+        profile_form.addEventListener("submit", (e) => {
+            
+            e.preventDefault();
+
+            user_data.find(function (obj) {
+
+                if (obj.email === profile_arr) {
+
+                    obj["Firstname"] = document.getElementById("firstname").value;
+                    obj["lastname"] = document.getElementById("lastname").value;
+                    obj["email"] = document.getElementById("email").value;
+
+                    let commun_obj = {
+
+                    "city": document.getElementById("city").value,
+                    "country" : document.getElementById("country").value,
+                    "address" :  document.getElementById("address").value,
+                    "occupation": document.getElementById("occupation").value,
+                    "mobile_number": document.getElementById("number").value
+                    }
+
+                    obj["communication"] = commun_obj;
+                }
+            })
+
+            localStorage.setItem("user_records", JSON.stringify(user_data));
+
+            alert("Profile Updated");
         })
 
-        document.getElementById("delete").addEventListener("click", (e) => {
-            let num = users.indexOf(check);
-            users.splice(num, 1);
-            localStorage.setItem("user_records", JSON.stringify(users));
 
 
+
+        //ends//
+
+        //uploading image//
+        const imgDiv = document.querySelector('.profile_image');
+        const img = document.querySelector('#photo');
+        const file = document.querySelector('#file');
+        const uploadbtn = document.querySelector('uploadbtn');
+
+        //hover on image div
+        // imgDiv.addEventListener('mouseseenter', function () {
+        //     uploadbtn.style.display = "block"
+        // });
+
+        //hover out from image div
+        // imgDiv.addEventListener('mouseleave', function () {
+        //     uploadbtn.style.display = "none"
+        // });
+
+        //image upload
+
+        file.addEventListener('change', function () {
+            //refers to file
+            const choosedfile = this.files[0];
+
+            if (choosedfile) {
+                const reader = new FileReader();//predefined function in js
+                reader.addEventListener('load', function () {
+                    img.setAttribute("src", reader.result);
+
+                });
+                reader.readAsDataURL(choosedfile);
+
+            }
         })
     </script>
 

@@ -13,7 +13,8 @@ header {
     display: flex;
     margin: 0;
     padding: 0;
-    margin-top: -10px;
+    /* margin-top: -50px; */
+    top: 0;
 }
 
 a {
@@ -43,8 +44,8 @@ a:hover {
 }
 
 .menu-bar {
-    margin-left: 100px;
-    margin-top: 40px;
+    margin-left: 350px;
+    margin-top: 50px;
 }
 
 a {
@@ -76,8 +77,14 @@ a {
     margin-top: 40px;
 
 }
-
-.main_background {
+.seller_hd{
+    font-size: 160px;
+    color: white;
+    position: relative;
+    top: 230px;
+    font-weight: bolder;
+}
+/* .main_background {
     border: 1px solid rgb(198, 197, 197);
     box-shadow: -5px 5px 10px 5px rgb(177, 176, 176);
     height: 500px;
@@ -87,28 +94,32 @@ a {
     top: 200px;
     border-radius: 50px;
     transition: 0.5s;
-}
+} */
 
-.main_background:hover {
+/* .main_background:hover {
     transform: scale(1.1);
-}
+} */
 
 h1 {
-    margin-left: 100px;
-    font-size: 50px;
+    /* margin-left:80px; */
+    text-align: center;
+    font-size: 70px;
     font-family: 'Raleway', 'Arial', sans-serif;
     color: rgb(171, 16, 47);
+    position: relative;
+    top: -100px;
 }
 
 .background_image {
     position: relative;
-    left: 500px;
-    background-image: url("../image/background.jfif");
-    height: 500px;
-    width: 750px;
+    top: 40px;
+    /* left: 500px; */
+    background-image:linear-gradient(rgb(4, 9, 34, 0.4), rgb(4, 9, 34, 0.4)), url("../image/sellerpage_background.jpg");
+    height: 700px;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 50px;
+    
 
 
 }
@@ -249,27 +260,8 @@ p {
     font-size: 20px;
 }
 
-
-.slider{
-    width: 1300px;
-    height: 750px;
-    background: url(../image/notnecessary.png);
-    margin: 100px auto;
-    animation: slide 30s infinite;
-}
-@keyframes slide{
-    25%{
-    background: url(../image/savetime.png);
-    }
-    50%{
-        background: url(../image/organic.png);
-    }
-    75%{
-        background: url(../image/opportuniy.png);
-    }
-    100%{
-        background: url(../image/notnecessary.png);
-    }
+hr{
+    margin-top: 50px;
 }
 
 /* footer */

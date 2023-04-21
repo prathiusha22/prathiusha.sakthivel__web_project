@@ -48,7 +48,6 @@
     <script>
 
         // converting string into array of objects
-
         const checklogin = document.getElementById("loginpage");
 
         checklogin.onsubmit = e => {
@@ -58,39 +57,36 @@
             const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            let data={
-                "Firstname":username,
-                "email":email,
-                "password":password
-            }
 
             const localdata = JSON.parse(localStorage.getItem("user_records"))
 
-            if (!localdata) {
-                alert("login failure");
-                return;
-            }
+            let success;
 
-            let success = false;
-            for (let i = 0; i < localdata.length; i++) {
-                if ((localdata[i]["email"] === email) && (localdata[i]["password"] === password)) {
-                    success = true;
-                    break;
+            localdata.find(el =>{
+
+           
+            
+                if ((el["email"] === email) && (el["password"] === password)) {
+                   let active_user = el;
+                   console.log(active_user);
+                   localStorage.setItem("active_user",JSON.stringify(active_user))
+                  return success = 1;
+                
                 }
-            }
-
+                else{
+                    return success = 0;
+                }
+          
+        })
             if (success) {
                 alert("login successful");
-                localStorage.setItem('data',JSON.stringify(data))
+                localStorage.setItem('data', email)
                 window.location.href = "../html/profilepage.html";
             } else {
                 alert("login failure");
             }
-
         }
     </script>
-
-
 </body>
 
 </html>

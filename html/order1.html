@@ -40,9 +40,9 @@
           <!-- </div> -->
         </div>
 
-        <li><a class="hdg" href="../html/signup.html">Sign-up</a></li>
+        <!-- <li><a class="hdg" href="../html/signup.html">Sign-up</a></li> -->
 
-        <li><a class="hdg" href="../html/register.html">Register</a></li>
+        <li><a class="hdg" href="../html/sellerpage.html">Register</a></li>
 
       </ul>
     </div>
@@ -251,7 +251,7 @@
         },
         "product_name": "FreshorganicTomato",
 
-        "price": "₹50",
+        "price": "₹ 50 Per kg",
         "rating": 4
       },
       //1
@@ -262,7 +262,7 @@
         },
 
         "product_name": "FreshorganicBeetroot",
-        "price": "₹75",
+        "price": "₹ 75 Per kg",
         "rating": 4
       },
       //2
@@ -274,11 +274,11 @@
 
         "product_name": "FreshorganicPotato",
 
-        "price": 60,
+        "price": "₹ 60 Per kg",
 
         "rating": 4
       },
-  
+
       {
         "product_image": {
           "source": "../assets/image/kohlrabi.jfif",
@@ -287,7 +287,7 @@
 
         "product_name": "FreshorganicKohlrabi",
 
-        "price": 150,
+        "price": "₹ 150 Per kg",
 
         "rating": 4
 
@@ -300,63 +300,63 @@
 
         "product_name": "FreshorganicBrinjal",
 
-        "price": 150,
+        "price": "₹ 150 Per kg",
 
         "rating": 4
 
       },
       {
-       "product_image": {
-           "source": "../assets/image/bittergourd.jfif",
-           "alt": "image of tomato veggie"
-       },
+        "product_image": {
+          "source": "../assets/image/bittergourd.jfif",
+          "alt": "image of tomato veggie"
+        },
 
-       "product_name": "FreshorganicBittergourd",
+        "product_name": "FreshorganicBittergourd",
 
-      "price": 150,
+        "price": "₹ 150 Per kg",
 
-       "rating": 4
+        "rating": 4
 
-  },
+      },
       {
         "product_image": {
-            "source": "../assets/image/broadbeans.jfif",
-            "alt": "image of tomato veggie"
+          "source": "../assets/image/broadbeans.jfif",
+          "alt": "image of tomato veggie"
         },
 
         "product_name": "FreshorganicBroadbeans",
 
-        "price": 150,
+        "price": "₹ 150 Per kg",
 
-        "rating":4
+        "rating": 4
 
-    },
-        {
+      },
+      {
         "product_image": {
-            "source": "../assets/image/bottle.jpg",
-            "alt": "image of tomato veggie"
+          "source": "../assets/image/bottle.jpg",
+          "alt": "image of tomato veggie"
         },
 
         "product_name": "FreshorganicBottlegourd",
 
-        "price": 150,
+        "price": "₹ 150 Per kg",
 
         "rating": 4
 
-    },
-        {
+      },
+      {
         "product_image": {
-            "source": "../assets/image/beans.jfif",
-            "alt": "image of tomato veggie"
+          "source": "../assets/image/beans.jfif",
+          "alt": "image of tomato veggie"
         },
 
         "product_name": "FreshorganicBeans",
 
-        "price": 150,
+        "price": "₹ 150 Per kg",
 
         "rating": 4
 
-    }
+      }
 
     ]
 
@@ -369,11 +369,11 @@
 
 
     product_details.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
+
       if (e["product_name"] == name) {
         product_create(e);
         console.log(e);
       }
-
     })
 
 
@@ -422,24 +422,71 @@
       inputbox.setAttribute("class", "quantity")
       inputbox.setAttribute("placeholder", "select quantity");
       heading1_div.append(inputbox)
-      
+
       // add to cart//
       add_to_cart = document.createElement("button");
       add_to_cart.setAttribute("id", "cartbutton")
-  
-      let anchor=document.createElement("a");
-      anchor.setAttribute("href","../html/cart.html")
+
+      let anchor = document.createElement("a");
+      anchor.setAttribute("href", "../html/cart.html")
+      anchor.setAttribute("id", "add-to-cart")
       anchor.innerText = "Add to Cart";
       add_to_cart.append(anchor)
       heading1_div.append(add_to_cart);
-      
+
       //buynow//
       buy_now = document.createElement("button");
       buy_now.setAttribute("id", "buybutton")
-      buy_now.innerText = "Buy Now";
-      heading1_div.append(buy_now);
+
+      let anchor1 = document.createElement("a");
+      anchor1.setAttribute("href", "../html/buynow.html")
+      anchor1.innerText = "Buy Now";
+      buy_now.append(anchor1);
+      heading1_div.append(buy_now)
       document.querySelector(".mainbox").append(box)
-      
+
+
+      console.log(result["product_image"]["source"])
+
+
+
+      let btn_cart = document.getElementById("cartbutton")
+      btn_cart.addEventListener("click", el => {
+
+
+        let user = JSON.parse(localStorage.getItem("active_user"))
+        let addCart = JSON.parse(localStorage.getItem("cart")) ?? []
+
+        let check;
+
+        addCart.find(e => {
+
+          if (e["titlename"] == result["product_name"] && e["email"] == user["email"]) {
+            return check = 1
+          }
+          else {
+            return check = 0;
+          }
+
+        })
+
+        if (check == 1) {
+          alert("already added")
+        }
+        else {
+          let item = {}
+
+          item["image"] = result["product_image"]["source"]
+          item["price"] = result["price"]
+          item["titlename"] = result["product_name"]
+          item["email"] = user["email"]
+
+          addCart.push(item)
+          localStorage.setItem("cart", JSON.stringify(addCart))
+          alert("added")
+
+        }
+      })
     }
   </script>
 </body>

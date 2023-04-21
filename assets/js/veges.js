@@ -352,7 +352,7 @@ let ratings_div;
 let buy_now_link;
 let add_to_cart_link;
 
-let products = JSON.parse(localStorage.getItem('create_product'))
+let products = JSON.parse(localStorage.getItem('create_product'));
 
 let i;
 
@@ -368,7 +368,7 @@ for (let i = 0; i < products.length; i++) {
     document.querySelector(".product-list-container").append(product_card_div);
 
     prdouct_link = document.createElement("a");
-    prdouct_link.setAttribute("href", "order1.html?name=" + products[i]["titlename"]);
+    // prdouct_link.setAttribute("href", "order1.html?name=" + products[i]["titlename"]);
     product_card_div.append(prdouct_link);
 
     product_image = document.createElement("img");
@@ -399,13 +399,13 @@ for (let i = 0; i < products.length; i++) {
     ratings_div.append(stars);
 
     buy_now_link = document.createElement("a");
-    buy_now_link.setAttribute("href", "#");
+    buy_now_link.setAttribute("href", "order1.html?name=" + products[i]["titlename"]);
     buy_now_link.setAttribute("class", "buy-now")
     buy_now_link.innerText = "Buy Now";
     product_card_div.append(buy_now_link);
 
     add_to_cart_link = document.createElement("a");
-    add_to_cart_link.setAttribute("href", "#");
+    add_to_cart_link.setAttribute("href", "../html/cart.html");
     add_to_cart_link.setAttribute("class", "add-to-cart")
     add_to_cart_link.innerText = "Add to Cart";
     product_card_div.append(add_to_cart_link);
@@ -414,3 +414,30 @@ for (let i = 0; i < products.length; i++) {
 }
 
 
+//search function 
+   
+
+
+   let search=document.getElementById("search");
+        search.addEventListener("keyup",(e)=>{
+            let word=e.target.value.toLowerCase();
+
+            console.log(word)
+
+            let course=document.querySelectorAll(".product-card");
+
+            console.log(course)
+
+            course.forEach(element => {
+                let content=element.children[0].textContent.toLowerCase();
+                if(content.includes(word)){
+                    element.style.display="flex";
+                }
+                else{
+                    element.style.display="none";
+                }
+            });
+        })
+
+
+        

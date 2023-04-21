@@ -79,9 +79,10 @@ a {
 .bussiness_name{
     display: flex;
     justify-content: space-around;
-    margin-left: 40px;
+    margin-left: -40px;
     margin-right: 50px;
 }
+
 .top-head{
     display: block;
     font-weight: 600;
@@ -89,6 +90,10 @@ a {
     padding: 11px 16px;
     line-height: 26px;
     text-align: center;
+}
+.bussiness_name .top-head{
+    width: 400px;
+    
 }
 .bussiness_name input, select{
     max-width: none;
@@ -102,12 +107,19 @@ a {
     color: #303030;
     margin: 0;
     width: 350px;
+    margin-left: -40px;
 }
+/* .year{
+    margin-left: 50px;
+} */
 #type{
     width: 400px;
     height: 60px;
 }
-
+#type1{
+    margin-left: 90px;
+    width: 400px;
+}
 .date-choose input{
     border: 1px solid #EBEBEB;
     background: #FFF;
@@ -157,13 +169,13 @@ a {
     flex-direction: column;
     justify-content: space-between;
     margin-right: 50px;
-    float: right;
+    /* float: right; */
 }
 .addres input{
     width: 600px;
     margin-top: 10px;
     margin-left: 30px;
-    height: 60px;
+    height: 80px;
     border: 1px solid #EBEBEB;
     background: #FFF;
     font-family: 'Raleway', 'Arial', sans-serif;
@@ -174,8 +186,8 @@ a {
 }
 .next{
     position: relative;
-    top: 120px;
-    left: 850px;
+    left: 1200px;
+    top: -100px;
     
 }
 button{
@@ -191,6 +203,71 @@ button{
 button a{
     text-decoration:none ;
     font-size: 20px;
+}
+#message{
+    position: relative;
+    left: 450px;
+    top: -130px;
+    height: 120px;
+    width: 850px;
+}
+.year .top-head{
+    width: 380px;
+    margin-left: 90px;
+    margin-top:50px ;
+}
+#type{
+    margin-left: 80px;
+}
+.year input{
+    border: 1px solid #EBEBEB;
+    background: #FFF;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    width: 400px;
+    height: 60px;
+    padding: 12px 15px;
+    margin-left: 90px;
+}
+.bankdetails input{
+    width: 400px;
+    height: 85px;
+    border: 1px solid #EBEBEB;
+    background: #FFF;
+}
+.bankdetails .top-head{
+    width: 380px;
+}
+.subclass {
+    margin-left: 450px;
+    margin-top: -155px;
+    
+}
+.branchname{
+    margin-left: 450px;
+    margin-top: -180px;
+    
+}
+.class_div{
+    margin-top: 50px;
+}
+.ifsccode{
+    margin-left: 450px;
+    margin-top: -175px;
+}
+.salary{
+    margin-left: 900px;
+    margin-top: -180px;
+    
+}
+
+.terms{
+    margin-top: 50px;
+}
+.terms select{
+    position: relative;
+    left: -70px;
 }
 
 /* footer */
@@ -227,9 +304,9 @@ button a{
 .foot {
     background-color: rgb(108, 145, 53);
     height: 50px;
-    width: 100%;
+    width: 1600px;
     bottom: 0;
 }
 hr{
-    margin-top: 150px;
+    margin-top: -50px;
 }

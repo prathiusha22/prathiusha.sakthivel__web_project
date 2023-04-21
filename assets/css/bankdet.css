@@ -1,22 +1,17 @@
 body {
     font-size: 20px;
-    background-color: rgb(249, 249, 246);
-}
-
-.logo {
-    position: relative;
-    left: 640px;
-    border-radius: 30px;
+    background-color: #fff;;
 }
 
 .borderbox {
-    border: 1px solid black;
-    height: 570px;
-    width: 500px;
-    border-radius: 50px;
+    border: 1px solid white;
+    height: 590px;
+    width: 550px;
     position: relative;
-    left: 480px;
-    top: 60px;
+    left: 470px;
+    top: 120px;
+    box-shadow: 5px 10px 5px 10px rgba(0,0,0,.1);
+
 }
 
 .img {
@@ -53,8 +48,9 @@ h4 {
 }
 
 .cancel {
-    margin-top: 100px;
-    margin-left: 510px;
+    margin-top: 170px;
+    margin-left: 520px;
+    
 }
 
 .but {
@@ -62,7 +58,7 @@ h4 {
     width: 220px;
     border: 0px solid rgb(108, 145, 53);
     background-color: rgb(108, 145, 53);
-    border-radius: 10px;
+
 }
 
 a {

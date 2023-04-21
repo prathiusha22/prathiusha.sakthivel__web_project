@@ -1,7 +1,6 @@
 body{
-    background-color: rgb(159, 215, 54);
+    background-image: url(../image/loginbg.jpeg);
     overflow: hidden;
-    background-image: url();
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -13,6 +12,9 @@ body{
     margin-left: 140px;
     margin-top: 70px;
 
+}
+.edit{
+    margin-top: 80px;
 }
 .header_container{
     background-color:rgb(159, 215, 54);
@@ -47,7 +49,8 @@ button{
     font-size: 20px;
     border-radius: 30px;
     border-color: rgb(235, 232, 225);
-    background-color: white;
+    background: rgba(0,0,0,0.7);
+    color: wheat;
    
 }
 button:hover{
@@ -57,6 +60,30 @@ button:hover{
 .profile_image img{
     height: 250px;
     width: 250px;
+}
+#file{
+    margin-left: -200px;
+    display: none
+}
+#uploadbtn{
+    height: 35px;
+    width: 180px;
+    border-radius: 20px;
+    /* padding-top: 20px; */
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: wheat;
+    line-height: 30px;
+    cursor: pointer;
+    margin-top: 250px;
+    margin-left: -120px;
+    /* display: none; */
+}
+#uploadbtn:hover{
+    color: white;
+    background-color: green;
 }
 label{
     font-size: 20px;
@@ -79,18 +106,19 @@ h1{
     position: relative;
     left: 350px;
     top: -450px;
+    
 }
 .profile_form{
     display: flex;
     justify-content: space-evenly;
     position: relative;
     left: 150px;
-    top: -430px;
+    top: -440px;
 }
 .email_container{
     position: relative;
     left: 345px;
-    top: -400px;
+    top: -420px;
 }
 .email_container input{
     height:40px ;
@@ -101,13 +129,13 @@ h1{
     justify-content: space-evenly;
     position: relative;
     left: 150px;
-    top: -380px;
+    top: -400px;
 }
 
 .address_container{
     position: relative;
     left: 345px;
-    top: -350px;
+    top: -380px;
 }
 .address_container input{
     height:60px ;
@@ -118,9 +146,9 @@ h1{
     justify-content: space-evenly;
     position: relative;
     left: 150px;
-    top: -310px;
+    top: -350px;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: wheat;
 }
