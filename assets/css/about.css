@@ -344,10 +344,200 @@ h1 {
     top: 700px;
     left: 150px;
 }
+
 @media screen and (max-width:400px) {
-    header{
+    header {
         width: 100%;
     }
+
+    .container {
+        border: 2px solid rgb(218, 224, 220);
+        box-shadow: -10px 10px 30px 10px rgb(218, 224, 220);
+        height: 600px;
+        width: 350px;
+        position: relative;
+        top: 200px;
+        left: 25px;
+    }
+
+    .para1 {
+        margin-left: 30px;
+        margin-top: 50px;
+        font-size: 20px;
+
+    }
+
+    .benefit1 {
+        position: relative;
+        top: 230px;
+        left: 30px;
+        height: 330px;
+
+    }
+
+    .benefit2 {
+        position: relative;
+        top: 620px;
+        left: -315px;
+        height: 330px;
+
+    }
+
+    .benefit3 {
+        position: relative;
+        top: 1000px;
+        left: -650px;
+        height: 330px;
+
+    }
+
+    .benefit4 {
+        position: relative;
+        top: 980px;
+        left: -410px;
+        height: 330px;
+
+    }
+
+    .benefit5 {
+        position: relative;
+        top: 1360px;
+        left: -750px;
+        height: 310px;
+
+    }
+
+    h2 {
+        position: relative;
+        top: 250px;
+        left: 30px;
+        font-size: 30px;
+        color: brown;
+    }
+
+    .toolheading {
+        position: relative;
+        top: 980px;
+        font-size: 22px;
+        left: 50px;
+    }
+
+    .tool {
+        position: relative;
+        top: 500px;
+    }
+
+    .toolparts {
+        border: 2px solid rgb(218, 224, 220);
+        box-shadow: -10px 10px 30px 10px rgb(218, 224, 220);
+        border-radius: 60px;
+        height: 480px;
+        width: 300px;
+        position: relative;
+        padding-top: 40px;
+        padding-left: 40px;
+        left: 30px;
+        top: 1000px;
+    }
+
+    ul li {
+        position: relative;
+        left: 10px;
+        top: 60px;
+        font-size: 25px;
+    }
+
+    .required {
+        position: relative;
+        top: 250px;
+        left: 50px;
+    }
+
+    /* soil */
+    .soil {
+        position: relative;
+        top: 600px;
+
+    }
+
+    h1 {
+        position: relative;
+        left: 80px;
+        top: 950px;
+    }
+
+    .soilimg {
+        position: relative;
+        left: 20px;
+        top: 980px;
+        width: 350px;
+    }
+
+    .soilpara {
+        position: relative;
+        top: 1000px;
+        font-size: 20px;
+        left: 10px;
+        word-break: normal;
+    }
+
+    /* water */
+    .watering {
+        position: relative;
+        top: 700px;
+    }
+
+    .wateringimg {
+        position: relative;
+        left: 60px;
+        top: 960px;
+        width: 250px;
+    }
+
+    .wateringpara {
+        font-size: 20px;
+        position: relative;
+        left: 30px;
+        top: 1000px;
+    }
+
+    /* sunlight */
+    .sunlight {
+        position: relative;
+        top: 800px;
+        left: -40px;
+    }
+
+    .sunlightimg {
+        position: relative;
+        left: 80px;
+        top: 980px;
+    }
+
+    .sunlightpara {
+        font-size: 20px;
+        position: relative;
+        left: 80px;
+        top: 1000px;
+    }
+
+    .plantimages {
+        position: relative;
+        top: 1850px;
+        left: 10px;
+
+    }
+
+    hr {
+        display: none;
+
+    }
+
+    footer {
+        display: none;
+    }
+
+
 }
 
 /* footer */

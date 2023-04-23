@@ -2,27 +2,108 @@ body {
     font-weight: 600;
     font-size: 20px;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
-    background-color: rgb(216, 244, 254);
+
 
 }
 
+/* header */
+header {
+
+    background-color: rgb(108, 145, 53);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    top: 0%;
+    margin-left: -5px;
+}
+
+.menu-bar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+
+
+}
+
+.menu-bar .main {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+
+
+}
+
+
+.menu-bar {
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+.main a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+}
+
+.menu-bar .main a {
+    padding-left: 70px;
+}
+
 .logo {
-    position: relative;
-    left: 640px;
-    border-radius: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 60px;
+    width: 160px;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.navi {
+    text-decoration: none;
+    color: white;
+}
+
+.navi:hover {
+    font-size: 35px;
+    color: black;
+}
+
+.img1 {
+    margin-top: -90px;
+    background-image: url("../image/background1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1000px;
+    width: 100%;
+}
+
+.hd1 {
+    float: right;
+    color: white;
+    word-spacing: 35px;
+    font-size: 25px;
+    margin-right: 150px;
+    margin-top: 40px;
+
 }
 
 .borderbox {
     background-color: white;
     border: 0px solid white;
-    border-radius: 100px;
+    box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
     height: 200px;
-    width: 1200px;
+    width: 1250px;
     position: relative;
-    /* top: 100px; */
-    left: 130px;
-    margin-top: 30px;
+    top: 100px;
+    left: 80px;
+    margin-top: 70px;
     /* padding-top: -200px; */
 }
 
@@ -81,12 +162,7 @@ h5 {
 }
 
 
-#number2 {
-    position: relative;
-    left: 600px;
-    top: -350px;
 
-}
 
 .content1 {
     position: relative;
@@ -148,9 +224,99 @@ p {
     top: 650px;
     left: 300px;
 }
+
 .fa-solid {
-   font-size: 40px;
-   position: relative;
-   left: 150px;
-   top: -25px;
+    font-size: 40px;
+    position: relative;
+    left: 150px;
+    top: -25px;
+}
+
+@media screen and (max-width:400px) {
+    header {
+        width: 100%;
+        height: 140px;
+        margin-left: -50px;
+    }
+
+    .logo {
+        border: 2px solid white;
+        border-radius: 20px;
+        height: 50px;
+        width: 100px;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    .menu-bar ul {
+        list-style: none;
+        flex-direction: row;
+        text-decoration: none;
+     
+ 
+    }
+    .main a{
+        font-size: 23px;
+        
+    }
+    .menu-bar {
+        margin-left: -160px;
+        margin-top: 100px;
+        padding-left: -20px;
+       
+    }
+    .borderbox {
+        background-color: white;
+        border: 0px solid white;
+        box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
+        height: 600px;
+        width: 350px;
+        position: relative;
+        top: 100px;
+        left: 20px;
+        margin-top: 70px;
+        /* padding-top: -200px; */
+    }
+
+    .tomato1 {
+        position: relative;
+        left: 40px;
+        top: 20px;
+        height: 250px;
+        width: 250px;
+    }
+
+    h4 {
+        position: relative;
+        left: 50px;
+        top: -10px;
+        font-size: 28px;
+        color: rgb(22, 88, 22);
+        /* font-weight: 600; */
+    }
+
+    h5 {
+        position: relative;
+        left: 110px;
+        top: -13px;
+        font-size: 24px;
+        color: rgb(42, 39, 188);
+    }
+
+    #number1 {
+        position: relative;
+        left: 45px;
+        top: -10px;
+        height: 50px;
+        width: 250px;
+        text-align: center;
+    }
+
+    .fa-solid {
+        font-size: 40px;
+        position: relative;
+        left: -750px;
+        top: 320px;
+    }
+
+
 }

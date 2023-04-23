@@ -87,3 +87,29 @@
     text-decoration: none;
     color: green;
 }
+@media screen and (max-width:400px) {
+    .img {
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+    .text1 {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 8px;
+        /* margin-bottom: 20px; */
+        position: relative;
+        animation: text 3s 1;
+        margin-top: 300px;
+        margin-left: 50px;
+    }
+    
+    .text2 {
+        margin-top: 30px;
+        font-size: 30px;
+        margin-left: 50px;
+    }
+    .last {
+        margin-top: 40px;
+        margin-left: 50px;
+    }
+}

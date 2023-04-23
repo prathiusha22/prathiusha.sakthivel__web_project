@@ -136,31 +136,36 @@ a {
     body {
         margin: 0%;
         padding: 0%;
-        height: 890px;
+        height: 750px;
         width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
     .mhd {
         background-color: white;
         border: 2px solid white;
         box-shadow: 20px 20px 20px rgb(218, 224, 220);
-        border-radius: 40px;
+        border-radius:0px;
         height: 600px;
-        width: 280px;
+        width: 400px;
         margin-top: -180px;
+        
     }
 
     .icon {
         margin-left: -6px;
         /* margin-top: -5px; */
+        margin-top: -20px;
 
     }
 
     .fa-brands {
         color: rgb(35, 129, 35);
-        padding-left: 10px;
+        padding-left: 30px;
         font-size: 25px;
         margin-right: 20px;
+     
     }
 
     .check {
@@ -184,24 +189,25 @@ a {
     }
 
     .but {
-        width: 230px;
+        width: 320px;
     }
 
     #username {
-        width: 230px;
+        width: 320px;
     }
 
     #email {
-        width: 230px;
+        width: 320px;
     }
 
     #password {
-        width: 230px;
+        width: 320px;
     }
 
     .img {
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 200px;
+        margin-top: 20px;
     }
 
 }

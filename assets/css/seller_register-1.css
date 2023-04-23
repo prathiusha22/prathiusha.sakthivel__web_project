@@ -269,8 +269,12 @@ button a{
     position: relative;
     left: -70px;
 }
+#termsand{
+    margin-left: 70px;
+    width: 400px;
+}
 
-/* footer */
+/* footer */ 
 
 .footer {
     background-color: white;
@@ -309,4 +313,25 @@ button a{
 }
 hr{
     margin-top: -50px;
+}
+@media screen and (max-width:400px) {
+    header{
+        display: none;
+    }
+    footer,hr{
+        display: none;
+    }
+    #forms input{
+       height: 40px;
+       width: 250px;
+    }
+  
+    .year .top-head{
+        width: 300px; 
+       
+    }
+    .year select{
+        width: 100px; 
+    }
+
 }

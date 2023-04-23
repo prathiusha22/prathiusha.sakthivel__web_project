@@ -15,11 +15,24 @@
 <body>
     <!-- header -->
     <header>
-        <div class="hd">
-            <img class="logo" src="../assets/image/mainlogo.png" height="70px" width="150px" alt="img">
+        <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
 
-        </div>
-        <hr>
+    <div class="menu-bar">
+
+      <div class="main">
+
+        <a href="../index.html">Home </a>
+
+        <!-- <a href="../html/about.html">About </a> -->
+
+        <a href="../html/profilepage.html">Profile</a>
+
+        <a href="../html/sellerpage.html">Register</a>
+
+      </div>
+
+    </div>
+
     </header>
     <!-- borderbox -->
 
@@ -38,14 +51,16 @@
             <div class="content1">
                 <i class="fa-solid fa-trash"></i>
             </div>
+            
+            <div class="continue">
+                <button>Continue</button>
+            </div>
+            
         </div> -->
-
+       
 
     <!-- exitbutton -->
-    <div class="exit">
-        <button><a href="../index.html">Exit</a></button>
-        <button><a href="../html/buynow.html">Continue</a></button>
-    </div>
+   
 
 
     <script>
@@ -96,6 +111,7 @@
         let delete_icon=document.createElement("i");
         delete_icon.setAttribute("class","fa-solid fa-trash")
         second_div.append(delete_icon)
+
     }
     });
 
