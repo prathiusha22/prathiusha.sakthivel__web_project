@@ -86,5 +86,6 @@ if (localStorage.getItem("create_product")) {
 else {
     localStorage.setItem("create_product", JSON.stringify(create_product));
     console.log("yes");
+    console.log("okok");
 
 }
