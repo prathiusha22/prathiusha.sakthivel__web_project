@@ -17,21 +17,21 @@
     <header>
         <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
 
-    <div class="menu-bar">
+        <div class="menu-bar">
 
-      <div class="main">
+            <div class="main">
 
-        <a href="../index.html">Home </a>
+                <a href="../index.html">Home </a>
 
-        <!-- <a href="../html/about.html">About </a> -->
+                <!-- <a href="../html/about.html">About </a> -->
 
-        <a href="../html/profilepage.html">Profile</a>
+                <a href="../html/profilepage.html">Profile</a>
 
-        <a href="../html/sellerpage.html">Register</a>
+                <a href="../html/sellerpage.html">Register</a>
 
-      </div>
+            </div>
 
-    </div>
+        </div>
 
     </header>
     <!-- borderbox -->
@@ -57,65 +57,114 @@
             </div>
             
         </div> -->
-       
+    <div class="price">
+        <h2 id="product">Price Details</h2>
+        <!-- <div class="total">
+            <p>Total Product Price :</p>
+            <p id="total_count"></p>
+        </div> -->
+        <div class="order">
+            <p>Order Total :</p>
+            <p id="total_count1"></p>
+        </div>
+        <!-- <a href="../../pages/Order/Buy Now.html"><button>Continue</button></a> -->
+    </div>
+
 
     <!-- exitbutton -->
-   
+
 
 
     <script>
 
-        let cart_sample = JSON.parse(localStorage.getItem("cart"))
-        let user = JSON.parse(localStorage.getItem("active_user"))
+        let cart_sample = JSON.parse(localStorage.getItem("cart"));
+        let user = JSON.parse(localStorage.getItem("active_user"));
 
-        cart_sample.find(e =>{
-            if(e["email"] == user["email"]){
 
-           
-        let outer_div = document.getElementById("outer_div")
+    //     let cartCount = [  ];
+    // Cart.forEach((e) => {
+    //   if (e["email"] == user["email"]) {
+    //     cartCount.push(e);
+    //   }
+    // });
+    // let count = document.getElementById("cartCount");
+    // count.innerText = cartCount.length;
 
-        let border_box = document.createElement("div");
-        border_box.setAttribute("class", "borderbox");
-        outer_div.append(border_box)
+        let total=0;
 
-        // let heading3 = document.createElement("h3");
-        // heading3.innerHTML = "Shopping cart";
-        // border_box.append(heading3)
+        // cart_sample.find(e => {
+            for(let i=0; i<cart_sample.length; i++){
+            if (user["email"] == cart_sample[i]["email"]) {
 
-        let image_div = document.createElement("div");
-        image_div.setAttribute("class", "tomato");
-        border_box.append(image_div)
+                total += Number(cart_sample[i]["price"]);
+                // console.log(e.price)
 
-        let image = document.createElement("img");
-        image.setAttribute("class", "tomato1");
-        image.setAttribute("src", e ["image"])
-        image_div.append(image)
 
-        let heading4 = document.createElement("h4");
-        heading4.innerHTML = e["titlename"];
-        border_box.append(heading4)
+                let outer_div = document.getElementById("outer_div")
 
-        let heading5 = document.createElement("h5");
-        heading5.innerHTML = e["price"];
-        border_box.append(heading5)
+                let border_box = document.createElement("div");
+                border_box.setAttribute("class", "borderbox");
+                outer_div.append(border_box)
 
-        let inputbox = document.createElement("input");
-        inputbox.setAttribute("id", "number1")
-        inputbox.setAttribute("placeholder", "Quantity");
-        border_box.append(inputbox)
+                let image_div = document.createElement("div");
+                image_div.setAttribute("class", "tomato");
+                border_box.append(image_div)
 
-        let second_div=document.createElement("div");
-        second_div.setAttribute("class","content1")
-        border_box.append(second_div)
+                let image = document.createElement("img");
+                image.setAttribute("class", "tomato1");
+                image.setAttribute("src", cart_sample[i]["image"])
+                image_div.append(image)
 
-        let delete_icon=document.createElement("i");
-        delete_icon.setAttribute("class","fa-solid fa-trash")
-        second_div.append(delete_icon)
+                let heading4 = document.createElement("h4");
+                heading4.innerHTML = cart_sample[i]["titlename"];
+                border_box.append(heading4)
 
-    }
-    });
+                let heading5 = document.createElement("h5");
+                heading5.innerHTML =cart_sample[i]["price"];
+                border_box.append(heading5)
+
+                let inputbox = document.createElement("input");
+                inputbox.setAttribute("id", "number1")
+                inputbox.setAttribute("placeholder", "Quantity");
+                border_box.append(inputbox)
+
+                let second_div = document.createElement("div");
+                second_div.setAttribute("class", "content1")
+                border_box.append(second_div)
+
+                let delete_icon = document.createElement("i");
+                delete_icon.setAttribute("class", "fa-solid fa-trash")
+                second_div.append(delete_icon)
+
+                delete_icon.addEventListener("click",(e)=>{
+                    for(let j=0; j<cart_sample.length; j++){
+                        if(user["email"] == cart_sample[i]["email"] && cart_sample[i]["titlename"] == cart_sample[j]["titlename"]){
+                            cart_sample.splice(i,1);
+                            localStorage.setItem("cart",JSON.stringify(cart_sample));
+                            location.reload();
+                            break;
+                        }
+                       
+                    }
+                });
+
+            }
+        };
+        // });
+
+        // let totalAmount = document.getElementById("total_count");
+
+        // totalAmount.innerText = total;
+
+        let totalAmount1 = document.getElementById("total_count1");
+        
+        totalAmount1.innerText = total;
+
+        console.log(total);
+
 
     </script>
 
 </body>
+
 </html>

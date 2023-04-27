@@ -359,7 +359,7 @@ let i;
 for (let i = 0; i < products.length; i++) {
     // productCard();
 // }
-
+if(products[i]["status"]){
 
 // function productCard() {
 
@@ -395,7 +395,6 @@ for (let i = 0; i < products.length; i++) {
     for (let j = 0; j < rating_round; j++) {
         stars += "⭐";
     }
-
     ratings_div.append(stars);
 
     buy_now_link = document.createElement("a");
@@ -412,12 +411,10 @@ for (let i = 0; i < products.length; i++) {
     
 
 }
-
+};
 
 //search function 
    
-
-
    let search=document.getElementById("search");
         search.addEventListener("keyup",(e)=>{
             let word=e.target.value.toLowerCase();
@@ -436,8 +433,8 @@ for (let i = 0; i < products.length; i++) {
                 else{
                     element.style.display="none";
                 }
-            });
-        })
+            })
+        });
 
 
         

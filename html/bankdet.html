@@ -17,47 +17,84 @@
             <p class="para">10% Cashback on Greenfarm Axis Bank Card</p>
             <hr>
             <h4>All Other Options</h4>
-            <form>
-            <div class="info">
-                <input type="radio" class="upi" name="rdo">UPI
-                <img class="labelimg" src="../assets/image/google-pay.png" height="50px" width="50px" alt="img"><br><br>
+            <form id="bankdetails">
+                <div class="info">
+                    <input type="radio" class="upi input" id="upi" name="rdo">UPI
+                    <img class="labelimg" src="../assets/image/google-pay.png" height="50px" width="50px"
+                        alt="img"><br><br>
+                    <hr>
+                    <input type="radio" class="wallet input" id="postpaid" name="rdo">Wallet/Postpaid
+                    <img class="labelimg" src="../assets/image/purse.png" height="30px" width="30px" alt="img"><br><br>
+                    <hr>
+                    <input type="radio" class="debit input" id="credit" name="rdo">Credit/Debit/ATM Card
+                    <img class="labelimg" src="../assets/image/credit-card (2).png" height="40px" width="40px"
+                        alt="img"><br><br>
+                    <hr>
+                    <input type="radio" class="net input" id="netbanking" name="rdo">Net Banking
+                    <img class="labelimg" src="../assets/image/cashless-payment.png" height="35px" width="40px"
+                        alt="img"><br><br>
+                    <hr>
+                    <input type="radio" class="cash input" id="cashondelivery" name="rdo">Cash on Delivery
+                    <img class="labelimg" src="../assets/image/cash-payment.png" height="38px" width="40px"
+                        alt="img"><br><br>
+                </div>
                 <hr>
-                <input type="radio" class="wallet" name="rdo">Wallet/Postpaid
-                <img class="labelimg" src="../assets/image/purse.png" height="30px" width="30px" alt="img"><br><br>
-                <hr>
-                <input type="radio" class="debit" name="rdo">Credit/Debit/ATM Card
-                <img class="labelimg" src="../assets/image/credit-card (2).png" height="40px" width="40px"
-                    alt="img"><br><br>
-                <hr>
-                <input type="radio" class="net" name="rdo">Net Banking
-                <img class="labelimg" src="../assets/image/cashless-payment.png" height="35px" width="40px"
-                    alt="img"><br><br>
-                <hr>
-                <input type="radio" class="cash" name="rdo">Cash on Delivery
-                <img class="labelimg" src="../assets/image/cash-payment.png" height="38px" width="40px"
-                    alt="img"><br><br>
-            </div>
-            <hr>
-            <!-- image -->
-            <div class="img">
-                <img src="../assets/image/original.png" height="60px" width="60px" alt="img"><br>
-                Authentic Products<br>
-                <img src="../assets/image/payment-secured.png" height="60px" width="60px" alt="img"><br>
-                Secure Payments
-            </div>
+                <!-- image -->
+                <div class="img">
+                    <img src="../assets/image/original.png" height="60px" width="60px" alt="img"><br>
+                    Authentic Products<br>
+                    <img src="../assets/image/payment-secured.png" height="60px" width="60px" alt="img"><br>
+                    Secure Payments
+                </div>
         </div>
-    </form>
-        <!-- button -->
         <div class="cancel">
             <button class="but"><a href="buynow.html">Cancel</a></button>
-            <button class="but"><a href="orderplaced.html">Place Order</a></button>
+            <button class="but"><a>Place Order</a></button>
         </div>
+        </form>
+        <!-- button -->
+
 
     </main>
 
-<script>
+    <script>
 
-</script>
+        let getform = document.getElementById("bankdetails");
+
+        let get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
+
+        getform.addEventListener("submit", function (e) {
+            e.preventDefault();
+            getData();
+        })
+
+        function getData() {
+
+            const inputs = document.querySelectorAll(".input")
+            console.log(inputs);
+            let payment = ""
+
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked === true) {
+                    payment = inputs[i]["id"]
+                }
+            }
+            console.log(payment);
+            const active_user = JSON.parse(localStorage.getItem("active_user"))
+            const buyer = JSON.parse(localStorage.getItem("buyerdetails"))
+
+            buyer.find(function (obj) {
+                if (active_user["email"] === obj["email"]) {
+                    console.log("why");
+                    obj["payment_method"] = payment
+
+                }
+            })
+            localStorage.setItem("buyerdetails", JSON.stringify(buyer))
+            window.location.href = "orderplaced.html";
+        }
+
+    </script>
 
 
 </body>

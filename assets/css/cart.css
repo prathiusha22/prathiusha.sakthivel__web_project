@@ -41,7 +41,7 @@ header {
 
 
 .menu-bar {
-    margin-left: 100px;
+    margin-left: 400px;
     margin-top: 40px;
 }
 
@@ -153,6 +153,7 @@ h5 {
     color: red;
 }
 
+
 #number1 {
     position: relative;
     left: 780px;
@@ -162,19 +163,19 @@ h5 {
 }
 
 
-
-
 .content1 {
     position: relative;
     left: 900px;
     top: -300px;
 }
 
+
 .content2 {
     position: relative;
     left: 900px;
     top: -420px;
 }
+
 
 a {
     text-decoration: none;
@@ -232,6 +233,30 @@ p {
     top: -25px;
 }
 
+.order {
+    position: relative;
+    top: 550px;
+    left: -975px;
+
+}
+
+.price {
+    border: 2px solid white;
+    box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
+    width: 230px;
+    height: 130px;
+    position: relative;
+    top: 200px;
+    bottom: 5px;
+    left: 1095px;
+    text-align: center;
+}
+
+#total_count1 {
+    margin-left: 130px;
+    margin-top: -42px;
+}
+
 @media screen and (max-width:400px) {
     header {
         width: 100%;
@@ -247,23 +272,28 @@ p {
         margin-left: 50px;
         margin-top: 20px;
     }
+
     .menu-bar ul {
         list-style: none;
+        display: flex;
         flex-direction: row;
         text-decoration: none;
-     
- 
+
+
     }
-    .main a{
+
+    .main a {
         font-size: 23px;
-        
+
     }
+
     .menu-bar {
         margin-left: -160px;
         margin-top: 100px;
         padding-left: -20px;
-       
+
     }
+
     .borderbox {
         background-color: white;
         border: 0px solid white;

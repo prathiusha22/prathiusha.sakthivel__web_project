@@ -7,6 +7,7 @@ header {
     position: fixed;
     z-index: 2;
     display: flex;
+    top: 0%;
 }
 
 .menu-bar ul {
@@ -61,4 +62,67 @@ a {
 .navi:hover {
     font-size: 35px;
     color: black;
+}
+input{
+    height: 30px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+button{
+    height: 35px;
+    width: 220px;
+    border: 0px solid rgb(108, 145, 53);
+    background-color: rgb(108, 145, 53);
+    border-radius: 10px;
+    font-size: 17px;
+    color: white;
+    margin-left: 180px;
+    
+}
+
+.container{
+    padding-left: 30px;
+    border: 3px solid rgb(247, 246, 246);
+    box-shadow: -5px 5px 10px 5px  rgb(218, 214, 214);
+    background-color: white;
+    height: 550px;
+    width: 600px;
+    margin-left: 450px;
+    margin-top: 200px;
+    font-size: 20px;
+    
+}
+input:focus{
+    border-radius: 30px;
+    outline: none;
+    border-color: rgb(56, 86, 9);
+    box-shadow: 1px 1px 1px 1px rgb(108, 145, 53);
+}
+#image{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+#titlename{
+    margin-top: 30px;
+    margin-left: 65px;
+}
+#price{
+    margin-top: 30px;
+    margin-left: 60px;
+}
+#ratings{
+    margin-top: 30px;
+    margin-left: 45px;
+}
+table td img{
+    width: 150px;
+    height: 150px;
+}
+
+
+table {
+    margin-left: -300px;
+    margin-top: 150px;
+    padding: 30px;
 }

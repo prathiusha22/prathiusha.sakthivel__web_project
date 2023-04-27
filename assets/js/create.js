@@ -15,6 +15,9 @@ function createproduct() {
     product_create["price"] = price;
     product_create["ratings"] = ratings;
     product_create["product_id"] = product.length;
+    product_create["status"] = true;
+
+
 
     product.push(product_create);
     localStorage.setItem("create_product", JSON.stringify(product))
@@ -22,15 +25,16 @@ function createproduct() {
 
 
 //delete product//
-function delete_product() {
-    let user_product = JSON.parse(localStorage.getItem("create_product"));
-    for (let i = 0; i < user_product.length; i++) {
-        if (document.getElementById("titlename").value == user_product[i]["titlename"]) {
-            user_product.splice(i, 1)
-            localStorage.setItem("create_product", JSON.stringify(user_product));
+function delete_product(id){
+    product.find(function(obj){
+        console.log(obj.product_id)
+        if(obj.product_id== id){
+            obj.status=false;
+            localStorage.setItem("create_product",JSON.stringify(product));
         }
-    }
+    })
 }
+
 
 //update product//
 let output = "";
@@ -45,9 +49,11 @@ let append_div = document.querySelector(".table_product");
    <td class="td-img"><img src="${item.image}"></td>
    <td>${item.price}</td>
    <td><button onclick="product_update(${item.product_id})">Update</button></td>
+   <td><button onclick="delete_product(${item.product_id})">Delete</button></td>
 </tr>`
     append_div.innerHTML = output;
 });
+
 
 function product_update(id) {
     product.find(function (obj) {
@@ -77,8 +83,6 @@ function updateproduct() {
             obj.ratings = rating;
         }
     })
-
-    localStorage.setItem("create_product", JSON.stringify(product));
-    
+    localStorage.setItem("create_product", JSON.stringify(product));  
 }
 
