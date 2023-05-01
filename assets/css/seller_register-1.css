@@ -40,8 +40,8 @@ a:hover{
 }
 
 .menu-bar {
-    margin-left: 100px;
-    margin-top: 40px;
+    margin-left: 350px;
+    margin-top: 50px;
 }
 
 a {
@@ -205,6 +205,14 @@ button a{
     font-size: 20px;
 }
 #message{
+    position: relative;
+    left: 450px;
+    top: -130px;
+    height: 120px;
+    width: 850px;
+}
+#image{
+    border: 1px solid black;
     position: relative;
     left: 450px;
     top: -130px;

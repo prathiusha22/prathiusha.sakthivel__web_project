@@ -11,19 +11,34 @@
 
 <body>
     <header>
-        <div class="hd">
-            <img class="logo" src="../assets/image/mainlogo.png" height="70px" width="150px" alt="img">
+        <img class="logo" src="../assets/image/mainlogo.png" height="70px" width="150px" alt="img">
+
+        <div class="menu-bar">
+    
+          <div class="main">
+            <a href="../html/signup.html">Home </a>
+    
+            <a class="about" href="../html/about.html">About </a>
+    
+            <a class="about" href="../html/veges.html">Product</a>
+    
+            <a class="about" href="../index.html">Sign-in</a>
+    
+            <a class="register" href="#"></a>
+    
+          </div>
         </div>
-        <hr>
     </header>
 
     <main>
         <div class="container">
             <form id="create_form">
-                <label for="img">Image url:<input type="text" id="image" /></label><br /><br />
+                <!-- <label for="img">Seller Profile url:<input type="text" id="image" /></label><br /><br /> -->
                 <label for="Tittle"> Title:<input type="text" id="titlename" /></label><br /><br />
+                <label for="img">Image url:<input type="text" id="image" /></label><br /><br />
+                <!-- <label for="rate">Quantity:<input type="text" id="ratings" /></label><br /><br /> -->
                 <label for="price">Price:<input id="price" /></label><br /><br />
-                <label for="rate">Rating:<input type="text" id="ratings" /></label><br /><br />
+                <label for="rate">Rating:<input type="text" id="ratings" /></label><br /><br />    
                 <button onclick="createproduct()">Create</button><br /><br />
                 <!-- <button onclick="delete_product()">Delete</button><br /><br /> -->
                 <button onclick="updateproduct()">Update</button><br /><br />
@@ -34,6 +49,7 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Image</th>
+                    <!-- <th>Quantity</th> -->
                     <th>Price</th>
                     <th>Update</th>
 

@@ -84,16 +84,16 @@ main .product-list-container {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 150px 20px 40px 20px;
+    margin: 150px 20px 20px 20px;
 
 }
 
 main .product-list-container .product-card {
-    border: 2px solid rgb(218, 224, 220);
+    border: 2px solid white;
     box-shadow: -5px 5px 10px 5px rgb(196, 229, 186);
-    width: 275px;
-    height: 470px;
-    border-radius: 50px;
+    width: 285px;
+    height: 490px;
+    /* border-radius: 50px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,6 +136,14 @@ main .product-list-container .product-card .add-to-cart {
 .product-list-container a {
     text-decoration: none;
 }
+.sellerprofile{
+    position: relative;
+    left: 100px;
+    top: 20px;
+    height: 70px;
+    width: 70px;
+}
+
 
 /* product card end */
 /* product-list-container end */

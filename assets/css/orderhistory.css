@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 header {
 
     background-color: rgb(108, 145, 53);
@@ -8,6 +11,7 @@ header {
     top: 0;
     z-index: 2;
     display: flex;
+
 }
 
 .menu-bar ul {
@@ -21,7 +25,7 @@ header {
 
 
 .menu-bar {
-    margin-left: 270px;
+    margin-left: 350px;
     margin-top: 40px;
 }
 
@@ -53,4 +57,114 @@ header a {
     margin-left: -230px;
     height: 40px;
     width: 250px;
+}
+.tomato1{
+    height: 150px;
+    width: 150px;
+}
+.borderbox{
+    border: 2px solid white;
+    box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
+    height: 200px;
+    width: 800px;
+    position: relative;
+    top: 200px;
+    left: 100px;
+}
+h1{
+    position: relative;
+    top: 160px;
+    left: 100px;
+}
+h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -150px;
+    left: -70px;
+}
+h3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -150px;
+    left: -140px;
+
+}
+h4{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -150px;
+    left: -150px;
+
+}
+#product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -200px;
+    left: 80px;
+ 
+}
+#order{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -150px;
+    left: -65px;
+    font-size: 19px;
+}
+#total_count1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    top: -150px;
+    left: -90px;
+    font-size: 19px;
+}
+.price{
+   display: flex;
+   flex-direction: row;
+   position: relative;
+   left: 450px;
+   top: -100px;
+
+   
+}
+.profile_box{
+    border: 2px solid white;
+    box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
+    height: 450px;
+    width: 450px;
+    display: flex;
+    margin-left: 1000px;
+    margin-top: -100px;
+    font-size: 18px;
+}
+#user_profile{
+    height: 130px;
+    width: 130px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    left: -100px;
+    top: 140px;
+}
+#user_name{
+    position: relative;
+    left: 150px;
+    top: -100px;
 }

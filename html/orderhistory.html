@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,63 +8,82 @@
     <title>order history</title>
     <link rel="stylesheet" href="../assets/css/orderhistory.css">
 </head>
+
 <body>
     <header>
         <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
 
         <div class="menu-bar">
-          <div class="search_box">
-            <input type="text" id="search" placeholder="search">
-        </div>
-    
-          <ul class="main">
-            <li class="down"><a class="hdg" href="../index.html">Home </a></li>
-    
-            <li class="down"><a class="hdg" href="../html/about.html">About</a></li>
-    
-            <li><a class="hdg" href="../html/profilepage.html">Profile</a></li>
-    
-          </ul>
+            <div class="search_box">
+                <input type="text" id="search" placeholder="search">
+            </div>
+
+            <ul class="main">
+                <li class="down"><a class="hdg" href="../html/signup.html">Home </a></li>
+
+                <li class="down"><a class="hdg" href="../html/about.html">About</a></li>
+
+                <li><a class="hdg" href="../html/profilepage.html">Profile</a></li>
+
+            </ul>
         </div>
     </header>
 
     <main>
         <!-- borderbox -->
+        <h1>Purchase History</h1>
 
-    <div class="outer_div" id="outer_div">
+        <div class="outer_div" id="outer_div">
+            <div class="borderbox">
+                <!-- <img class="dp" src="../assets/image/userprofileimg.jpg" alt="image"> -->
+
+                <div class="tomato">
+                    <img class="tomato1" src="../assets/image/tomato.jpg" alt="img">
+                    <h2>Fresh Organic Tomato</h2>
+                    <h3>Quantity:1</h3>
+                    <h4>₹10 Per kg</h4>
+
+                </div>
+
+
+                <div class="price">
+                    <h2 id="product">Price Details:-</h2>
+                    <div class="order">
+                        <p id="order">Order Price : 10</p>
+                        <p id="total_count1">Total:10</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    <div class="profile_box">
+        <div class="profile_image">
+            <img id="user_profile" src="../assets/image/userprofileimg.jpg" alt="profile image">
+            <p id="user_name">Prathiusha Sakthivel</p>
+        </div>
+        <div class="details">
+        <div class="email">
+            <p>Email</p>
+            <p>prathiusha@gmail.com</p>
+        </div>
+        <div class="address">
+            <p>Address</p>
+            <p>1/243-KKR nagar,Main road,chennai.</p>
+        </div>
+        <div class="phone">
+            <p>Phone</p>
+            <p>9876543210</p>
+        </div>
+    </div>
 
     </div>
-    <div class="borderbox">
-        <h3>Shopping cart</h3>
-        <div class="tomato">
-            <img class="tomato1" src="../assets/image/tomato.jpg" height="150px" width="150px" alt="img">
-            <h4>Fresh Organic Tomato</h4>
-            <h5>₹10 Per kg</h5>
-            <input type="number" id="number1" name="number">
 
-           
-            <div class="content1">
-                <i class="fa-solid fa-trash"></i>
-            </div>
-            
-            <div class="continue">
-                <button>Continue</button>
-            </div>
-            
-        </div>
-    <div class="price">
-        <h2 id="product">Price Details()</h2>
-        <div class="total">
-            <p>Total Product Price :</p>
-            <p id="total_count"></p>
-        </div>
-        <div class="order">
-            <p>Order Total :</p>
-            <p id="total_count1"></p>
-        </div>
-        <!-- <a href="../../pages/Order/Buy Now.html"><button>Continue</button></a> -->
-    </div>
+
+
     </main>
-    
+
 </body>
+
 </html>
