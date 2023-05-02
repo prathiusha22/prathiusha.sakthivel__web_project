@@ -155,6 +155,7 @@ h4{
     left: 10px;
     top: 5px;
 }
+
 .details{
     display: flex;
     flex-direction: column;
@@ -162,9 +163,11 @@ h4{
     position: relative;
     left: -100px;
     top: 140px;
+    color: rgb(117, 115, 115);
 }
 #user_name{
     position: relative;
     left: 150px;
     top: -100px;
+    color: rgb(117, 115, 115);
 }

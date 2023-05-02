@@ -34,7 +34,7 @@
         <h1>Purchase History</h1>
 
         <div class="outer_div" id="outer_div">
-            <div class="borderbox">
+            <!-- <div class="borderbox">
         
                 <div class="tomato">
                     <img class="tomato1" src="../assets/image/tomato.jpg" alt="img">
@@ -77,14 +77,12 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
 
         </div>
     </main>
 
-
-<!-- 
     <script>
 
         let border_div = document.createElement("div")
@@ -139,61 +137,63 @@
         profile_div.setAttribute("class", "profile_box")
         document.querySelector(".outer_div").append(profile_div);
 
+        let profile_image = document.createElement("div")
+        profile_image.setAttribute("class","profile_image")
+        document.querySelector(".profile_box").append(profile_image)
 
         let profileimage = document.createElement("img")
         profileimage.setAttribute("id", "user_profile")
         profileimage.setAttribute("src", "../assets/image/userprofileimg.jpg")
-        profile_div.append(profileimage);
-
-        let details=document.createElement("div")
-        details.setAttribute("class","details")
-        profile_div.append(details) 
-
-        let useremail=document.createElement("div")
-        useremail.setAttribute("class","email")
-        profile_div.append(useremail);
-
-        let email_para=document.createElement("p")
-        email_para.innerHTML="Email"
-        useremail.append(email_para)
+        document.querySelector(".profile_image").append(profileimage);
 
         let username=document.createElement("p")
         username.setAttribute("id","user_name")
         username.innerHTML="Prathiusha Sakthivel"
-        useremail.append(username)
+        document.querySelector(".profile_image").append(username);
+
+        let details=document.createElement("div")
+        details.setAttribute("class","details")
+        document.querySelector(".profile_box").append(details); 
+
+        let useremail=document.createElement("div")
+        useremail.setAttribute("class","email")
+        document.querySelector(".details").append(useremail)
+
+        let email_para=document.createElement("p")
+        email_para.innerHTML="Email"
+        document.querySelector(".email").append(email_para);
 
         let email_para2=document.createElement("p")
         email_para2.innerHTML="prathiusha@gmail.com"
-        useremail.append(email_para2)
+        document.querySelector(".email").append(email_para2);
 
         let useraddress=document.createElement("div")
         useraddress.setAttribute("class","address")
-        profile_div.append(useraddress);
+        document.querySelector(".details").append(useraddress);
 
         let address_para=document.createElement("p")
         address_para.innerHTML="Address"
-        useremail.append(address_para)
+        document.querySelector(".address").append(address_para);
 
         let address_para2=document.createElement("p")
         address_para2.innerHTML="1/243-KKR nagar,Main road,chennai."
-        useremail.append(address_para2)
+        document.querySelector(".address").append(address_para2);
 
         let userphone=document.createElement("div")
         userphone.setAttribute("class","phone")
-        profile_div.append(userphone);
+        document.querySelector(".details").append(userphone);
 
         let phone_para=document.createElement("p")
         phone_para.innerHTML="Phone"
-        useremail.append(phone_para)
+        document.querySelector(".phone").append(phone_para);
 
         let phone_para2=document.createElement("p")
         phone_para2.innerHTML="9876543210"
-        useremail.append(phone_para2)
+        document.querySelector(".phone").append(phone_para2);
 
 
-
-
-    </script> -->
+    </script>
+    
 </body>
 
 </html>
