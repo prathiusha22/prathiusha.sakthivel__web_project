@@ -559,19 +559,16 @@
     let name = urls.get("name")
     console.log(name)//"FreshOrganicTomato"
 
+    const product_info=JSON.parse(localStorage.getItem("create_product"))
 
-    product_details.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
+    product_info.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
 
-      if (e["product_name"] == name) {
+      if (e["titlename"] == name) {
         product_create(e);
         console.log(e);
       }
     })
-
-    
-
-    
-
+   
     function product_create(result) {
 
       //div creation//
@@ -587,7 +584,7 @@
 
       let image = document.createElement("img");
       image.setAttribute("class", "tomato")
-      image.setAttribute("src", result["product_image"]["source"]);
+      image.setAttribute("src", result["image"]);
 
       //heading div//
       let heading1_div = document.createElement("div");
@@ -597,7 +594,7 @@
 
       //product name//
       let heading2 = document.createElement("h2");
-      heading2.innerText = result["product_name"]
+      heading2.innerText = result["titlename"]
       heading1_div.append(heading2)
 
       //price//
@@ -607,7 +604,7 @@
 
       //star//
       let star = "";
-      for (let j = 0; j < result["rating"]; j++) {
+      for (let j = 0; j < result["ratings"]; j++) {
         star += "⭐";
       }
       heading1_div.append(star);
@@ -641,7 +638,7 @@
       document.querySelector(".mainbox").append(box)
 
 
-      console.log(result["product_image"]["source"])
+      // console.log(result["product_image"]["source"])
 
 
       //cart function
@@ -657,7 +654,7 @@
 
         addCart.find(e => {
 
-          if (e["titlename"] == result["product_name"] && e["email"] == user["email"]) {
+          if (e["titlename"] == result["titlename"] && e["email"] == user["email"]) {
             return check = 1
           }
           else {
@@ -672,9 +669,9 @@
         else {
           let item = {}
 
-          item["image"] = result["product_image"]["source"]
+          item["image"] = result["image"]
           item["price"] = result["price"]
-          item["titlename"] = result["product_name"]
+          item["titlename"] = result["titlename"]
           item["email"] = user["email"]
 
           addCart.push(item)
