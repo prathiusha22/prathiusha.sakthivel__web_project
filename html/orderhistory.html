@@ -35,8 +35,7 @@
 
         <div class="outer_div" id="outer_div">
             <div class="borderbox">
-                <!-- <img class="dp" src="../assets/image/userprofileimg.jpg" alt="image"> -->
-
+        
                 <div class="tomato">
                     <img class="tomato1" src="../assets/image/tomato.jpg" alt="img">
                     <h2>Fresh Organic Tomato</h2>
@@ -55,35 +54,146 @@
                 </div>
 
             </div>
+
+
+    
+            <div class="profile_box">
+                <div class="profile_image">
+                    <img id="user_profile" src="../assets/image/userprofileimg.jpg" alt="profile image">
+                    <p id="user_name">Prathiusha Sakthivel</p>
+                </div>
+                <div class="details">
+                    <div class="email">
+                        <p>Email</p>
+                        <p>prathiusha@gmail.com</p>
+                    </div>
+                    <div class="address">
+                        <p>Address</p>
+                        <p>1/243-KKR nagar,Main road,chennai.</p>
+                    </div>
+                    <div class="phone">
+                        <p>Phone</p>
+                        <p>9876543210</p>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
-
-
-    <div class="profile_box">
-        <div class="profile_image">
-            <img id="user_profile" src="../assets/image/userprofileimg.jpg" alt="profile image">
-            <p id="user_name">Prathiusha Sakthivel</p>
-        </div>
-        <div class="details">
-        <div class="email">
-            <p>Email</p>
-            <p>prathiusha@gmail.com</p>
-        </div>
-        <div class="address">
-            <p>Address</p>
-            <p>1/243-KKR nagar,Main road,chennai.</p>
-        </div>
-        <div class="phone">
-            <p>Phone</p>
-            <p>9876543210</p>
-        </div>
-    </div>
-
-    </div>
-
-
-
     </main>
 
+
+<!-- 
+    <script>
+
+        let border_div = document.createElement("div")
+        border_div.setAttribute("class", "borderbox")
+        document.querySelector(".outer_div").append(border_div);
+
+        let next_div = document.createElement("div")
+        next_div.setAttribute("class", "tomato")
+        border_div.append(next_div);
+
+        let product_image = document.createElement("img")
+        product_image.setAttribute("class", "tomato1")
+        product_image.setAttribute("src", "../assets/image/tomato.jpg")
+        next_div.append(product_image);
+
+        let h2 = document.createElement("h2")
+        h2.innerHTML = "Fresh Organic Tomato"
+        next_div.append(h2);
+
+        let h3 = document.createElement("h3")
+        h3.innerHTML = "Quantity : 1"
+        next_div.append(h3);
+
+        let h4 = document.createElement("h4")
+        h4.innerHTML = "₹10 Per kg"
+        next_div.append(h4);
+
+        let productdetails_div = document.createElement("div")
+        productdetails_div.setAttribute("class", "price")
+        border_div.append(productdetails_div);
+
+        let heading2 = document.createElement("h2")
+        heading2.setAttribute("id", "product")
+        heading2.innerHTML = "Price Details:-"
+        productdetails_div.append(heading2);
+
+        let order_detail = document.createElement("div")
+        order_detail.setAttribute("class", "order")
+        productdetails_div.append(order_detail);
+
+        let order_para = document.createElement("p")
+        order_para.setAttribute("id", "order")
+        order_para.innerHTML = "Order Price : 10"
+        order_detail.append(order_para);
+
+        let total_para = document.createElement("p")
+        total_para.setAttribute("id", "total_count1")
+        total_para.innerHTML = "Total:10"
+        order_detail.append(total_para)
+
+        let profile_div = document.createElement("div")
+        profile_div.setAttribute("class", "profile_box")
+        document.querySelector(".outer_div").append(profile_div);
+
+
+        let profileimage = document.createElement("img")
+        profileimage.setAttribute("id", "user_profile")
+        profileimage.setAttribute("src", "../assets/image/userprofileimg.jpg")
+        profile_div.append(profileimage);
+
+        let details=document.createElement("div")
+        details.setAttribute("class","details")
+        profile_div.append(details) 
+
+        let useremail=document.createElement("div")
+        useremail.setAttribute("class","email")
+        profile_div.append(useremail);
+
+        let email_para=document.createElement("p")
+        email_para.innerHTML="Email"
+        useremail.append(email_para)
+
+        let username=document.createElement("p")
+        username.setAttribute("id","user_name")
+        username.innerHTML="Prathiusha Sakthivel"
+        useremail.append(username)
+
+        let email_para2=document.createElement("p")
+        email_para2.innerHTML="prathiusha@gmail.com"
+        useremail.append(email_para2)
+
+        let useraddress=document.createElement("div")
+        useraddress.setAttribute("class","address")
+        profile_div.append(useraddress);
+
+        let address_para=document.createElement("p")
+        address_para.innerHTML="Address"
+        useremail.append(address_para)
+
+        let address_para2=document.createElement("p")
+        address_para2.innerHTML="1/243-KKR nagar,Main road,chennai."
+        useremail.append(address_para2)
+
+        let userphone=document.createElement("div")
+        userphone.setAttribute("class","phone")
+        profile_div.append(userphone);
+
+        let phone_para=document.createElement("p")
+        phone_para.innerHTML="Phone"
+        useremail.append(phone_para)
+
+        let phone_para2=document.createElement("p")
+        phone_para2.innerHTML="9876543210"
+        useremail.append(phone_para2)
+
+
+
+
+    </script> -->
 </body>
 
 </html>
