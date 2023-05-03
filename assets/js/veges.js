@@ -439,8 +439,20 @@ if(products[i]["status"]){
 
         //cart count
 
-        let cartsample =JSON.parse(localStorage.getItem("cart"));
-        let user=JSON.parse(localStorage.getItem("active_user"));
+       // cartCount
 
-        let cartcount=[];
-        
+    let cart_sample = JSON.parse(localStorage.getItem("cart"));
+    let user = JSON.parse(localStorage.getItem("active_user"));
+
+    let cartCount = [];
+    cart_sample.forEach((e) => {
+      if (e["email"] == user["email"]) {
+        cartCount.push(e);
+      }
+    });
+
+    let co = cartCount.length
+
+    console.log(co)
+    let count = document.getElementById("cartcount");
+    count.innerHTML = cartCount.length;
