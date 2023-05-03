@@ -91,7 +91,7 @@ let create_product = [
 ];
 
 if (localStorage.getItem("create_product")) {
-    console.log("pro");
+    // console.log("pro");
 }
 
 else {

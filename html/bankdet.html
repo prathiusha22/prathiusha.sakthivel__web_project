@@ -12,29 +12,36 @@
 <body>
     <!-- header -->
     <main>
+
         <div class="borderbox">
             <img class="label" src="../assets/image/label.png" height="30px" width="30px" alt="img">
             <p class="para">10% Cashback on Greenfarm Axis Bank Card</p>
             <hr>
             <h4>All Other Options</h4>
-            <form id="bankdetails">
+            <form id="form">
                 <div class="info">
-                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" >UPI
+                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required>UPI
                     <img class="labelimg" src="../assets/image/google-pay.png" height="50px" width="50px"
                         alt="img"><br><br>
                     <hr>
-                    <input type="radio" class="payment_option" id="postpaid" name="rdo" value="wallet">Wallet/Postpaid
+                    <input type="radio" class="payment_option" id="postpaid" name="rdo" value="wallet"
+                        required>Wallet/Postpaid
                     <img class="labelimg" src="../assets/image/purse.png" height="30px" width="30px" alt="img"><br><br>
                     <hr>
-                    <input type="radio" class="payment_option" id="credit" name="rdo" value="debit">Credit/Debit/ATM Card
+                    <input type="radio" class="payment_option" id="credit" name="rdo" value="debit"
+                        required>Credit/Debit/ATM
+                    Card
                     <img class="labelimg" src="../assets/image/credit-card (2).png" height="40px" width="40px"
                         alt="img"><br><br>
                     <hr>
-                    <input type="radio" class="payment_option" id="netbanking" name="rdo" value="net_banking" >Net Banking
+                    <input type="radio" class="payment_option" id="netbanking" name="rdo" value="net_banking"
+                        required>Net
+                    Banking
                     <img class="labelimg" src="../assets/image/cashless-payment.png" height="35px" width="40px"
                         alt="img"><br><br>
                     <hr>
-                    <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery" >Cash on Delivery
+                    <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
+                        required>Cash on Delivery
                     <img class="labelimg" src="../assets/image/cash-payment.png" height="38px" width="40px"
                         alt="img"><br><br>
                 </div>
@@ -46,12 +53,13 @@
                     <img src="../assets/image/payment-secured.png" height="60px" width="60px" alt="img"><br>
                     Secure Payments
                 </div>
-        </div>
-        <div class="cancel">
-            <button class="but"><a href="buynow.html">Cancel</a></button>
-            <button class="but"><a>Place Order</a></button>
-        </div>
-        </form>
+         </div>
+          <div class="cancel">
+             <button class="but"><a href="buynow.html">Cancel</a></button>
+             <!-- <a href="../html/orderplaced.html"></a> -->
+             <button class="but" type="submit">Place Order</a></button>
+          </div>
+       </form>
         <!-- button -->
 
 
@@ -59,41 +67,43 @@
 
     <script>
 
-        let getform = document.getElementById("bankdetails");
+        // let getform = document.getElementById("form");
 
-        let get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
+        // let get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
 
-        getform.addEventListener("submit", function (e) {
-            e.preventDefault();
-            getData();
-        })
+        // getform.addEventListener("submit", function (e) {
+        //     e.preventDefault();
+        //     getData();
+        // })
 
-        function getData() {
+        // function getData() {
 
-            const inputs = document.querySelectorAll(".input")
-            console.log(inputs);
-            let payment = ""
+        //     const inputs = document.querySelectorAll("input")
+        //     console.log(inputs);
+        //     let payment = ""
 
-            for (let i = 0; i < inputs.length; i++) {
-                if (inputs[i].checked === true) {
-                    payment = inputs[i]["id"]
-                }
-            }
-            console.log(payment);
-            const active_user = JSON.parse(localStorage.getItem("active_user"))
-            const buyer = JSON.parse(localStorage.getItem("buyerdetails"))
+        //     for (let i = 0; i < inputs.length; i++) {
+        //         if (inputs[i].checked === true) {
+        //             payment = inputs[i]["id"]
+        //         }
+        //     }
+        //     console.log(payment);
+        //     const active_user = JSON.parse(localStorage.getItem("active_user"))
+        //     const buyer = JSON.parse(localStorage.getItem("buyerdetails"))
 
-            buyer.find(function (obj) {
-                if (active_user["email"] === obj["email"]) {
-                    console.log("why");
-                    obj["payment_method"] = payment
+        //     buyer.find(function (obj) {
+        //         console.log(active_user)
+        //         if (active_user["email"] === obj["email"]) {
+        //         //    console.log("why");
+        //             obj["payment_method"] = payment
 
-                }
-            })
-            localStorage.setItem("buyerdetails", JSON.stringify(buyer))
-            // window.location.href = "orderplaced.html";
-        }
+        //         }
+        //     })
+        //     localStorage.setItem("buyerdetails", JSON.stringify(buyer))
+        //     // window.location.href = "./orderplaced.html";
+        // }
 
+        //order history
 
         let ondate;
         let objectdate = new Date();
@@ -116,30 +126,30 @@
         let name = urls.get("name")
         console.log(name)//"FreshOrganicTomato"
 
- 
+
         let result;
         let product;
-        product_details.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
+        products.find(function (e) {             //arr=[{0},{1},{2}] ; e={0};e={1}
 
-            if (e["product_name"] == name) {
-                product=e;
+            if (e["titlename"] == name) {
+                product = e;
                 return (result = e);
-                console.log(e);
+                // console.log(e);
             }
-            else{
+            else {
                 return (result = 0);
             }
         });
-         
+
         console.log(product);
 
-        let bankdetails = document.getElementById("bankdetails");
-        bankdetails.addEventListener("submit", function(e){
-         e.preventDefault();
+        let form = document.getElementById("form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
 
-         let payment_option = document.querySelector(
-            "payment_option:checked").value;
+            let payment_option = document.querySelector(
+                ".payment_option:checked").value;
 
 
             let user = JSON.parse(localStorage.getItem("active_user"));
@@ -148,22 +158,18 @@
 
             let arr = {}
 
-            arr["image"] = product["iamge"];
-             arr["price"] = product["price"];
-             arr["titlename"] = product["titlename"];
-             arr["product_id"] = product["product_id"];
-             arr["order_id"] = order_id;
-             arr["order_date"] = newdate;
-             arr["payment_option"] = payment_option;
+            arr["image"] = product["image"];
+            arr["price"] = product["price"];
+            arr["titlename"] = product["titlename"];
+            arr["product_id"] = product["product_id"];
+            arr["order_id"] = order_id;
+            arr["order_date"] = ondate;
+            arr["payment_option"] = payment_option;
+            arr["email"] = user["email"];
 
-
-             order.push(arr);
-             localStorage.setItem("order",JSON.stringify(order));
-             window.location.href = "orderplaced.html";
-         
-
-
-
+            order.push(arr);
+            localStorage.setItem("order", JSON.stringify(order));
+            window.location.href = "orderplaced.html";
 
         })
 

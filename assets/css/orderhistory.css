@@ -1,8 +1,10 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+body {
     overflow-x: hidden;
+    font-family: 'Roboto Slab', serif;
 }
-header {
 
+header {
     background-color: rgb(108, 145, 53);
     height: 100px;
     width: 101%;
@@ -53,65 +55,79 @@ header a {
     margin-left: 250px;
     margin-top: 20px;
 }
-#search{
+
+#search {
     margin-left: -230px;
     height: 40px;
     width: 250px;
 }
-.tomato1{
+
+.tomato1 {
     height: 150px;
     width: 150px;
 }
-.borderbox{
+
+.borderbox {
     border: 2px solid white;
     box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
     height: 200px;
     width: 800px;
     position: relative;
-    top: 200px;
+    top: 150px;
     left: 100px;
+    margin-top: 50px;
 }
-h1{
+
+h1 {
     position: relative;
     top: 160px;
     left: 100px;
+    color: rgb(3, 103, 3);
 }
-h2{
+
+h2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
-    top: -150px;
-    left: -70px;
+    top: -140px;
+    left: -80px;
+    color: rgb(117, 115, 115);
 }
-h3{
+
+h3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
     top: -150px;
     left: -140px;
+    color: rgb(117, 115, 115);
 
 }
-h4{
+
+h4 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
     top: -150px;
     left: -150px;
+    color: rgb(117, 115, 115);
 
 }
-#product{
+
+#product {
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
     top: -200px;
     left: 80px;
- 
+
 }
-#order{
+
+#order {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -120,7 +136,8 @@ h4{
     left: -65px;
     font-size: 19px;
 }
-#total_count1{
+
+#total_count1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -129,26 +146,31 @@ h4{
     left: -90px;
     font-size: 19px;
 }
-.price{
-   display: flex;
-   flex-direction: row;
-   position: relative;
-   left: 450px;
-   top: -100px;
 
-   
+.price {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 450px;
+    top: -100px;
+    color: rgb(117, 115, 115);
+
+
 }
-.profile_box{
+
+.profile_box {
     border: 2px solid white;
     box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
-    height: 450px;
+    height: 490px;
     width: 450px;
     display: flex;
-    margin-left: 1000px;
-    margin-top: -100px;
+    position: fixed;
+    left: 980px;
+    top: 130px;
     font-size: 18px;
 }
-#user_profile{
+
+#user_profile {
     height: 130px;
     width: 130px;
     position: relative;
@@ -156,7 +178,7 @@ h4{
     top: 5px;
 }
 
-.details{
+.details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -165,7 +187,8 @@ h4{
     top: 140px;
     color: rgb(117, 115, 115);
 }
-#user_name{
+
+#user_name {
     position: relative;
     left: 150px;
     top: -100px;

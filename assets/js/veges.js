@@ -418,6 +418,7 @@ if(products[i]["status"]){
    let search=document.getElementById("search");
         search.addEventListener("keyup",(e)=>{
             let word=e.target.value.toLowerCase();
+            
 
             console.log(word)
 
@@ -436,5 +437,10 @@ if(products[i]["status"]){
             })
         });
 
+        //cart count
 
+        let cartsample =JSON.parse(localStorage.getItem("cart"));
+        let user=JSON.parse(localStorage.getItem("active_user"));
+
+        let cartcount=[];
         

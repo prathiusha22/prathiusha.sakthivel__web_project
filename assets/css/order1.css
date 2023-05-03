@@ -47,7 +47,14 @@ a {
 .menu-bar ul li {
     padding-left: 70px;
 }
-
+#cartcount{
+    font-size: 24px;
+    color: white;
+    font-weight: 800px;
+    position: relative;
+    top: -45px;
+    left: -5px;
+}
 .logo {
     border: 2px solid white;
     border-radius: 20px;

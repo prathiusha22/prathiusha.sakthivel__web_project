@@ -72,7 +72,20 @@ header a {
     width: 250px;
     /* border-radius: 30px; */
 }
+a i{
+    position: relative;
+    top: -70px;
+    font-size: 27px;
+    left: 580px;
+}
+#cartcount{
+    position: relative;
+    top: -150px;
+    font-size: 25px;
+    left: 610px;
+color: white;
 
+}
 
 /* product-list-container start */
 

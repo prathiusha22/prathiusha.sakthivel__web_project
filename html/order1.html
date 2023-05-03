@@ -22,7 +22,7 @@
     <div class="menu-bar">
 
       <ul class="main">
-        <li class="down"><a class="hdg" href="../index.html">Home </a>
+        <li class="down"><a class="hdg" href="./signup.html">Home </a>
 
         </li>
         <li class="down"><a class="hdg" href="../html/about.html">About</a>
@@ -40,7 +40,8 @@
           <!-- </div> -->
         </div>
         <a href="../html/cart.html"> <i class="fa-solid fa-cart-shopping fa-fade"></i></a>
-       
+        <p id="cartcount">0</p>
+
 
         <!-- <li><a class="hdg" href="../html/signup.html">Sign-up</a></li> -->
 
@@ -549,7 +550,7 @@
 
     ]
 
-    
+
 
 
     let url = window.location.search;  //?name=FreshOrganicTomato
@@ -559,131 +560,152 @@
     let name = urls.get("name")
     console.log(name)//"FreshOrganicTomato"
 
-    const product_info=JSON.parse(localStorage.getItem("create_product"))
+    let result;
+
+    const product_info = JSON.parse(localStorage.getItem("create_product"))
 
     product_info.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
 
       if (e["titlename"] == name) {
-        product_create(e);
+        result = e
         console.log(e);
+
       }
     })
-   
-    function product_create(result) {
 
-      //div creation//
-      let box = document.createElement("div");
-      box.setAttribute("class", "box");
+    // function product_create() {
 
-      let image1 = document.createElement("img");
-      image1.setAttribute("class", "offimg")
-      image1.setAttribute("src", "../assets/image/offer.png")
-      box.append(image1)
+    //div creation//
+    let box = document.createElement("div");
+    box.setAttribute("class", "box");
 
-      //image//
+    let image1 = document.createElement("img");
+    image1.setAttribute("class", "offimg")
+    image1.setAttribute("src", "../assets/image/offer.png")
+    box.append(image1)
 
-      let image = document.createElement("img");
-      image.setAttribute("class", "tomato")
-      image.setAttribute("src", result["image"]);
+    //image//
 
-      //heading div//
-      let heading1_div = document.createElement("div");
-      heading1_div.setAttribute("class", "heading1")
-      box.append(image)
-      box.append(heading1_div)
+    let image = document.createElement("img");
+    image.setAttribute("class", "tomato")
+    image.setAttribute("src", result["image"]);
 
-      //product name//
-      let heading2 = document.createElement("h2");
-      heading2.innerText = result["titlename"]
-      heading1_div.append(heading2)
+    //heading div//
+    let heading1_div = document.createElement("div");
+    heading1_div.setAttribute("class", "heading1")
+    box.append(image)
+    box.append(heading1_div)
 
-      //price//
-      let heading3 = document.createElement("h4");
-      heading3.innerText = "₹" + " " + result["price"] + " " + "Per Kg"
-      heading1_div.append(heading3)
+    //product name//
+    let heading2 = document.createElement("h2");
+    heading2.innerText = result["titlename"]
+    heading1_div.append(heading2)
 
-      //star//
-      let star = "";
-      for (let j = 0; j < result["ratings"]; j++) {
-        star += "⭐";
-      }
-      heading1_div.append(star);
+    //price//
+    let heading3 = document.createElement("h4");
+    heading3.innerText = "₹" + " " + result["price"] + " " + "Per Kg"
+    heading1_div.append(heading3)
 
-      //quantity//
-      let inputbox = document.createElement("input");
-      inputbox.setAttribute("class", "quantity")
-      inputbox.setAttribute("placeholder", "select quantity");
-      heading1_div.append(inputbox)
+    //star//
+    let star = "";
+    for (let j = 0; j < result["ratings"]; j++) {
+      star += "⭐";
+    }
+    heading1_div.append(star);
 
-      // add to cart//
-      add_to_cart = document.createElement("button");
-      add_to_cart.setAttribute("id", "cartbutton")
+    //quantity//
+    let inputbox = document.createElement("input");
+    inputbox.setAttribute("class", "quantity")
+    inputbox.setAttribute("placeholder", "select quantity");
+    heading1_div.append(inputbox)
 
-      let anchor = document.createElement("a");
-      anchor.setAttribute("href", "#")
-      anchor.setAttribute("id", "add-to-cart")
-      anchor.innerText = "Add to Cart";
-      add_to_cart.append(anchor)
-      heading1_div.append(add_to_cart);
+    // add to cart//
+    add_to_cart = document.createElement("button");
+    add_to_cart.setAttribute("id", "cartbutton")
 
-      //buynow//
-      buy_now = document.createElement("button");
-      buy_now.setAttribute("id", "buybutton")
+    let anchor = document.createElement("a");
+    anchor.setAttribute("href", "#")
+    anchor.setAttribute("id", "add-to-cart")
+    anchor.innerText = "Add to Cart";
+    add_to_cart.append(anchor)
+    heading1_div.append(add_to_cart);
 
-      let anchor1 = document.createElement("a");
-      anchor1.setAttribute("href", "../html/buynow.html")
-      anchor1.innerText = "Buy Now";
-      buy_now.append(anchor1);
-      heading1_div.append(buy_now)
-      document.querySelector(".mainbox").append(box)
+    //buynow//
+    buy_now = document.createElement("button");
+    buy_now.setAttribute("id", "buybutton")
 
-
-      // console.log(result["product_image"]["source"])
+    let anchor1 = document.createElement("a");
+    anchor1.setAttribute("href", "../html/buynow.html?name=" + name);
+    anchor1.innerText = "Buy Now";
+    buy_now.append(anchor1);
+    heading1_div.append(buy_now)
+    document.querySelector(".mainbox").append(box)
 
 
-      //cart function
-
-      let btn_cart = document.getElementById("cartbutton")
-      btn_cart.addEventListener("click", el => {
+    // console.log(result["product_image"]["source"])
 
 
-        let user = JSON.parse(localStorage.getItem("active_user"))
-        let addCart = JSON.parse(localStorage.getItem("cart")) ?? []
+    //cart function
 
-        let check;
+    let btn_cart = document.getElementById("cartbutton")
+    btn_cart.addEventListener("click", el => {
 
-        addCart.find(e => {
 
-          if (e["titlename"] == result["titlename"] && e["email"] == user["email"]) {
-            return check = 1
-          }
-          else {
-            return check = 0; 
-          }
+      let user = JSON.parse(localStorage.getItem("active_user"))
+      let addCart = JSON.parse(localStorage.getItem("cart")) ?? []
 
-        })
+      let check;
 
-        if (check == 1) {
-          alert("Your product already added to cart")
+      addCart.find(e => {
+
+        if (e["titlename"] == result["titlename"] && e["email"] == user["email"]) {
+          return check = 1
         }
         else {
-          let item = {}
-
-          item["image"] = result["image"]
-          item["price"] = result["price"]
-          item["titlename"] = result["titlename"]
-          item["email"] = user["email"]
-
-          addCart.push(item)
-          localStorage.setItem("cart", JSON.stringify(addCart))
-          alert("Your product added to cart")
-
+          return check = 0;
         }
+
       })
-    }
+
+      if (check == 1) {
+        alert("Your product already added to cart")
+      }
+      else {
+        let item = {}
+
+        item["image"] = result["image"]
+        item["price"] = result["price"]
+        item["titlename"] = result["titlename"]
+        item["email"] = user["email"]
+
+        addCart.push(item)
+        localStorage.setItem("cart", JSON.stringify(addCart))
+        alert("Your product added to cart")
+
+      }
+    })
+
+    // cartCount
+
+    let cart_sample = JSON.parse(localStorage.getItem("cart"));
+    let user = JSON.parse(localStorage.getItem("active_user"));
+
+    let cartCount = [];
+    cart_sample.forEach((e) => {
+      if (e["email"] == user["email"]) {
+        cartCount.push(e);
+      }
+    });
+
+    let co = cartCount.length
+
+    console.log(co)
+    let count = document.getElementById("cartcount");
+    count.innerHTML = cartCount.length;
 
 
   </script>
+
 </body>
 
 </html>

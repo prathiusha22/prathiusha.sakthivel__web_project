@@ -52,6 +52,7 @@
                         <p id="total_count1">Total:10</p>
                     </div>
                 </div>
+                
 
             </div>
 
@@ -85,6 +86,10 @@
 
     <script>
 
+        let orderget=JSON.parse(localStorage.getItem("order"));
+
+        orderget.find((el) =>{
+
         let border_div = document.createElement("div")
         border_div.setAttribute("class", "borderbox")
         document.querySelector(".outer_div").append(border_div);
@@ -95,11 +100,11 @@
 
         let product_image = document.createElement("img")
         product_image.setAttribute("class", "tomato1")
-        product_image.setAttribute("src", "../assets/image/tomato.jpg")
+        product_image.setAttribute("src",el["image"])
         next_div.append(product_image);
 
         let h2 = document.createElement("h2")
-        h2.innerHTML = "Fresh Organic Tomato"
+        h2.innerHTML = el["titlename"]
         next_div.append(h2);
 
         let h3 = document.createElement("h3")
@@ -107,7 +112,7 @@
         next_div.append(h3);
 
         let h4 = document.createElement("h4")
-        h4.innerHTML = "₹10 Per kg"
+        h4.innerHTML = "₹" + el["price"] + " " +"Per kg"
         next_div.append(h4);
 
         let productdetails_div = document.createElement("div")
@@ -125,13 +130,20 @@
 
         let order_para = document.createElement("p")
         order_para.setAttribute("id", "order")
-        order_para.innerHTML = "Order Price : 10"
+        order_para.innerHTML = "₹" + el["price"]+ " " +"Per kg"
         order_detail.append(order_para);
 
         let total_para = document.createElement("p")
         total_para.setAttribute("id", "total_count1")
-        total_para.innerHTML = "Total:10"
+        total_para.innerHTML = "₹" + el["price"]
         order_detail.append(total_para)
+
+    });
+
+    let profile_userdetails=JSON.parse(localStorage.getItem("buyerdetails"))??[]
+
+
+        //profile//
 
         let profile_div = document.createElement("div")
         profile_div.setAttribute("class", "profile_box")
@@ -191,9 +203,10 @@
         phone_para2.innerHTML="9876543210"
         document.querySelector(".phone").append(phone_para2);
 
-
-    </script>
+   
     
+    </script>
+
 </body>
 
 </html>
