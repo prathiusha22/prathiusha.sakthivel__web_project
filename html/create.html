@@ -14,46 +14,71 @@
         <img class="logo" src="../assets/image/mainlogo.png" height="70px" width="150px" alt="img">
 
         <div class="menu-bar">
-    
-          <div class="main">
-            <a href="../html/signup.html">Home </a>
-    
-            <a class="about" href="../html/about.html">About </a>
-    
-            <a class="about" href="../html/veges.html">Product</a>
-    
-            <a class="about" href="../index.html">Sign-in</a>
-    
-            <a class="register" href="#"></a>
-    
-          </div>
+
+            <div class="main">
+                <a href="../index.html">Home </a>
+
+                <a class="about" href="../html/about.html">About </a>
+
+                <a class="about" href="../html/veges.html">Product</a>
+
+                <!-- <a class="about" href="../index.html">Sign-in</a> -->
+
+                <a class="register" href="#"></a>
+
+            </div>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <form id="create_form">
-                <!-- <label for="img">Seller Profile url:<input type="text" id="image" /></label><br /><br /> -->
-                <label for="Tittle"> Title:<input type="text" id="titlename" /></label><br /><br />
-                <label for="img">Image url:<input type="text" id="image" /></label><br /><br />
-                <!-- <label for="rate">Quantity:<input type="text" id="ratings" /></label><br /><br /> -->
-                <label for="price">Price:<input id="price" /></label><br /><br />
-                <label for="rate">Rating:<input type="text" id="ratings" /></label><br /><br />    
-                <button onclick="createproduct()">Create</button><br /><br />
-                <!-- <button onclick="delete_product()">Delete</button><br /><br /> -->
-                <button onclick="updateproduct()">Update</button><br /><br />
+            <form onsubmit="" id="create_form">
+                <div class="titlename">
+                    <label>Product Name:</label><br><br>
+                    <input type="text" id="titlename" required="true" />
+                </div>
+
+                <div class="imageurl">
+                    <label>Product Image url:</label><br><br>
+                    <input type="text" id="image" required="true" />
+                </div>
+
+                <div class="productprice">
+                    <label>Product Price:</label><br><br>
+                    <input type="number" id="price" required="true" />
+                </div>
+
+                <div class="separate">
+                    <div class="Quantity">
+                        <label>Product Quantity:</label><br><br>
+                        <input type="number" id="quantity" required="true" />
+                    </div>
+
+                    <div class="rating">
+                        <label>Product Category:</label><br><br>
+                        <select name="sub" id="Category">
+                          <option value="Vegetables"> Vegetables</option>
+                          <option value="Fruits">Fruits</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="create" >Create</button>
+                <button type="submit" class="update" onclick="updateproduct()">Update</button>
+
             </form>
 
             <table>
-                <thead>
+                <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Image</th>
-                    <!-- <th>Quantity</th> -->
                     <th>Price</th>
+                    <th>Quantity</th>
                     <th>Update</th>
+                    <th>Delete</th>
 
-                </thead>
+                </tr>
                 <tbody class="table_product">
                 </tbody>
             </table>
@@ -61,7 +86,7 @@
 
     </main>
     <script src="../assets/js/create.js"></script>
-   
+
 </body>
 
 </html>

@@ -1,4 +1,11 @@
 //create   product//
+let getting_data=document.getElementById("create_form")
+getting_data.addEventListener("submit",function(e){
+    e.preventDefault();
+    createproduct();
+    updateproduct();
+})
+
 
 let product = JSON.parse(localStorage.getItem('create_product')) ?? [];
 function createproduct() {
@@ -8,12 +15,14 @@ function createproduct() {
     const image = document.getElementById("image").value
     const titlename = document.getElementById("titlename").value
     const price = document.getElementById("price").value
-    const ratings = document.getElementById("ratings").value
+    const quantity = document.getElementById("quantity").value
+    const ratings = document.getElementById("Category").value
 
     product_create["image"] = image;
     product_create["titlename"] = titlename;
     product_create["price"] = price;
-    product_create["ratings"] = ratings;
+    product_create["quantity"]=quantity;
+    product_create["Category"] = ratings;
     product_create["product_id"] = product.length;
     product_create["status"] = true;
 
@@ -21,6 +30,8 @@ function createproduct() {
 
     product.push(product_create);
     localStorage.setItem("create_product", JSON.stringify(product))
+
+    window.location.reload()
 }
 
 
@@ -36,6 +47,7 @@ function delete_product(id){
 }
 
 
+
 //update product//
 let output = "";
 let append_div = document.querySelector(".table_product");
@@ -48,7 +60,8 @@ let append_div = document.querySelector(".table_product");
    <td>${item.titlename}</td>
    <td class="td-img"><img src="${item.image}"></td>
    <td>${item.price}</td>
-   <td><button onclick="product_update(${item.product_id})">Update</button></td>
+   <td>${item.quantity}</td>
+   <td><a href="#"><button id="update" onclick="product_update(${item.product_id})">Update</button></a></td>
    <td><button onclick="delete_product(${item.product_id})">Delete</button></td>
 </tr>`
     append_div.innerHTML = output;
@@ -62,7 +75,8 @@ function product_update(id) {
             document.getElementById("image").value = obj.image;
             document.getElementById("titlename").value = obj.titlename;
             document.getElementById("price").value = obj.price;
-            document.getElementById("ratings").value = obj.ratings;
+            document.getElementById("quantity").value=obj.quantity;
+            document.getElementById("Category").value = obj.Category;
         }
     });
 }
@@ -71,7 +85,8 @@ function updateproduct() {
     const image = document.getElementById("image").value;
     const title = document.getElementById("titlename").value;
     const price = document.getElementById("price").value;
-    const rating = document.getElementById("ratings").value;
+    const quantity = document.getElementById("quantity").value
+    const categories = document.getElementById("Category").value;
 
       product.find(function (obj) {
 
@@ -80,7 +95,8 @@ function updateproduct() {
             obj.image = image;
             obj.titlename = title;
             obj.price = price;
-            obj.ratings = rating;
+            obj.quantity=quantity;
+            obj.Category = categories;
         }
     })
     localStorage.setItem("create_product", JSON.stringify(product));  

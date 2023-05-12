@@ -1,9 +1,10 @@
-body {
-    font-weight: 600;
-    font-size: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-size: 16px;
     overflow-x: hidden;
-
-
 }
 
 /* header */
@@ -12,11 +13,10 @@ header {
     background-color: rgb(108, 145, 53);
     height: 100px;
     width: 100%;
-    position: fixed;
-    z-index: 2;
+    /* position: fixed; */
+    /* top: 0; */
+    /* z-index: 2; */
     display: flex;
-    top: 0%;
-    margin-left: -5px;
 }
 
 .menu-bar ul {
@@ -26,34 +26,33 @@ header {
     justify-content: space-around;
     text-decoration: none;
 
-
-}
-
-.menu-bar .main {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-decoration: none;
-
-
 }
 
 
 .menu-bar {
-    margin-left: 400px;
+    margin-left: 70px;
     margin-top: 40px;
 }
 
-.main a {
+
+.hdg {
+    font-size: 22px;
+    position: relative;
+    top: 0px;
+    
+} 
+
+
+header a {
     text-decoration: none;
-    font-size: 25px;
-    color: white;
+    font-size: 15px;
     font-weight: 700;
+    color: white;
 }
 
-.menu-bar .main a {
-    padding-left: 70px;
+.menu-bar ul li {
+    padding-left: 90px;
+    /* margin-top: -50px; */
 }
 
 .logo {
@@ -69,284 +68,203 @@ header {
     text-decoration: none;
     color: white;
 }
-
-.navi:hover {
-    font-size: 35px;
-    color: black;
-}
-
-.img1 {
-    margin-top: -90px;
-    background-image: url("../image/background1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 1000px;
-    width: 100%;
-}
-
-.hd1 {
-    float: right;
-    color: white;
-    word-spacing: 35px;
-    font-size: 25px;
-    margin-right: 150px;
-    margin-top: 40px;
-
-}
-
-.borderbox {
-    background-color: white;
-    border: 0px solid white;
-    box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
-    height: 200px;
-    width: 1250px;
-    position: relative;
-    top: 100px;
-    left: 80px;
+.container {
+    display: flex;
+    margin: 3rem 150px;
     margin-top: 70px;
-    /* padding-top: -200px; */
+    margin-left: 70px;
+    width: 1500px;
+
 }
 
-h3 {
-    margin-left: 50px;
-    font-size: 25px;
-    position: relative;
-    top: 30px;
-    color: brown;
+.cart {
+    width: 65%;
+    background-color: #f2f2f2;
 }
 
-h4 {
-    position: relative;
-    left: 250px;
-    top: -120px;
-    font-size: 25px;
-    color: rgb(22, 88, 22);
-    /* font-weight: 600; */
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 30px 0;
 }
 
-h5 {
-    position: relative;
-    left: 580px;
-    top: -188px;
-    font-size: 24px;
-    color: rgb(42, 39, 188);
-}
-
-.tomato1 {
-    position: relative;
-    left: 60px;
-    top: 20px;
-    height: 160px;
-    width: 160px;
-}
-
-.grapes {
-    position: relative;
-    top: -110px;
-    left: 30px;
-}
-
-.remove {
-    position: relative;
-    left: 722px;
-    top: -320px;
-    color: red;
-}
-
-
-#number1 {
-    position: relative;
-    left: 780px;
-    top: -275px;
-    height: 50px;
+table {
+    width: 100%;
+    padding: 10px;
     text-align: center;
+
 }
 
-
-.content1 {
-    position: relative;
-    left: 900px;
-    top: -300px;
+.table-head {
+    color: white;
+    background-color: rgb(108, 145, 53);
 }
 
-
-.content2 {
-    position: relative;
-    left: 900px;
-    top: -420px;
+.head-img {
+    text-align: left;
+    padding-left: 7px;
 }
 
-
-a {
-    text-decoration: none;
-    color: rgb(204, 86, 42);
+.summary {
+    background-color: #f2f2f2;
+    width: 25%;
+    margin-left: 20px;
+    height: 600px;
+    
+}
+.summary hr{
+   display: none;
 }
 
-
-.line {
-
-    position: relative;
-    top: -515px;
-    left: 300px;
-    height: 1.5px;
-    width: 800px;
-    background-color: grey;
+.summary::-webkit-scrollbar{
+    display: none;
 }
+
+.detail {
+    margin: 10px 6;
+    padding: 0 10px;
+    align-items: center;
+    background-color: rgb(108, 145, 53);
+    color: white;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    margin: 15px 0;
+    padding: 7px;
+}
+
 
 button {
+    border: none;
+    background-color: red;
+    padding: 8px 30px ;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin: 5px 0px 0px 40px;
 
-    border: 0px solid rgb(193, 215, 224);
-    position: relative;
-    top: -500px;
-    left: 550px;
-    height: 30px;
-    width: 200px;
-    color: black;
-    font-size: 17px;
+}
+
+.checkout {
+    width: 100%;
+    background-color: rgb(108, 145, 53);
+    margin-left: -3px;
+
+}
+
+button:hover,
+.checkout:hover {
+    background-color: #333;
+}
+.img-box{
+    margin: 5px;
+    width: 100px;
+    height: 100px;
     border-radius: 50px;
-    padding-top: -100px;
-}
-
-#rupee {
+    border: 1px solid rgb(108, 145, 53);
+    background-color: white;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     position: relative;
-    top: -500px;
-    left: 725px;
+    /* top: -50px; */
+    left: 20px;
 }
+/* .img{
+    max-width: 52px;
+    max-height: 52px;
+    border-radius: 50%;
 
-p {
-    position: relative;
-    top: -548px;
-    left: 950px;
-
+} */
+.fa-trash{
+    color: rgb(108, 145, 53);
 }
-
-.exit {
-    position: relative;
-    top: 650px;
-    left: 300px;
+.fa-trash:hover{
+    color: #333;
 }
-
-.fa-solid {
-    font-size: 40px;
+.title{
+    font-size: 18px;
     position: relative;
+    top: -60px;
     left: 150px;
-    top: -25px;
 }
-
-.order {
+.price{
+    font-size: 18px;
     position: relative;
-    top: 550px;
-    left: -975px;
-
+    top: -79px;
+    left: 370px;
 }
-
-.price {
-    border: 2px solid white;
-    box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
-    width: 230px;
-    height: 130px;
+#bin-icon{
+    color: #333;
+    font-size: 30px;
     position: relative;
-    top: 200px;
-    bottom: 5px;
-    left: 1095px;
-    text-align: center;
+    top:-195px ;
+    left: 900px;
 }
-
-#total_count1 {
-    margin-left: 130px;
-    margin-top: -42px;
+#bin-icon:hover{
+    color: rgb(108, 145, 53);
 }
+.quanty{
+    position: relative;
+    top:-100px ;
+    left: 470px;
+}
+.btn-input{
+    width: 100px;
+    height: 40px;
+}
+.btn1 {
+    position: relative;
+    left: 580px;
+    top: -145px;
+    margin: 0px 0px 10px 10px;
+}
+.btn-input{
+    position: relative;
+    left: 585px;
+    top: -145px;
+}
+.product_image hr{
+    position: relative;
+    top: -80px;
 
-@media screen and (max-width:400px) {
-    header {
-        width: 100%;
-        height: 140px;
-        margin-left: -50px;
-    }
+}
+.shippingInput{
+    height: 100px;
+}
+#headimage{
+    position: relative;
+    left: 40px;
+    font-size: 19px;
+}
+#headname{
+    position: relative;
+    left: 40px;
+    font-size: 19px;
 
-    .logo {
-        border: 2px solid white;
-        border-radius: 20px;
-        height: 50px;
-        width: 100px;
-        margin-left: 50px;
-        margin-top: 20px;
-    }
+}
+#headprice{
+    position: relative;
+    left: -160px;
+    font-size: 19px;
+}
+#headquantity{
+    position: relative;
+    left: -140px;
+    font-size: 19px;
 
-    .menu-bar ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        text-decoration: none;
-
-
-    }
-
-    .main a {
-        font-size: 23px;
-
-    }
-
-    .menu-bar {
-        margin-left: -160px;
-        margin-top: 100px;
-        padding-left: -20px;
-
-    }
-
-    .borderbox {
-        background-color: white;
-        border: 0px solid white;
-        box-shadow: -5px 5px 10px 5px rgb(205, 205, 204);
-        height: 600px;
-        width: 350px;
-        position: relative;
-        top: 100px;
-        left: 20px;
-        margin-top: 70px;
-        /* padding-top: -200px; */
-    }
-
-    .tomato1 {
-        position: relative;
-        left: 40px;
-        top: 20px;
-        height: 250px;
-        width: 250px;
-    }
-
-    h4 {
-        position: relative;
-        left: 50px;
-        top: -10px;
-        font-size: 28px;
-        color: rgb(22, 88, 22);
-        /* font-weight: 600; */
-    }
-
-    h5 {
-        position: relative;
-        left: 110px;
-        top: -13px;
-        font-size: 24px;
-        color: rgb(42, 39, 188);
-    }
-
-    #number1 {
-        position: relative;
-        left: 45px;
-        top: -10px;
-        height: 50px;
-        width: 250px;
-        text-align: center;
-    }
-
-    .fa-solid {
-        font-size: 40px;
-        position: relative;
-        left: -750px;
-        top: 320px;
-    }
-
-
+}
+#headdelete{
+    position: relative;
+    left: 50px;
+    font-size: 19px;
 }

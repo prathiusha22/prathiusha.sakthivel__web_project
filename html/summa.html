@@ -15,26 +15,26 @@
 <body>
     <!-- header -->
     <header>
-
+    
 
         <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
-
+    
         <div class="menu-bar">
-
-
-            <ul class="main">
-                <li class="down"><a class="hdg" href="../index.html">Home </a></li>
-                <li class="down"><a class="hdg" href="../html/about.html">About</a>
-
-                </li>
-
-                <li><a class="hdg" href="../html/profilepage.html">Profile</a></li>
-
-            </ul>
-
+         
+    
+          <ul class="main">
+            <li class="down"><a class="hdg" href="../index.html">Home </a></li>
+            <li class="down"><a class="hdg" href="../html/about.html">About</a>
+    
+            </li>
+    
+            <li><a class="hdg" href="../html/profilepage.html">Profile</a></li>
+    
+          </ul>
+        
         </div>
-
-    </header>
+        
+      </header>
 
     <div class="main_container">
 
@@ -142,31 +142,26 @@
 
         const imgHead = document.createElement('th');
         imgHead.classList.add('head-img');
-        imgHead.setAttribute("id", "headimage")
         imgHead.setAttribute('width', '150');
         imgHead.innerText = 'Image';
 
         const nameHead = document.createElement('th');
         nameHead.classList.add('head-img');
-        nameHead.setAttribute("id", "headname")
         nameHead.setAttribute('width', '360');
         nameHead.innerText = 'Name';
 
         const priceHead = document.createElement('th');
         priceHead.classList.add('head-img');
-        priceHead.setAttribute("id", "headprice")
         priceHead.setAttribute('width', '150');
         priceHead.innerText = 'Price';
 
         const quantityHead = document.createElement('th');
         quantityHead.classList.add('head-img');
-        quantityHead.setAttribute("id", "headquantity")
         quantityHead.setAttribute('width', '150');
         quantityHead.innerText = 'Quantity';
 
         const deleteHead = document.createElement('th');
         deleteHead.classList.add('head-img');
-        deleteHead.setAttribute("id", "headdelete")
         deleteHead.setAttribute('width', '150');
         deleteHead.innerText = 'Delete';
 
@@ -201,6 +196,7 @@
                 total += Number(cart_sample[i]["price"]);
                 // console.log(e.price)
 
+
                 const product_div = document.createElement("div")
                 product_div.setAttribute("class", "product_image")
                 cart.append(product_div)
@@ -222,7 +218,7 @@
 
                 const quanty = document.createElement("p")
                 quanty.setAttribute("class", "quanty")
-                quanty.innerText = 250 + "g";
+                quanty.innerText = "1" + " " + "kg"
                 product_div.append(quanty)
 
                 decrement = document.createElement("button");
@@ -238,7 +234,6 @@
                 product_div.append(adding)
 
                 increment = document.createElement("button")
-                increment.setAttribute("id", "increment")
                 increment.setAttribute("class", "btn1 btn-increment")
                 increment.innerText = "+"
                 product_div.append(increment)
@@ -246,6 +241,7 @@
                 sub_div = document.createElement("div")
                 sub_div.setAttribute("class", "total-amount")
                 product_div.append(sub_div)
+
 
                 const delete_icon = document.createElement("i")
                 delete_icon.setAttribute("id", "bin-icon")
@@ -255,6 +251,85 @@
                 const break_tag = document.createElement("hr")
                 break_tag.setAttribute("id", "break")
                 product_div.append(break_tag)
+
+
+                
+                // // let valueCount = 1;
+                // increment = document.querySelectorAll(".btn-increment");
+                // decrement = document.querySelectorAll(".btn-decrement");
+                // let count = document.querySelectorAll("#quantity");
+                // let totalcount = document.querySelectorAll("#price");
+                // let gramintokg = document.querySelectorAll(".gram");
+                // let valueCount=0;
+
+
+                // increment.forEach(function (obj) {
+                //     // let valueCount=valueCnt;
+                //     valueCount = 2
+                //     obj.addEventListener("click", (e) => {//e.target
+                //         // let check=0//
+
+
+                //         // console.log(e.target.parentElement.parentElement.children[0].children[1].innerText)
+
+                //         e.target.parentElement.children[1].value = valueCount
+                //         e.target.parentElement.children[7].innerText = valueCount * 6;
+
+                //         check = valueCount * 250//value
+                //         //  console.log(check +"gfmdg")
+                //         valueCount++;
+                //         valueCnt = valueCount;
+                //         if ((check >= "250")) {
+                //             console.log(e.target.parentElement.parentElement.children[1].innerText)
+
+
+                //             console.log(check)//g
+                //             e.target.parentElement.parentElement.children[1].innerText = check + "g";
+
+                //         }
+                //         if (check >= 1000) {
+                //             console.log(check)
+                //             // gramintokg.innerText=kg
+                //             let kg = Number(check) / 1000;
+                //             e.target.parentElement.parentElement.children[1].innerText = kg + "kg"
+                //             console.log("kilo" + kg)
+
+                //         }
+
+                //         //  qunatity,, total price..total kg
+                //     })
+                // })
+                // increment
+
+                // decrement.forEach(function (obj) {
+                //     // let check1
+
+                //     obj.addEventListener("click", (e) => {
+                //         // if (valueCount >= 2) {
+                //         //     let sub = --valueCount;
+                //         //     count.value = sub;
+                //         //     totalcount.innerHTML = sub * 6;
+                //         //     check1 = check-250
+                //         //     if(gramintokg.innerText>="1000g") {
+
+                //         //     gramintokg.inneText = check1+"g";
+                //         //     console.log(gramintokg)
+                //         //     console.log(check1)
+                //         //     }
+                //         //     // if(check>=1000){
+
+                //         //     // }
+                //         // }
+
+                //         valueCnt--
+                //         // valueCnt--
+                //         // valueCnt=valueCount;
+                //         e.target.parentElement.children[1].value = valueCnt;
+                //         console.log(valueCnt)
+                //     })
+                // })
+
+
 
                 delete_icon.addEventListener("click", (e) => {
                     for (let j = 0; j < cart_sample.length; j++) {
@@ -269,6 +344,10 @@
 
             }
         }
+
+
+
+
         // Create the horizontal line
         const hr = document.createElement('hr');
 
@@ -315,7 +394,7 @@
         shippingTitle.innerText = 'Shipping';
 
         const shippingInput = document.createElement('input');
-        shippingInput.setAttribute("class", "shippingInput")
+        shippingInput.setAttribute("class","shippingInput")
         shippingInput.setAttribute('type', 'text');
         shippingInput.setAttribute('placeholder', 'Delivery Address');
 
@@ -324,15 +403,9 @@
 
         const promoCodeInput = document.createElement('input');
         promoCodeInput.setAttribute('type', 'number')
-        promoCodeInput.setAttribute('minlength', '10')
-        promoCodeInput.setAttribute('maxlength', '10')
+        promoCodeInput.setAttribute('minlength','10')
+        promoCodeInput.setAttribute('maxlength','10')
         promoCodeInput.setAttribute('placeholder', 'Enter Your Mobile number');
-
-        const button_1 = document.createElement("button");
-        button_1.setAttribute("class", "first-btn")
-        button_1.setAttribute("id", "promo")
-        button_1.setAttribute("onclick", "promo()")
-        button_1.innerText = "Edit"
 
         const button = document.createElement("button");
         button.setAttribute("class", "first-btn")
@@ -342,14 +415,17 @@
 
         const hr_2 = document.createElement("hr")
 
-        shippingAndPromo.append(shippingTitle, shippingInput, promoCodeTitle, promoCodeInput, button_1, button, hr);
+
+        shippingAndPromo.append(shippingTitle, shippingInput, promoCodeTitle, promoCodeInput, button, hr);
         summary.append(shippingAndPromo)
 
         const div = document.createElement("div")
         div.setAttribute("class", "top")
 
+
         const heading_2 = document.createElement("h2")
         heading_2.innerText = "Total"
+
 
         const heading_3 = document.createElement("h2")
         heading_3.setAttribute("id", "totalB")
@@ -360,17 +436,11 @@
         style.style.marginBottom = '20px';
         style.style.padding = '0 10px';
 
-        
-        const anchor=document.createElement("a");
-        anchor.setAttribute("href","../html/buynow.html")
-        style.append(anchor);
-
         const button_2 = document.createElement("button")
         button_2.setAttribute("class", "checkout")
         button_2.innerText = "Check out"
-        
 
-        anchor.append(button_2)
+        style.append(button_2)
         summary.append(div, style)
 
         container.append(cart)
@@ -378,81 +448,64 @@
 
         document.querySelector(".main_container").append(container);
 
-        //cart increment function
-
-        let increment1 = document.querySelectorAll(".btn-increment");
-        // decrement = document.querySelectorAll(".btn-decrement");
-        // let count = document.querySelectorAll("#quantity");
-        // let totalcount = document.querySelectorAll("#price");
-        // let gramintokg = document.querySelectorAll(".gram");
-        // let valueCount=0;
-
-        console.log(increment1);
-        increment1.forEach((obj, index) => {
-
-            let valueCount = 1;
-            let valueCnt = 2;
-            obj.addEventListener("click", (e) => {//e.target
-                // alert("hi")
-                let check = 1//                    
-                //value
-
-                check = valueCnt * 250
-
-                valueCnt = ++valueCnt
-
-                // console.log(e.target.parentElement.parentElement.children[0].children[1].innerText)
-
-                e.target.parentElement.children[5].value = ++valueCount
-
-                // console.log(check);
-                e.target.parentElement.children[3].innerText = check + "g";
-
-                // //  console.log(check +"gfmdg")
-                // valueCount++;
-                // valueCnt = valueCount;
-                if ((check >= "250")) {
-                    console.log(e.target.parentElement.parentElement.children[1].innerText)
 
 
-                    console.log(check)//g
-                    e.target.parentElement.children[3].innerText = check + "g";
-                }
-                if (check >= 1000) {
-                    console.log(check)
-                    // gramintokg.innerText=kg
-                    let kg = Number(check) / 1000;
-                    e.target.parentElement.children[3].innerText = kg + "kg"
-                    console.log("kilo" + kg)
-                }
-            })
 
 
-            let decrement1 = document.querySelectorAll(".btn-decrement");
+        // let increment=document.querySelector(".btn-increment")
+        // promoCode
 
-            console.log(decrement1);
+            // const product=[
+            //     {
+            //         image:"../assets/image/tomato.jpg",
+            //         title:"FreshOrganicTomato",
+            //         price:"30"
+            //     },
+            //     {
+            //         image:"../assets/image/cabbage.png",
+            //         title:"FreshOrganicCabbage",
+            //         price:"30"
+            //     },
+            //     {
+            //         image:"../assets/image/beetroot.jpg",
+            //         title:"FreshOrganicCabbage",
+            //         price:"30"
+            //     }
+            // ]
 
-            decrement1.forEach((obj, index) => {
-                let decrement_valueCount = 1;
-                let decrement_valueCnt = 2;
+            // const categories=[...new Set(product.map((item)=>
+            // {return item}
+            // ))];
+            // function delElement(a){
+            //     categories.splice(a,1);
+            //     displaycart();
+            // }
 
-                obj.addEventListener("click", (e) => {
-                    check = decrement_valueCnt * 250
-                    decrement_valueCnt = --decrement_valueCnt;
+            // function displaycart(){
+            //     let j=0;
+            //    document.getElementById("itemA").innerHTML=categories.length+"Items";
+            //    document.getElementById("itemB").innerHTML=categories.length+"Items";
+            //     if(categories.length==0){
+            //         document.getElementById("root").innerHTML="Your Cart is empty";
 
-                    if (decrement_valueCount > 1) {
-                        e.target.parentElement.children[5].value = --decrement_valueCount;
-                        e.target.parentElement.children[3].innerText = check + "g";
-                    }
-                    if (check >= 1000) {
-                        let kg = Number(check);
-                        e.target.parentElement.children[3].innerText = kg + "kg"
-                    } else {
-                        e.target.parentElement.children[3].innerText = check + "g";
-                    }
-                });
-            });
-        })
+            //     }
+            //     else{
+            //         document.getElementById("root").innerHTML=categories.map((items)=>{
+            //             let {image,title,price}=items;
+            //             return(
+            //                 `<tr>
+            //                     <td width="150"><div class="img-box"><img class="img" src=${image}></div></td>
+            //                     <td width="360"><p style="font-size:15px;">${title}</p></td>
+            //                     <td width="150"><h2 style="font-size:15px;color:red">₹${price}.00</h2></td>
+            //                     <td width="70">`+"<i class='fa-solid fa-trash' onclick='delElement("+(j++)+")'></i></td>"+
+            //                    ` </tr>`
+            //             );
+            //         }).join('');
+            //     }
+            // }
+            // displaycart()
+
+
 
     </script>
 

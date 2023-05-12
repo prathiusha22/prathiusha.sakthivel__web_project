@@ -173,6 +173,8 @@ h4 {
 #user_profile {
     height: 130px;
     width: 130px;
+    border: 0px solid white;
+    border-radius: 50%;
     position: relative;
     left: 10px;
     top: 5px;

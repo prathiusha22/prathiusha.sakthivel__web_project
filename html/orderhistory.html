@@ -19,7 +19,7 @@
             </div>
 
             <ul class="main">
-                <li class="down"><a class="hdg" href="../html/signup.html">Home </a></li>
+                <li class="down"><a class="hdg" href="../index.html">Home </a></li>
 
                 <li class="down"><a class="hdg" href="../html/about.html">About</a></li>
 
@@ -142,8 +142,17 @@
 
     let profile_userdetails=JSON.parse(localStorage.getItem("buyerdetails"))??[]
 
+    // let last_user=JSON.parse(localStorage.getItem("data"))
+    let last_user_details=JSON.parse(localStorage.getItem("user_records"));
+    let last_email=localStorage.getItem("data");
+    // console.log(last_email,"nklj")
+
 
         //profile//
+last_user_details.filter(item => {
+    if(last_email==item.email){
+      
+   
 
         let profile_div = document.createElement("div")
         profile_div.setAttribute("class", "profile_box")
@@ -155,12 +164,12 @@
 
         let profileimage = document.createElement("img")
         profileimage.setAttribute("id", "user_profile")
-        profileimage.setAttribute("src", "../assets/image/userprofileimg.jpg")
+        profileimage.setAttribute("src", item.image_url);
         document.querySelector(".profile_image").append(profileimage);
 
         let username=document.createElement("p")
         username.setAttribute("id","user_name")
-        username.innerHTML="Prathiusha Sakthivel"
+        username.innerHTML=item.Firstname+" "+item.lastname
         document.querySelector(".profile_image").append(username);
 
         let details=document.createElement("div")
@@ -176,7 +185,7 @@
         document.querySelector(".email").append(email_para);
 
         let email_para2=document.createElement("p")
-        email_para2.innerHTML="prathiusha@gmail.com"
+        email_para2.innerHTML=item.email
         document.querySelector(".email").append(email_para2);
 
         let useraddress=document.createElement("div")
@@ -188,7 +197,7 @@
         document.querySelector(".address").append(address_para);
 
         let address_para2=document.createElement("p")
-        address_para2.innerHTML="1/243-KKR nagar,Main road,chennai."
+        address_para2.innerHTML=item.communication.address
         document.querySelector(".address").append(address_para2);
 
         let userphone=document.createElement("div")
@@ -200,10 +209,13 @@
         document.querySelector(".phone").append(phone_para);
 
         let phone_para2=document.createElement("p")
-        phone_para2.innerHTML="9876543210"
+        phone_para2.innerHTML=item.communication.mobile_number
         document.querySelector(".phone").append(phone_para2);
 
-   
+
+    }
+    
+});
     
     </script>
 

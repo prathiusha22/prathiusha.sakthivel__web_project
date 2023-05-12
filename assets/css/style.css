@@ -55,7 +55,9 @@ a {
     margin-left: 250px;
     margin-top: 20px;
 }
-
+.login{
+    position: relative;
+}
 .navi {
     text-decoration: none;
     color: white;
@@ -84,9 +86,10 @@ a {
     margin-top: 40px;
 
 }
-#icon{
+
+#icon {
     position: relative;
-    left: -10px;
+    left: 100px;
     font-size: 27px;
     color: white;
 }
@@ -124,6 +127,10 @@ a {
     font-weight: 700;
     font-size: 20px;
     border: none;
+}
+
+.dropdown-content a .fruits {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .dropdown:hover .dropdown-content {
@@ -336,22 +343,26 @@ a {
     margin-left: 590px;
     margin-top: -20px;
 }
-.box1 img{
+
+.box1 img {
     height: 90px;
     width: 300px;
     transition: 0.5s;
 }
-.box1 img:hover{
+
+.box1 img:hover {
     transform: scale(1.1);
     height: 90px;
     width: 300px;
     transition: 0.5s;
 }
+
 .box2 {
     margin-left: 590px;
     margin-top: -15px;
 }
-.box2 img{
+
+.box2 img {
     height: 90px;
     width: 300px;
 }
@@ -374,25 +385,86 @@ a {
 
 /* background */
 .background1 {
-    background-image: linear-gradient(rgb(4, 9, 34, 0.3), rgb(4, 9, 34, 0.3)), url("../image/imp.jfif");
+    background-image: linear-gradient(rgba(2, 7, 32, 0.3), rgba(0, 1, 7, 0.3)), url("../image/imp.jfif");
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
     width: 100%;
-    margin-top: -420px;
+    margin-top: -400px;
 }
 
 
 h1 {
     color: white;
     position: relative;
-    left: 250px;
-    top: 330px;
-    font-size: 90px;
+    left: 180px;
+    top: 230px;
+    font-size: 80px;
     font-weight: 800;
 }
 
+.borderofbox {
+    border: 2px solid white;
+    height: 650px;
+    width: 500px;
+    position: relative;
+    top: -380px;
+    left: 750px;
+    background-color: white;
+}
 
+.borderofbox .feedback {
+    height: 120px;
+    width: 350px;
+    padding-left: 70px;
+}
+
+#feedback_form {
+    text-align: center;
+
+
+}
+
+#feedback_form input {
+    width: 400px;
+    height: 50px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(164, 162, 162);
+}
+
+#feedback_form #name {
+    margin-top: 50px;
+}
+
+#feedback_form #email {
+    margin-top: 50px;
+}
+
+#feedback_form #message {
+    height: 70px;
+    width: 400px;
+    margin-top: 50px;
+}
+
+#feedback_form textarea {
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(164, 162, 162);
+}
+
+button {
+    border: 0px solid rgb(108, 145, 53);
+    ;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(108, 145, 53);
+    margin-top: 50px;
+}
 
 /* slider */
 #slider {
@@ -476,6 +548,7 @@ h1 {
         margin-left: 50px;
         margin-top: 20px;
     }
+
     .menu-bar ul {
         list-style: none;
         /* display: flex; */
@@ -483,13 +556,15 @@ h1 {
         /* justify-content: space-around; */
         text-decoration: none;
         /* font-size: 10px; */
-        
+
     }
+
     .menu-bar {
         margin-left: -500px;
         margin-top: 40px;
-        
+
     }
+
     .img1 {
         background-size: cover;
         background-repeat: no-repeat;
@@ -498,6 +573,7 @@ h1 {
         height: 700px;
         margin-left: -200px;
     }
+
     .para {
         /* font-size: 20px; */
         color: white;
@@ -511,25 +587,29 @@ h1 {
         margin-left: 210px;
         font-size: 80px;
     }
-    
+
 
     .mainpage2,
     .mainpage3 {
         display: flex;
         justify-content: center;
     }
-    .p2{
+
+    .p2 {
         height: 250px;
         width: 300px;
         margin-top: -200px;
     }
-    .fv{
+
+    .fv {
         margin-left: -500px;
         margin-top: 220px;
     }
-    .but{
+
+    .but {
         margin-left: -500px;
     }
+
     .mpage1 {
         margin-left: -1100px;
         width: 350px;
@@ -542,16 +622,19 @@ h1 {
         height: 500px;
         margin-top: -150px;
     }
-    .p3{
+
+    .p3 {
         height: 250px;
         width: 300px;
         margin-top: -200px;
     }
-    .ff{
+
+    .ff {
         margin-left: -500px;
         margin-top: 220px;
     }
-    .but1{
+
+    .but1 {
         margin-left: -500px;
     }
 
@@ -588,10 +671,12 @@ h1 {
         margin-top: 60px;
 
     }
-    .product{
+
+    .product {
         margin-left: -35px;
     }
-    .login{
+
+    .login {
         margin-left: -30px;
     }
 
@@ -599,11 +684,12 @@ h1 {
         font-size: 20px;
 
     }
-    .register{
+
+    .register {
         margin-left: -30px;
     }
 
-    
+
     .bg {
         /* border: 2px solid black; */
         width: 1480px;
@@ -620,37 +706,45 @@ h1 {
         margin-top: -60px;
 
     }
-    .heading2{
+
+    .heading2 {
         margin-left: 50px;
         font-size: 25px;
         margin-top: 10px;
     }
-    .heading3{
+
+    .heading3 {
         margin-left: 50px;
         font-size: 20px;
         margin-top: 10px;
     }
-    .vegimg{
+
+    .vegimg {
         height: 350px;
         width: 300px;
-        margin-left:50px ;
+        margin-left: 50px;
         margin-top: 30px;
     }
-    .featurebox1{
+
+    .featurebox1 {
         margin-left: -550px;
     }
-    .featurebox2{
+
+    .featurebox2 {
         margin-left: -310px;
         margin-top: 120px;
     }
-    .featurebox3{
+
+    .featurebox3 {
         margin-left: -550px;
         margin-top: 10px;
     }
-    .featurebox4{
+
+    .featurebox4 {
         margin-left: -310px;
         margin-top: 130px;
     }
+
     .box1 {
         display: flex;
         /* margin-left: -200px; */
@@ -666,21 +760,22 @@ h1 {
         height: 500px;
         margin-left: -500px;
     }
-    .background1 h1{
+
+    .background1 h1 {
         font-size: 40px;
         margin-left: 250px;
         /* margin-top: -100px; */
-        
+
     }
 
-    #slider{
+    #slider {
         display: none;
     }
 
-    footer{
+    footer {
         display: none;
     }
-    
+
 }
 
 /* footer */

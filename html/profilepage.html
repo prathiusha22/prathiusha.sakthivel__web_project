@@ -33,11 +33,11 @@
                 </div>
                 <br><br>
                 <div>
-                    <button type="submit" id="save_button"><a href="../html/veges.html">Next</a></button>
+                    <button type="submit" id="save_button"><a href="../index.html">Home</a></button>
                 </div>
                 <br><br>
                 <div>
-                    <button id="next"><a href="../html/signup.html">Log-out</a></button>
+                    <button onclick="logout()" id="next"><a href="#">Log-out</a></button>
                 </div>
             </div>
 
@@ -52,12 +52,12 @@
 
                     <div class="fname_container">
                         <label>Firstname</label><br>
-                        <input disabled type="text" id="firstname" required="true">
+                        <input disabled type="text" id="firstname" pattern="[A-Za-z]{1,35}" required="true" >
                     </div>
 
                     <div class="lname_container">
                         <label>Last name</label><br>
-                        <input disabled type="text" id="lastname" required="true">
+                        <input disabled type="text" id="lastname" pattern="[A-Za-z]{1,35}" required="true">
                     </div>
                 </div>
 
@@ -208,7 +208,7 @@
                 localStorage.setItem("user_records", JSON.stringify(userRecords));
             };
             fileReader.readAsDataURL(file);
-        })
+        });
 
 
         const userRecords = JSON.parse(localStorage.getItem("user_records"));
@@ -228,6 +228,29 @@
                 break;
             }
         }
+
+        const user_logged1 = JSON.parse(localStorage.getItem("active_user"));
+        const logout=document.getElementById("next")
+        logout.addEventListener("click",(e) =>{
+            let deletefalse=delete user_logged1
+
+            localStorage.setItem("active_user",deletefalse)
+       window.location.href="../index.html";
+
+        })
+        // function logout(email) {
+        //     email.find(function (user) {
+        //         console.log(user.email_id)
+        //         if (user.email_id == email) {
+        //             user.status = false;
+        //             localStorage.setItem("active_user", JSON.stringify(users));
+        //         }
+        //     })
+        // }
+
+
+
+
     </script>
 
 </body>

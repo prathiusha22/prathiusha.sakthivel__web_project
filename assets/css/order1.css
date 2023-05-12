@@ -13,6 +13,7 @@ header {
     top: 0;
     z-index: 2;
     display: flex;
+
 }
 
 .menu-bar ul {
@@ -85,8 +86,8 @@ main {
 
 .box {
     border: 2px solid white;
-    height: 400px;
-    width: 850px;
+    height: 450px;
+    width: 950px;
     box-shadow: -10px 10px 30px 10px rgb(218, 224, 220);
     border-radius: 0px;
     display: flex;
@@ -149,8 +150,8 @@ h4 {
     background-color: rgb(108, 145, 53);
     color: white;
     position: relative;
-    top: 60px;
-    right: 200px;
+    top: 40px;
+    right: 204px;
 
 }
 
@@ -164,13 +165,31 @@ h4 {
     background-color: rgb(108, 145, 53);
     color: white;
     position: relative;
-    top: 120px;
+    top: 100px;
+    left: -5px;
     
 }
 i {
     padding-right: 10px;
 
 }
+.fas{
+    color: black;
+    position: relative;
+    left: 30px;
+    top: -75px;
+}
+#price{
+    position: relative;
+    left: 30px;
+    top: -73px;
+}
+/* #add-to-cart{
+    position: relative;
+    top: -50px;
+
+} */
+
 
 /* i:hover {
     color: rgb(248, 10, 10);

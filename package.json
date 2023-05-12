@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/fssa-batch3/prathiusha.sakthivel__web_project#readme",
   "dependencies": {
+    "@vonage/server-sdk": "^3.4.0",
     "http-server": "^14.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "eslint": "^8.40.0",
     "husky": "^8.0.3"
   }
 }

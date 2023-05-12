@@ -17,13 +17,13 @@
     <div class="menu-bar">
 
       <div class="main">
-        <a href="../html/signup.html">Home </a>
+        <a href="../index.html">Home </a>
 
         <a class="about" href="../html/about.html">About </a>
 
         <!-- <a class="about" href="#">Contact </a> -->
 
-        <a class="about" href="../index.html">Sign-in</a>
+        <a class="about" href="./profilepage.html">Profile</a>
 
         <a class="register" href="#"></a>
 
@@ -121,28 +121,28 @@
 
             </div>
 
-            <div class="class_div">
+            <!-- <div class="class_div"> -->
               <!-- accountnumber -->
-              <div class="account_no">
+              <!-- <div class="account_no">
                 <label for="appointment-date" class="top-head">ACCOUNT NUMBER</label><br>
                 <input id="time1" type="number" required aria-label="time" required>
               </div><br>
-              <!-- IFSC code -->
-              <div class="ifsccode">
+               IFSC code -->
+              <!-- <div class="ifsccode">
                 <label for="appointment-date" class="top-head">IFSC CODE</label><br>
                 <input id="time2" type="text" required aria-label="time" required>
               </div><br>
-            </div>
+            </div>  -->
             <!-- salary -->
 
-            <div class="salary">
+            <!-- <div class="salary">
               <label for="appointment-date" class="top-head">EXPECTED INCOME</label><br>
               <input id="time3" type="number" required aria-label="time" required>
-            </div><br>
+            </div><br> -->
 
             <!-- terms and conditions -->
             <div class="terms">
-              <label class="top-head">I ACCEPT THE TERMS AND CONDITIONS</label><br>
+              <label class="top-head">Above mentioned details are true</label><br>
               <select name="sub" id="termsand">
                 <option value="yes"> YES</option>
                 <option value="no">NO</option>
@@ -152,7 +152,13 @@
             <!-- message -->
             <textarea id="message" cols="30" rows="3" placeholder="Additional Feedback or Comments"></textarea><br><br>
 
-           <input id="image" type="file" placeholder="Add your terrace farming images">
+          <p class="post">Add your terrace farming images</p> 
+           <input placeholder="Upload Image" type="file" id="inputbox">
+           <img src="#" id="myImg" >
+         
+
+    
+          <!-- </div> -->
           </div>
 
 
@@ -287,9 +293,6 @@
     let squarefeet = document.getElementById("squarefeet").value;
     let bankname = document.getElementById("bankname").value;
     let branchname = document.getElementById("time").value;
-    let accountnumber = document.getElementById("time1").value;
-    let ifsc_code = document.getElementById("time2").value;
-    let income = document.getElementById("time3").value;
     let terms = terms_and_condition.value;
     let message = document.getElementById("message").value;
     let category;
@@ -313,17 +316,52 @@
       "squarefeet": squarefeet,
       "bankname": bankname,
       "time": branchname,
-      "time1": accountnumber,
-      "time2": ifsc_code,
-      "time3": income,
       "termsand": terms,
       "message": message,
-      "category": category
+      "category": category,
+     
 
     })
     localStorage.setItem("seller_record_details", JSON.stringify(seller_records));
     window.location.href = "./create.html";
   }
+
+
+
+  window.addEventListener('load',function(){
+    
+    document.querySelector('input[type="file"]').addEventListener('change',function(){
+      console.log(this.files);
+      const reader=new FileReader();
+      reader.addEventListener("load",()=>{
+        localStorage.setItem("recent-image",reader.result);
+        console.log(reader.result);
+      })
+
+      document.addEventListener("DOMContentLoaded",()=>{
+        const recentImageDataUrl=localStorage.getItem("recent-image");
+        if(recentImageDataUrl){
+          document.querySelector("myImg").setAttribute("src",recentImageDataUrl);
+        }
+      })
+
+
+
+      reader.readAsDataURL(this.files[0]);
+      if(this.files && this.files[0]){
+       let img=document.getElementById('myImg');
+       img.src=URL.createObjectURL(this.files[0]);
+       img.onload=imgIsLoaded;
+      }
+    })
+  }
+  )
+  function imgIsLoaded(you){
+    alert("Your Image uploaded");
+  }
+
+  
+
 </script>
 
 </html>
