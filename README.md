@@ -13,6 +13,8 @@ userflow:https://drive.google.com/file/d/1A74aQOd3qClHgO3zmY9PHo1Vnm2wjKYr/view?
 
 Wireframe:https://drive.google.com/drive/folders/1N1aCOmLsaDZGYlNv_vO6hAFE4w9zF6JS
 
+Netlify link:https://greenfarmz.netlify.app/
+
 # E-commerce
 
 ## Buyer
