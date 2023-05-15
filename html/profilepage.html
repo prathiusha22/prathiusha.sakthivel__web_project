@@ -26,22 +26,27 @@
                 <div class="edit">
                     <button id="edit">Edit-Profile</button>
                 </div>
-                <br><br>
+                <br>
+<br>
                 <!-- Save -->
                 <div>
                     <button type="submit" id="save_button">Save</button>
                 </div>
-                <br><br>
+                <br>
+<br>
                 <div>
-                    <button type="submit" id="save_button"><a href="../index.html">Home</a></button>
+                    <button type="submit" id="save_button">
+<a href="../index.html">Home</a>
+</button>
                 </div>
-                <br><br>
+                <br>
+<br>
                 <div>
-                    <button onclick="logout()" id="next"><a href="#">Log-out</a></button>
+                    <button onclick="logout()" id="next">
+<a href="#">Log-out</a>
+</button>
                 </div>
             </div>
-
-
 
             <div class="form_div">
                 <!-- heading -->
@@ -51,12 +56,14 @@
                 <div class="profile_form">
 
                     <div class="fname_container">
-                        <label>Firstname</label><br>
-                        <input disabled type="text" id="firstname" pattern="[A-Za-z]{1,35}" required="true" >
+                        <label>Firstname</label>
+<br>
+                        <input disabled type="text" id="firstname" pattern="[A-Za-z]{1,35}" required="true">
                     </div>
 
                     <div class="lname_container">
-                        <label>Last name</label><br>
+                        <label>Last name</label>
+<br>
                         <input disabled type="text" id="lastname" pattern="[A-Za-z]{1,35}" required="true">
                     </div>
                 </div>
@@ -64,44 +71,48 @@
                 <!-- email -->
 
                 <div class="email_container">
-                    <label>Email</label><br>
+                    <label>Email</label>
+<br>
                     <input disabled type="email" id="email" disabled>
                 </div>
-
 
                 <!-- city and country -->
 
                 <div class="profile_form2">
 
                     <div class="city_container">
-                        <label>City</label><br>
+                        <label>City</label>
+<br>
                         <input type="text" id="city" required="true">
                     </div>
 
                     <div class="country_container">
-                        <label>Country</label><br>
+                        <label>Country</label>
+<br>
                         <input disabled type="text" id="country" required="true">
                     </div>
                 </div>
 
                 <!-- address -->
                 <div class="address_container">
-                    <label>Address</label><br>
+                    <label>Address</label>
+<br>
                     <input disabled type="text" id="address" required="true">
                 </div>
 
                 <!-- occupation and phonenumber -->
 
-
                 <div class="profile_form3">
 
                     <div class="occupation_container">
-                        <label>Occupation</label><br>
+                        <label>Occupation</label>
+<br>
                         <input disabled type="text" id="occupation" required="true">
                     </div>
 
                     <div class="number_container">
-                        <label>MobileNumber</label><br>
+                        <label>MobileNumber</label>
+<br>
                         <input disabled type="telephone" id="number" maxlength="10" minlength="10" required="true">
                     </div>
                 </div>
@@ -141,7 +152,6 @@
         let save_button = document.getElementById("save_button");
 
         let editbutton = document.getElementById("edit");
-
 
         let inputs = document.querySelectorAll("input");
 
@@ -210,7 +220,6 @@
             fileReader.readAsDataURL(file);
         });
 
-
         const userRecords = JSON.parse(localStorage.getItem("user_records"));
         const user_logged = JSON.parse(localStorage.getItem("active_user"));
        
@@ -247,9 +256,6 @@
         //         }
         //     })
         // }
-
-
-
 
     </script>
 

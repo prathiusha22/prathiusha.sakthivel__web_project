@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/seller-login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Login landing page</title>
+</head>
+
+<body>\
+        <section class="side">
+            <img src="../assets/image/seller-login-bg.png" alt="">
+        </section>
+
+        <section class="main">
+            <div class="login-container">
+                <p class="title">Welcome back</p>
+                <div class="separator"></div>
+                <p class="welcome-message">Please, provide login credential to proceed to become a seller</p>
+
+                <form class="login-form">
+                    <div class="form-control">
+                        <input type="text" placeholder="Sellername" id="username" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-control">
+                        <input type="email" placeholder="Email" id="email" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <button class="submit"><a href="../html/seller_register-2.html">Login</a></button>
+                </form>
+            </div>
+        </section>
+   
+
+    <script>
+        const checksellerlogin = document.getElementById("login-form");
+
+        checksellerlogin.onsubmit = e => {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+
+            const sellerdata = JSON.parse(localStorage.getItem("seller_record_details"))
+
+            let success;
+            sellerdata.find(el => {
+                if ((el.email === email) && (el.username === username)) {
+                    const activeseller = el;
+                    console.log(activeseller);
+                    localStorage.setItem("activeseller", JSON.stringify(activeseller))
+                    return success = 1;
+                }
+                return success = 0;
+            })
+            if (sucess) {
+                alert("login successful");
+                localStorage.setItem('data', email)
+                window.location.href = "../html/seller_register-2.html";
+            } else {
+                alert("Invalid email or sellername");
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

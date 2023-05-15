@@ -73,7 +73,7 @@ a {
 .shop {
     position: relative;
     top: 80px;
-    left: 630px;
+    left: 550px;
     font-size: 25px;
     padding: 10px 40px 10px 40px;
     background-color: rgb(108, 145, 53);
@@ -94,6 +94,30 @@ a {
   
 }
 
+.shop1 {
+    position: relative;
+    top: 80px;
+    left: 580px;
+    font-size: 25px;
+    padding: 10px 70px 10px 70px;
+    background-color: rgb(108, 145, 53);
+    border: 0px solid rgb(108, 145, 53);
+    height: 100px;
+    width: 400px;
+    border-radius: 30px;
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.5s;
+    text-align: center;
+}
+.shop1:hover {
+    color:rgb(108, 145, 53); 
+    font-weight: 900px;
+    background-color: white;
+    border: white 2px solid;
+  
+}
 .hd1 {
     float: right;
     color: white;

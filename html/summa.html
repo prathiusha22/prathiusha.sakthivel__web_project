@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="../assets/css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Addtocart</title>
 </head>
 
 <body>
     <!-- header -->
     <header>
-    
 
         <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
     
         <div class="menu-bar">
-         
     
           <ul class="main">
-            <li class="down"><a class="hdg" href="../index.html">Home </a></li>
-            <li class="down"><a class="hdg" href="../html/about.html">About</a>
+            <li class="down">
+<a class="hdg" href="../index.html">Home </a>
+</li>
+            <li class="down">
+<a class="hdg" href="../html/about.html">About</a>
     
             </li>
     
-            <li><a class="hdg" href="../html/profilepage.html">Profile</a></li>
+            <li>
+<a class="hdg" href="../html/profilepage.html">Profile</a>
+</li>
     
           </ul>
         
@@ -65,7 +68,6 @@
                     <div class="total-amount">
                         <h2>Price:</h2>
 
-
                     </div>
                     <i id="bin-icon" class="fa-solid fa-trash"></i>
         
@@ -101,11 +103,7 @@
         </div> -->
 
     </div>
-    <script>
-
-
-
-        // Create the main container
+    <script>        // Create the main container
         const mainContainer = document.createElement('div');
         mainContainer.classList.add('main_container');
 
@@ -175,7 +173,6 @@
 
         cart.appendChild(tableHead);
 
-
         // Create the root table
         const rootTable = document.createElement('table');
         rootTable.setAttribute('cellspacing', '0');
@@ -183,19 +180,17 @@
 
         cart.appendChild(rootTable);
 
-
-        let cart_sample = JSON.parse(localStorage.getItem("cart")) ?? [];
-        let user = JSON.parse(localStorage.getItem("active_user"));
+        const cart_sample = JSON.parse(localStorage.getItem("cart")) ?? [];
+        const user = JSON.parse(localStorage.getItem("active_user"));
 
         let total = 0;
 
         // cart_sample.find(e => {
         for (let i = 0; i < cart_sample.length; i++) {
-            if (user["email"] == cart_sample[i]["email"]) {
+            if (user.email == cart_sample[i].email) {
 
-                total += Number(cart_sample[i]["price"]);
+                total += Number(cart_sample[i].price);
                 // console.log(e.price)
-
 
                 const product_div = document.createElement("div")
                 product_div.setAttribute("class", "product_image")
@@ -203,17 +198,17 @@
 
                 const product_image = document.createElement("img")
                 product_image.setAttribute("class", "img-box")
-                product_image.setAttribute("src", cart_sample[i]["image"])
+                product_image.setAttribute("src", cart_sample[i].image)
                 product_div.append(product_image);
 
                 const title = document.createElement("p")
                 title.setAttribute("class", "title")
-                title.innerText = cart_sample[i]["titlename"];
+                title.innerText = cart_sample[i].titlename;
                 product_div.append(title)
 
                 const cost = document.createElement("p")
                 cost.setAttribute("class", "price")
-                cost.innerText = cart_sample[i]["price"];
+                cost.innerText = cart_sample[i].price;
                 product_div.append(cost)
 
                 const quanty = document.createElement("p")
@@ -242,7 +237,6 @@
                 sub_div.setAttribute("class", "total-amount")
                 product_div.append(sub_div)
 
-
                 const delete_icon = document.createElement("i")
                 delete_icon.setAttribute("id", "bin-icon")
                 delete_icon.setAttribute("class", "fa-solid fa-trash")
@@ -251,8 +245,6 @@
                 const break_tag = document.createElement("hr")
                 break_tag.setAttribute("id", "break")
                 product_div.append(break_tag)
-
-
                 
                 // // let valueCount = 1;
                 // increment = document.querySelectorAll(".btn-increment");
@@ -262,13 +254,11 @@
                 // let gramintokg = document.querySelectorAll(".gram");
                 // let valueCount=0;
 
-
                 // increment.forEach(function (obj) {
                 //     // let valueCount=valueCnt;
                 //     valueCount = 2
                 //     obj.addEventListener("click", (e) => {//e.target
                 //         // let check=0//
-
 
                 //         // console.log(e.target.parentElement.parentElement.children[0].children[1].innerText)
 
@@ -281,7 +271,6 @@
                 //         valueCnt = valueCount;
                 //         if ((check >= "250")) {
                 //             console.log(e.target.parentElement.parentElement.children[1].innerText)
-
 
                 //             console.log(check)//g
                 //             e.target.parentElement.parentElement.children[1].innerText = check + "g";
@@ -329,11 +318,9 @@
                 //     })
                 // })
 
-
-
                 delete_icon.addEventListener("click", (e) => {
                     for (let j = 0; j < cart_sample.length; j++) {
-                        if (user["email"] == cart_sample[i]["email"] && cart_sample[i]["titlename"] == cart_sample[j]["titlename"]) {
+                        if (user.email == cart_sample[i].email && cart_sample[i].titlename == cart_sample[j].titlename) {
                             cart_sample.splice(i, 1);
                             localStorage.setItem("cart", JSON.stringify(cart_sample));
                             location.reload();
@@ -344,9 +331,6 @@
 
             }
         }
-
-
-
 
         // Create the horizontal line
         const hr = document.createElement('hr');
@@ -415,17 +399,14 @@
 
         const hr_2 = document.createElement("hr")
 
-
         shippingAndPromo.append(shippingTitle, shippingInput, promoCodeTitle, promoCodeInput, button, hr);
         summary.append(shippingAndPromo)
 
         const div = document.createElement("div")
         div.setAttribute("class", "top")
 
-
         const heading_2 = document.createElement("h2")
         heading_2.innerText = "Total"
-
 
         const heading_3 = document.createElement("h2")
         heading_3.setAttribute("id", "totalB")
@@ -447,10 +428,6 @@
         container.append(summary)
 
         document.querySelector(".main_container").append(container);
-
-
-
-
 
         // let increment=document.querySelector(".btn-increment")
         // promoCode
@@ -504,13 +481,7 @@
             //     }
             // }
             // displaycart()
-
-
-
     </script>
-
-
-
 
 </body>
 

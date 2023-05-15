@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/buynow.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Buynow</title>
 
 </head>
@@ -59,6 +59,11 @@
                                 title="Firstname cannot contain space" required="true">
                         </div>
                     </div>
+                    <div class="inputBox">
+                        <span >Mobile Number:</span>
+                        <input id="mobilenumber" type="number" required="true">
+                    </div>
+
 
                 </div>
 
@@ -79,78 +84,122 @@
                         <input id="creditcard" type="number" required="true">
                     </div>
                     <div class="inputBox">
-                        <span>Branch Name:</span>
+                        <span class="mobile">Branch Name:</span>
                         <input id="branchname" type="text" required="true">
-                    </div>
-                    <div class="inputBox">
-                        <span>Mobile Number:</span>
-                        <input id="mobilenumber" type="number" required="true">
                     </div>
 
                 </div>
 
             </div>
 
+
+
             <!-- <input type="submit" value="proceed to checkout" class="submit-btn" > -->
             <button class="submit-btn" type="submit">proceed to checkout</button>
         </form>
 
     </div>
+    <!-- <div class="store"> -->
+        <!-- <div class="box_div">
+            <img src="../assets/image/tomato.jpg" alt="image">
+            <h1>FreshorganicTomato</h1>
+            <h2>₹ 50</h2>
+        </div> -->
+
+    <!-- </div> -->
 
     <script>
-
-
-
-        let getdetails = document.getElementById("payment_details");
-        getdetails.addEventListener("submit", function (e) {
+        const getdetails = document.getElementById("payment_details");
+        getdetails.addEventListener("submit", (e) => {
             e.preventDefault();
             getdata()
         })
 
+        const products = JSON.parse(localStorage.getItem('create_product'));
 
-        let products = JSON.parse(localStorage.getItem('create_product'));
 
-        let url = window.location.search;  //?name=FreshOrganicTomato
+        const url = window.location.search;  //?name=FreshOrganicTomato
         console.log(url)
-        let urls = new URLSearchParams(url)
+        const urls = new URLSearchParams(url)
         console.log(urls)//"name":"FreshOrganicTomato"
-        let name = urls.get("name")
+        const name = urls.get("name")
         console.log(name)//"FreshOrganicTomato"
 
+        
+       
 
-        let get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
 
+
+
+
+
+        const get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
 
         function getdata() {
             // let name1 = document.getElementById("fullname").value;
             // let email = document.getElementById("email").value;
-            let address = document.getElementById("address").value;
-            let city = document.getElementById("city").value;
-            let state = document.getElementById("state").value;
-            let pincode = document.getElementById("pincode").value;
-            let name_on_card = document.getElementById("name_on_card").value;
-            let creditcard = document.getElementById("creditcard").value;
-            let branchname = document.getElementById("branchname").value;
-            let mobilenumber = document.getElementById("mobilenumber").value;
-            let active_user = JSON.parse(localStorage.getItem("active_user"))
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+            const pincode = document.getElementById("pincode").value;
+            const name_on_card = document.getElementById("name_on_card").value;
+            const creditcard = document.getElementById("creditcard").value;
+            const branchname = document.getElementById("branchname").value;
+            const mobilenumber = document.getElementById("mobilenumber").value;
+            const active_user = JSON.parse(localStorage.getItem("active_user"))
 
             get_buyerdetails.push({
-                "fullname": active_user["Firstname"],
-                "email": active_user["email"],
-                "address": address,
-                "city": city,
-                "state": state,
-                "pincode": pincode,
-                "name_on_card": name_on_card,
-                "creditcard": creditcard,
-                "branchname": branchname,
-                "mobilenumber": mobilenumber
+                "fullname": active_user.Firstname,
+                "email": active_user.email,
+                address,
+                city,
+                state,
+                pincode,
+                name_on_card,
+                creditcard,
+                branchname,
+                mobilenumber
             })
 
             localStorage.setItem("buyerdetails", JSON.stringify(get_buyerdetails));
-            window.location.href = "../html/bankdet.html?name=" + name;
+            window.location.href = `../html/bankdet.html?name=${name}`;
         }
 
+
+        //  let result;
+
+        // if (name == (name)) {
+        //     create_product = products.find((el) => {
+
+        //         if (el.product_id == name) {
+        //             return (result = el);
+        //         }
+        //         return (result = 0);
+        //     });
+
+
+        //     let div = document.createElement("div");
+        //     div.setAttribute("class", "box_div");
+
+
+        //     let image_veg = document.createElement("img");
+        //     image_veg.setAttribute("class", "tomato");
+        //     image_veg.setAttribute("src", result.image);
+        //     div.append(image_veg);
+
+        //     let heading1 = document.createElement("h1");
+        //     heading1.setAttribute("class", "product_name");
+        //     heading1.innerText = result.titlename;
+        //     div.append(heading1);
+
+        //     let heading2 = document.createElement("h2");
+        //     heading2.setAttribute("class", "product_name");
+        //     heading2.innerText = `₹${result.price}`;
+        //     div.append(heading2);
+
+        //     document.querySelector(".store").append(div);
+
+        // }
     </script>
 
 </body>

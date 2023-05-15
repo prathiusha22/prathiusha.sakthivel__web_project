@@ -17,14 +17,12 @@
 
         <form class="form" id="form" onsubmit="checkinput()">
 
-
             <div class="form-control">
                 <label>First name</label>
                 <input type="text" placeholder="" id="firstname" title="Firstname cannot contain space" required="true"
                     pattern="[A-Za-z]{1,32}">
                 <i class="fa-solid fa-check"></i>
             </div>
-
 
             <div class="form-control">
                 <label>Last name</label>
@@ -33,13 +31,11 @@
                 <i class="fa-solid fa-check"></i>
             </div>
 
-
             <div class="form-control">
                 <label>Email</label>
                 <input type="email" placeholder="" id="email" required="true">
                 <i class="fa-solid fa-check"></i>
             </div>
-
 
             <div class="form-control">
                 <label>Password</label>
@@ -47,7 +43,6 @@
                     minlenght="6">
                 <i class="fa-solid fa-check"></i>
             </div>
-
 
             <div class="form-control">
                 <label>confirm Password</label>
@@ -58,11 +53,12 @@
 
             <button type="submit">Submit</button>
 
-            <p>Already have an Account? <a href="../html/login1.html">Log-in→</a></p>
+            <p>
+Already have an Account? <a href="../html/login1.html">Log-in→</a>
+</p>
 
         </form>
     </div>
-
 
     <script>
         const form = document.getElementById("form");
@@ -77,16 +73,12 @@
             checkInput();
         });
 
-
-
         function checkInput() {
             const firstnamevalue = firstname.value.trim();
             const lastnamenamevalue = lastname.value.trim();
             const emailvalue = email.value.trim();
             const passwordvalue = password.value.trim();
             const password2value = password2.value.trim();
-
-
 
             if (firstnamevalue === '') {
                 setError(firstname, 'Firstname cannot be blank');
@@ -106,7 +98,6 @@
                 setError(email, 'Email cannot be blank');
             }
 
-
             else {
                 setSucess(email);
             }
@@ -118,14 +109,13 @@
                 setSucess(password);
             }
 
-
             if (passwordvalue !== password2value) {
                 setError(password2, 'Password does not match')
             }
             else {
                 setSucess(password2);
             }
-            let userList = JSON.parse(localStorage.getItem("user_records")) ?? [];
+            const userList = JSON.parse(localStorage.getItem("user_records")) ?? [];
 
             const user = {
                 "Firstname": firstnamevalue,
@@ -167,7 +157,6 @@
             const formcontrol = input.parentElement;
             formcontrol.className = 'form-control success';
         }
-
     </script>
 
 </body>

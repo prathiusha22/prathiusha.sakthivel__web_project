@@ -56,7 +56,6 @@
 
 //   },
 
-
 //   {
 //       "product_image": {
 //           "source": "../assets/image/guava.jpg",
@@ -84,7 +83,6 @@
 //       "rating" : 4
 
 //   },
-
 
 //   {
 //       "product_image": {
@@ -128,7 +126,6 @@
 
 //   },
 
-
 //   {
 //       "product_image": {
 //           "source": "../assets/image/pomegranate.jfif",
@@ -143,7 +140,6 @@
 
 //   },
 
-
 //   {
 //       "product_image": {
 //           "source": "../assets/image/raspberry.jfif",
@@ -157,7 +153,6 @@
 //       "rating" : 4
 
 //   },
-
 
 //   {
 //       "product_image": {
@@ -230,7 +225,6 @@
 //   },
 // ]
 
-
 // let product_card_div;
 
 // let prdouct_link;
@@ -244,13 +238,11 @@
 // let buy_now_link;
 // let add_to_cart_link;
 
-
 // let i;
 
 // for(i=0; i<fruits.length; i++){
 // //   productCard();
 // // }
-
 
 // // function productCard(){
 
@@ -269,7 +261,6 @@
 // product_name = document.createElement("p");
 // product_name.innerText = fruits[i]["titlename"];
 // prdouct_link.append(product_name);
-
 
 // product_quantity = document.createElement("p");
 // product_quantity.innerText = "₹ "+fruits[i]["price"]+ " Per kg";
@@ -302,4 +293,3 @@
 // product_card_div.append(add_to_cart_link);
 
 // }
-

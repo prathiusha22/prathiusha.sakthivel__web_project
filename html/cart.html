@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Addtocart</title>
 </head>
 
@@ -16,25 +16,29 @@
     <!-- header -->
     <header>
 
-
         <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
 
         <div class="menu-bar">
 
-
             <ul class="main">
-                <li class="down"><a class="hdg" href="../index.html">Home </a></li>
-                <li class="down"><a class="hdg" href="../html/about.html">About</a>
+                <li class="down">
+                    <a class="hdg" href="../index.html">Home </a>
+                </li>
+                <li class="down">
+                    <a class="hdg" href="../html/about.html">About</a>
 
                 </li>
 
-                <li><a class="hdg" href="../html/profilepage.html">Profile</a></li>
+                <li>
+                    <a class="hdg" href="../html/profilepage.html">Profile</a>
+                </li>
 
             </ul>
 
         </div>
 
     </header>
+
 
     <div class="main_container">
 
@@ -64,7 +68,6 @@
                     </div>
                     <div class="total-amount">
                         <h2>Price:</h2>
-
 
                     </div>
                     <i id="bin-icon" class="fa-solid fa-trash"></i>
@@ -101,10 +104,8 @@
         </div> -->
 
     </div>
+
     <script>
-
-
-
         // Create the main container
         const mainContainer = document.createElement('div');
         mainContainer.classList.add('main_container');
@@ -126,7 +127,7 @@
 
         const itemATitle = document.createElement('h2');
         itemATitle.id = 'itemA';
-        itemATitle.innerText = '4 Items';
+        itemATitle.innerText = '';
 
         topSection.appendChild(shoppingCartTitle);
         topSection.appendChild(itemATitle);
@@ -180,7 +181,6 @@
 
         cart.appendChild(tableHead);
 
-
         // Create the root table
         const rootTable = document.createElement('table');
         rootTable.setAttribute('cellspacing', '0');
@@ -188,18 +188,16 @@
 
         cart.appendChild(rootTable);
 
-
-        let cart_sample = JSON.parse(localStorage.getItem("cart")) ?? [];
-        let user = JSON.parse(localStorage.getItem("active_user"));
+        const cart_sample = JSON.parse(localStorage.getItem("cart")) ?? [];
+        const user = JSON.parse(localStorage.getItem("active_user"));
 
         let total = 0;
 
         // cart_sample.find(e => {
         for (let i = 0; i < cart_sample.length; i++) {
-            if (user["email"] == cart_sample[i]["email"]) {
+            if (user.email == cart_sample[i].email) {
 
-                total += Number(cart_sample[i]["price"]);
-                // console.log(e.price)
+                total += Number(cart_sample[i].price);
 
                 const product_div = document.createElement("div")
                 product_div.setAttribute("class", "product_image")
@@ -207,22 +205,22 @@
 
                 const product_image = document.createElement("img")
                 product_image.setAttribute("class", "img-box")
-                product_image.setAttribute("src", cart_sample[i]["image"])
+                product_image.setAttribute("src", cart_sample[i].image)
                 product_div.append(product_image);
 
                 const title = document.createElement("p")
                 title.setAttribute("class", "title")
-                title.innerText = cart_sample[i]["titlename"];
+                title.innerText = cart_sample[i].titlename;
                 product_div.append(title)
 
                 const cost = document.createElement("p")
                 cost.setAttribute("class", "price")
-                cost.innerText = cart_sample[i]["price"];
+                cost.innerText = cart_sample[i].price;
                 product_div.append(cost)
 
                 const quanty = document.createElement("p")
                 quanty.setAttribute("class", "quanty")
-                quanty.innerText = 250 + "g";
+                quanty.innerText = `${250}g`;
                 product_div.append(quanty)
 
                 decrement = document.createElement("button");
@@ -258,7 +256,7 @@
 
                 delete_icon.addEventListener("click", (e) => {
                     for (let j = 0; j < cart_sample.length; j++) {
-                        if (user["email"] == cart_sample[i]["email"] && cart_sample[i]["titlename"] == cart_sample[j]["titlename"]) {
+                        if (user.email == cart_sample[i].email && cart_sample[i].titlename == cart_sample[j].titlename) {
                             cart_sample.splice(i, 1);
                             localStorage.setItem("cart", JSON.stringify(cart_sample));
                             location.reload();
@@ -295,11 +293,11 @@
 
         const itemBTitle = document.createElement('h2');
         itemBTitle.id = 'itemB';
-        itemBTitle.innerText = '4 Items';
+        itemBTitle.innerText = '';
 
         const totalATitle = document.createElement('h2');
         totalATitle.id = 'totalA';
-        totalATitle.innerText = '₹ 30';
+        totalATitle.innerText = '';
 
         detail.appendChild(itemBTitle);
         detail.appendChild(totalATitle);
@@ -360,15 +358,13 @@
         style.style.marginBottom = '20px';
         style.style.padding = '0 10px';
 
-        
-        const anchor=document.createElement("a");
-        anchor.setAttribute("href","../html/buynow.html")
+        const anchor = document.createElement("a");
+        anchor.setAttribute("href", "../html/buynow.html")
         style.append(anchor);
 
         const button_2 = document.createElement("button")
         button_2.setAttribute("class", "checkout")
         button_2.innerText = "Check out"
-        
 
         anchor.append(button_2)
         summary.append(div, style)
@@ -380,84 +376,119 @@
 
         //cart increment function
 
-        let increment1 = document.querySelectorAll(".btn-increment");
-        // decrement = document.querySelectorAll(".btn-decrement");
-        // let count = document.querySelectorAll("#quantity");
-        // let totalcount = document.querySelectorAll("#price");
-        // let gramintokg = document.querySelectorAll(".gram");
-        // let valueCount=0;
+        const product_item = JSON.parse(localStorage.getItem("cart")) ?? [];
+        const incrementBtn = document.querySelector(".btn-increment")
+        const product_name = document.querySelector(".title");
+        const product_quantity = document.querySelector(".quanty");
+        const product_price = document.querySelector(".price");
 
-        console.log(increment1);
+        //increment
+        const increment1 = document.querySelectorAll(".btn-increment");
+
+
         increment1.forEach((obj, index) => {
-
             let valueCount = 1;
-            let valueCnt = 2;
+
             obj.addEventListener("click", (e) => {//e.target
-                // alert("hi")
-                let check = 1//                    
-                //value
 
-                check = valueCnt * 250
+                e.target.parentElement.children[5].value = Number(e.target.parentElement.children[5].value) + valueCount;
+                console.log(e.target.parentElement.children[5].value);
+                console.log(e.target.parentElement.children[1].innerText)
 
-                valueCnt = ++valueCnt
+                let check = Number(e.target.parentElement.children[5].value) * 250;
+                e.target.parentElement.children[3].innerText = `${check}g`;
 
-                // console.log(e.target.parentElement.parentElement.children[0].children[1].innerText)
-
-                e.target.parentElement.children[5].value = ++valueCount
-
-                // console.log(check);
-                e.target.parentElement.children[3].innerText = check + "g";
-
-                // //  console.log(check +"gfmdg")
-                // valueCount++;
-                // valueCnt = valueCount;
                 if ((check >= "250")) {
-                    console.log(e.target.parentElement.parentElement.children[1].innerText)
 
-
-                    console.log(check)//g
-                    e.target.parentElement.children[3].innerText = check + "g";
+                    e.target.parentElement.children[3].innerText = `${check}g`;
                 }
                 if (check >= 1000) {
-                    console.log(check)
-                    // gramintokg.innerText=kg
-                    let kg = Number(check) / 1000;
-                    e.target.parentElement.children[3].innerText = kg + "kg"
-                    console.log("kilo" + kg)
+
+                    const kg = Number(check) / 1000;
+                    e.target.parentElement.children[3].innerText = `${kg}kg`
+                }
+
+                if (JSON.parse(localStorage.getItem("cart"))) {
+                    product_item.find(el => {
+                        if (e.target.parentElement.children[1].innerText == el["titlename"]) {
+
+                            return check = el;
+                        }
+                    })
+                    if (check) {
+                        check["quanty"] = e.target.parentElement.children[3].innerText;
+                        check["price"] = e.target.parentElement.children[2].innerText;
+                        localStorage.setItem("cart", JSON.stringify(product_item))
+                    }
+                    else {
+                        const incrementedObj = {
+                            "title": e.target.parentElement.children[1].innerText,
+                            "quanty": e.target.parentElement.children[3].innerText,
+                            "price": e.target.parentElement.children[2].innerText
+                        }
+                        console.log(incrementedObj)
+                        product_item.push(incrementedObj)
+                        localStorage.setItem("cart", JSON.stringify(product_item))
+                    }
+                }
+                else {
+                    const incrementedObj = {
+                        "title": e.target.parentElement.children[1].innerText,
+                        "quanty": e.target.parentElement.children[3].innerText,
+                        "price": e.target.parentElement.children[2].innerText
+                    }
+                    console.log(incrementedObj)
+                    product_item.push(incrementedObj)
+                    localStorage.setItem("cart", JSON.stringify(product_item))
                 }
             })
 
+        })
 
-            let decrement1 = document.querySelectorAll(".btn-decrement");
+        //decrement
+        const decrement1 = document.querySelectorAll(".btn-decrement");
+        console.log(decrement1);
 
-            console.log(decrement1);
+        decrement1.forEach((obj, index) => {
 
-            decrement1.forEach((obj, index) => {
-                let decrement_valueCount = 1;
-                let decrement_valueCnt = 2;
+            obj.addEventListener("click", (e) => {
+                let decrement_valueCount = Number(e.target.parentElement.children[5].value) - 1;
+                let check = decrement_valueCount * 250
 
-                obj.addEventListener("click", (e) => {
-                    check = decrement_valueCnt * 250
-                    decrement_valueCnt = --decrement_valueCnt;
+                console.log(decrement_valueCount)
+                console.log(check)
 
-                    if (decrement_valueCount > 1) {
-                        e.target.parentElement.children[5].value = --decrement_valueCount;
-                        e.target.parentElement.children[3].innerText = check + "g";
-                    }
-                    if (check >= 1000) {
-                        let kg = Number(check);
-                        e.target.parentElement.children[3].innerText = kg + "kg"
-                    } else {
-                        e.target.parentElement.children[3].innerText = check + "g";
-                    }
-                });
+                if (decrement_valueCount == 1) {
+                    e.target.parentElement.children[5].value = 1;
+                    e.target.parentElement.children[3].innerText = `250g`;
+
+                }
+
+                if (decrement_valueCount > 1) {
+                    e.target.parentElement.children[5].value = decrement_valueCount--;
+                    e.target.parentElement.children[3].innerText = `${check}g`;
+                }
+
+                if (check >= 1000) {
+                    const kg = Number(check) / 1000;
+                    e.target.parentElement.children[3].innerText = `${kg}kg`
+                }
             });
         })
 
+
+        //calculation
+        const input_qty = document.querySelectorAll(".price")
+        const input_total = document.querySelectorAll(".btn-input")
+        const head = document.getElementById("totalB")
+
+        for (let i = 0; i < input_qty.length; i++) {
+            input_qty[i].addEventListener("change", function () {
+                input_total[i].value = parseFloat(input_qty[i].value) * parseFloat(head[i].innerHTML)
+            })
+        }
+
     </script>
-
-
-
 
 </body>
 

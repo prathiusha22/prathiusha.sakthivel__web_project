@@ -20,7 +20,6 @@
     <div class="main">
       <a href="../index.html">Home </a>
 
-
       <a class="about" href="html/about.html">About </a>
 
       <a class="login" href="./html/sellerpage.html">Seller</a>
@@ -30,19 +29,40 @@
     </div>
   </div>
 
-
 </header>
 
 <main>
   <div class="container">
       <form action="">
-          <label for="img">Image url:<input type="text" id="image" /></label><br /><br />
-          <label for="Tittle"> Title:<input type="text" id="titlename" /></label><br /><br />
-          <label for="price">Price:<input id="price" /></label><br /><br />
-          <label for="rate">Rating:<input type="text" id="ratings" /></label><br /><br />
-          <button onclick="createproduct()">Create</button><br /><br />
-          <button onclick="delete_product()">Delete</button><br /><br />
-          <button onclick="updateproduct()">Update</button><br /><br />
+          <label for="img">
+Image url:<input type="text" id="image">
+</label>
+<br >
+<br >
+          <label for="Tittle">
+ Title:<input type="text" id="titlename">
+</label>
+<br >
+<br >
+          <label for="price">
+Price:<input id="price">
+</label>
+<br >
+<br >
+          <label for="rate">
+Rating:<input type="text" id="ratings">
+</label>
+<br >
+<br >
+          <button onclick="createproduct()">Create</button>
+<br >
+<br >
+          <button onclick="delete_product()">Delete</button>
+<br >
+<br >
+          <button onclick="updateproduct()">Update</button>
+<br >
+<br >
       </form>
 
       <table>
@@ -61,35 +81,32 @@
 
 </main>
 <script>
-
 //create   product//
 
-let product = JSON.parse(localStorage.getItem('seller_create_product')) ?? [];
+const product = JSON.parse(localStorage.getItem('seller_create_product')) ?? [];
 function createproduct() {
-    let product_create = {}
-
+    const product_create = {}
 
     const image = document.getElementById("image").value
     const titlename = document.getElementById("titlename").value
     const price = document.getElementById("price").value
     const ratings = document.getElementById("ratings").value
 
-    product_create["image"] = image;
-    product_create["titlename"] = titlename;
-    product_create["price"] = price;
-    product_create["ratings"] = ratings;
-    product_create["product_id"] = product.length;
+    product_create.image = image;
+    product_create.titlename = titlename;
+    product_create.price = price;
+    product_create.ratings = ratings;
+    product_create.product_id = product.length;
 
     product.push(product_create);
     localStorage.setItem("seller_create_product", JSON.stringify(product))
 }
 
-
 //delete product//
 function delete_product() {
-    let user_product = JSON.parse(localStorage.getItem("seller_create_product"));
+    const user_product = JSON.parse(localStorage.getItem("seller_create_product"));
     for (let i = 0; i < user_product.length; i++) {
-        if (document.getElementById("titlename").value == user_product[i]["titlename"]) {
+        if (document.getElementById("titlename").value == user_product[i].titlename) {
             user_product.splice(i, 1)
             localStorage.setItem("seller_create_product", JSON.stringify(user_product));
         }
@@ -98,7 +115,7 @@ function delete_product() {
 
 //update product//
 let output = "";
-let append_div = document.querySelector(".table_product");
+const append_div = document.querySelector(".table_product");
 
    product.forEach(item => {
    output += `
@@ -114,7 +131,7 @@ let append_div = document.querySelector(".table_product");
 });
 
 function product_update(id) {
-    product.find(function (obj) {
+    product.find((obj) => {
 
         if (obj.product_id == id) {
             document.getElementById("image").value = obj.image;
@@ -131,7 +148,7 @@ function updateproduct() {
     const price = document.getElementById("price").value;
     const rating = document.getElementById("ratings").value;
 
-      product.find(function (obj) {
+      product.find((obj) => {
 
         if (title == obj.titlename) {
 
@@ -144,7 +161,6 @@ function updateproduct() {
 
     localStorage.setItem("seller_create_product", JSON.stringify(product));
 }
-
 </script>
 
 </body>

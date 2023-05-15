@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Document</title>
 </head>
 
@@ -22,7 +22,6 @@
 
         <form class="form" id="form">
 
-
             <div class="form-control">
                 <label>First name</label>
                 <input type="text" placeholder="" id="firstname"
@@ -31,7 +30,6 @@
                 <i class="fa-solid fa-check"></i>
             </div>
 
-
             <div class="form-control">
                 <label>Last name</label>
                 <input type="text" placeholder="" id="lastname" title="Lastname cannot contain number or space "
@@ -39,14 +37,12 @@
                 <i class="fa-solid fa-check"></i>
             </div>
 
-
             <div class="form-control">
                 <label>Email</label>
                 <input type="email" placeholder="" id="email" required="true"
                     pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid Email">
                 <i class="fa-solid fa-check"></i>
             </div>
-
 
             <div class="form-control">
                 <label>Password</label>
@@ -56,7 +52,6 @@
                     minlenght="6">
                 <i class="fa-solid fa-check"></i>
             </div>
-
 
             <div class="form-control">
                 <label>confirm Password</label>
@@ -69,15 +64,15 @@
 
             <button type="submit">Submit</button>
 
-            <p>Already have an Account? <a href="../html/login1.html">Log-in→</a></p>
+            <p>
+                Already have an Account? <a href="../html/login1.html">Log-in→</a>
+            </p>
 
         </form>
     </div>
 
-
     <script>
-
-        let userList = JSON.parse(localStorage.getItem("user_records")) ?? [];
+        const userList = JSON.parse(localStorage.getItem("user_records")) ?? [];
 
         const form = document.getElementById("form");
         const firstname = document.getElementById("firstname");
@@ -144,8 +139,7 @@
             }
             if (success) {
 
-
-                let user = {
+                const user = {
                     "Firstname": firstnamevalue,
                     "lastname": lastnamenamevalue,
                     "email": emailvalue,
@@ -177,10 +171,7 @@
             formcontrol.className = 'form-control success';
         }
 
-        let logoutuser = JSON.parse(localStorage.getItem("user_records"))
-
-
-
+        const logoutuser = JSON.parse(localStorage.getItem("user_records"))
     </script>
 
 </body>

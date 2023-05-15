@@ -67,7 +67,11 @@ a {
     font-size: 35px;
     color: black;
 }
-
+.dropdown-content button a{
+    color: white;
+    position: relative;
+    left: -58px;
+}
 .img1 {
     margin-top: -90px;
     background-image: url("../image/background1.jpg");
@@ -114,7 +118,7 @@ a {
     position: absolute;
     background-color: white;
     left: 35px;
-    min-width: 160px;
+    min-width: 120px;
     z-index: 1;
 }
 
@@ -144,6 +148,10 @@ a {
     width: 0%;
     margin: auto;
     transition: 0.7s;
+}
+.fruits{
+    position: relative;
+    left: 38px;
 }
 
 /* content */

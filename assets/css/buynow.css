@@ -25,6 +25,15 @@
   background: #fff;
   box-shadow: 5px 10px 5px 10px rgba(0,0,0,.1);
 }
+#branchname{
+  position: relative;
+  top: 20px;
+}
+ .name{
+  position: relative;
+  top: 20px;
+}
+
 
 .container form .row{
   display: flex;
@@ -80,7 +89,7 @@
 }
 
 .container form .submit-btn{
-  width:660px;
+  width:860px;
   padding:12px;
   font-size: 17px;
   background:  rgb(108, 145, 53);;
@@ -89,9 +98,62 @@
   cursor: pointer;
   text-align: center;
 }
+.store{
+  border: 2px solid white;
+  box-shadow: -10px 10px 30px 10px rgb(186, 192, 188);
+  height: 400px;
+  width: 400px;
+}
 a{
   color: white;
   text-decoration: none;
+}
+.mobile{
+  position: relative;
+  top: 20px;
+}
+.tomato{
+  height: 200px;
+  width: 250px;
+}
+.labelimg3{
+  position: relative;
+  left: 750px;
+  top: -35px;
+}
+.labelimg2{
+  position: relative;
+  left: 230px;
+  top: 3px;
+}
+.labelimg1{
+  position: relative;
+  left: 130px;
+  top: 18px;
+}
+.span3{
+  position: relative;
+  left: 300px;
+}
+.span2{
+  position: relative;
+  left: 200px;
+}
+.span1{
+  position: relative;
+  left: 100px;
+}
+#cashondelivery{
+  position: relative;
+  left: 280px;
+}
+#postpaid{
+  position: relative;
+  left: 180px;
+}
+#upi{
+  position: relative;
+  left: 70px;
 }
 @media screen and (max-width:400px) {
   .container form{

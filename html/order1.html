@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../assets/css/order1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>order1</title>
 
 </head>
@@ -22,10 +22,12 @@
     <div class="menu-bar">
 
       <ul class="main">
-        <li class="down"><a class="hdg" href="../index.html">Home </a>
+        <li class="down">
+          <a class="hdg" href="../index.html">Home </a>
 
         </li>
-        <li class="down"><a class="hdg" href="../html/about.html">About</a>
+        <li class="down">
+          <a class="hdg" href="../html/about.html">About</a>
 
         </li>
 
@@ -39,9 +41,10 @@
           <!-- <a href="html/login2.html">Fresh Vegetables</a> -->
           <!-- </div> -->
         </div>
-        <a href="../html/cart.html"> <i class="fa-solid fa-cart-shopping fa-fade"></i></a>
+        <a href="../html/cart.html">
+          <i class="fa-solid fa-cart-shopping fa-fade"></i>
+        </a>
         <p id="cartcount">0</p>
-
 
         <!-- <li><a class="hdg" href="../html/signup.html">Sign-up</a></li> -->
 
@@ -74,7 +77,6 @@
     </div>
     <!-- benefits of tomato -->
 
-
     <!-- <div class="heading2"> -->
     <!-- <h3>Benifits of Tomato</h3>
       <ul>
@@ -96,7 +98,6 @@
         <li> Fat: 0.2 grams</li>
       </ul> -->
     <!-- </div>   -->
-
 
     <!-- variety of tomato  -->
     <!-- <div class="product-list-container">
@@ -166,7 +167,6 @@
 
     <div class="footer">
 
-
       <div class="footer1">
 
         <div class="footerone">
@@ -174,30 +174,23 @@
 
         </div>
 
-
         <div class="footerone">
           <p>Home</p>
         </div>
-
 
         <div class="footerone">
           <p>About</p>
         </div>
 
-
         <div class="footerone">
           <p>Contact</p>
         </div>
-
-
 
         <div class="footerone">
           <p>Pricing</p>
         </div>
 
-
       </div>
-
 
       <!-- footer two -->
 
@@ -211,14 +204,11 @@
 
         </div>
 
-
-
         <div class="footertwo">
 
           <i class="fa-solid fa-phone"></i>
           <p>+1234567890</p>
         </div>
-
 
         <div class="footertwo">
           <i class="fa-solid fa-envelope"></i>
@@ -227,10 +217,12 @@
 
       </div>
 
-
       <div class="footerthird">
         <h3 class="h31">About Us</h3>
-        <p>We supply organic fruits<br> and vegetables at a fair <br> price to everyone.</p>
+        <p>
+          We supply organic fruits<br>
+          and vegetables at a fair <br> price to everyone.
+        </p>
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-whatsapp"></i>
         <i class="fa-brands fa-instagram"></i>
@@ -238,17 +230,15 @@
         <p></p>
       </div>
 
-
     </div>
     <div class="foot">
 
     </div>
 
-
   </footer>
 
   <script>
-    let product_details = [
+    const product_details = [
       //0
       {
         "product_image": {
@@ -547,26 +537,22 @@
 
       }
 
-
     ]
 
-
-
-
-    let url = window.location.search;  //?name=FreshOrganicTomato
+    const url = window.location.search;  //?name=FreshOrganicTomato
     console.log(url)
-    let urls = new URLSearchParams(url)
+    const urls = new URLSearchParams(url)
     console.log(urls)//"name":"FreshOrganicTomato"
-    let name = urls.get("name")
+    const name = urls.get("name")
     console.log(name)//"FreshOrganicTomato"
 
     let result;
 
     const product_info = JSON.parse(localStorage.getItem("create_product"))
 
-    product_info.find(function (e) { //arr=[{0},{1},{2}] ; e={0};e={1}
+    product_info.find((e) => { //arr=[{0},{1},{2}] ; e={0};e={1}
 
-      if (e["titlename"] == name) {
+      if (e.titlename == name) {
         result = e
         console.log(e);
 
@@ -576,38 +562,37 @@
     // function product_create() {
 
     //div creation//
-    let box = document.createElement("div");
+    const box = document.createElement("div");
     box.setAttribute("class", "box");
 
-    let image1 = document.createElement("img");
+    const image1 = document.createElement("img");
     image1.setAttribute("class", "offimg")
     image1.setAttribute("src", "../assets/image/offer.png")
     box.append(image1)
 
     //image//
 
-    let image = document.createElement("img");
+    const image = document.createElement("img");
     image.setAttribute("class", "tomato")
-    image.setAttribute("src", result["image"]);
+    image.setAttribute("src", result.image);
 
     //heading div//
-    let heading1_div = document.createElement("div");
+    const heading1_div = document.createElement("div");
     heading1_div.setAttribute("class", "heading1")
     box.append(image)
     box.append(heading1_div)
 
     //product name//
-    let heading2 = document.createElement("h2");
+    const heading2 = document.createElement("h2");
     heading2.setAttribute("id", "name_of_product")
-    heading2.innerText = result["titlename"]
+    heading2.innerText = result.titlename
     heading1_div.append(heading2)
 
     //price//
-    let heading3 = document.createElement("h4");
+    const heading3 = document.createElement("h4");
     heading3.setAttribute("id", "quantity_of_product")
-    heading3.innerText = " ₹" + " " + result["price"]
+    heading3.innerText = ` ₹` + ` ${result.price}`
     heading1_div.append(heading3)
-
 
     // product_quantity = document.createElement("p");
     // product_quantity.innerText ="Starts from "+  250 + "g";
@@ -615,7 +600,7 @@
 
     //star//
     let star = "";
-    for (let j = 0; j < result["ratings"]; j++) {
+    for (let j = 0; j < result.ratings; j++) {
       star += "⭐";
     }
     heading1_div.append(star);
@@ -629,50 +614,70 @@
     heading1_div.append(button_div)
 
 
+    let description = document.createElement("p");
+    description.setAttribute("class", "description");
+    description.innerText = `Vegetables are an essential part of a healthy and balanced diet, and
+    offer numerous benefits for our overall health and well-being.Some of the benefits of
+    vegetables include:`
+    heading1_div.append(description)
+
+    let description_1 = document.createElement("p");
+    description_1.setAttribute("class", "description");
+    description_1.innerText =` Nutrient-rich: Vegetables are packed with essential vitamins, minerals, and nutrients that are
+    necessary for the proper functioning of our bodies. They are particularly high in vitamins A, C,
+    and K, as well as potassium, fiber, and antioxidants.`
+    heading1_div.append(description_1)
+
+    let description_2 = document.createElement("p");
+    description_2.setAttribute("class", "description");
+    description_2.innerText =`   Low in calories: Most vegetables are low in calories and high in fiber, which makes them an
+    excellent choice for weight management. They can help you feel full for longer periods of time,
+    without adding a lot of calories to your diet.`
+    heading1_div.append(description_2)
+
+
+          
+
     // add to cart//
 
     add_to_cart = document.createElement("button");
     add_to_cart.setAttribute("id", "cartbutton")
 
-    let anchor = document.createElement("a");
+    const anchor = document.createElement("a");
     anchor.setAttribute("href", "#")
     anchor.setAttribute("id", "add-to-cart")
     anchor.innerText = "Add to Cart";
     add_to_cart.append(anchor)
     heading1_div.append(add_to_cart);
 
-    //buynow//
+    // //buynow//
     buy_now = document.createElement("button");
     buy_now.setAttribute("id", "buybutton")
 
-    let anchor1 = document.createElement("a");
-    anchor1.setAttribute("href", "../html/buynow.html?name=" + name);
+    const anchor1 = document.createElement("a");
+    anchor1.setAttribute("href", `../html/buynow.html?name=${  name}`);
     anchor1.innerText = "Buy Now";
     buy_now.append(anchor1);
     heading1_div.append(buy_now)
     document.querySelector(".mainbox").append(box)
 
-   
-
     //cart function
 
-    let btn_cart = document.getElementById("cartbutton")
+    const btn_cart = document.getElementById("cartbutton")
     btn_cart.addEventListener("click", el => {
 
-
-      let user = JSON.parse(localStorage.getItem("active_user"))
-      let addCart = JSON.parse(localStorage.getItem("cart")) ?? []
+      const user = JSON.parse(localStorage.getItem("active_user"))
+      const addCart = JSON.parse(localStorage.getItem("cart")) ?? []
 
       let check;
 
       addCart.find(e => {
 
-        if (e["titlename"] == result["titlename"] && e["email"] == user["email"]) {
+        if (e.titlename == result.titlename && e.email == user.email) {
           return check = 1
         }
-        else {
-          return check = 0;
-        }
+
+        return check = 0;
 
       })
 
@@ -680,12 +685,12 @@
         alert("Your product already added to cart")
       }
       else {
-        let item = {}
+        const item = {}
 
-        item["image"] = result["image"]
-        item["price"] = result["price"]
-        item["titlename"] = result["titlename"]
-        item["email"] = user["email"]
+        item.image = result.image
+        item.price = result.price
+        item.titlename = result.titlename
+        item.email = user.email
 
         addCart.push(item)
         localStorage.setItem("cart", JSON.stringify(addCart))
@@ -696,46 +701,42 @@
 
     // cartCount
 
-    let cart_sample = JSON.parse(localStorage.getItem("cart"));
-    let user = JSON.parse(localStorage.getItem("active_user"));
+    const cart_sample = JSON.parse(localStorage.getItem("cart"));
+    const user = JSON.parse(localStorage.getItem("active_user"));
 
-    let cartCount = [];
+    const cartCount = [];
     cart_sample.forEach((e) => {
-      if (e["email"] == user["email"]) {
+      if (e.email == user.email) {
         cartCount.push(e);
       }
     });
 
-    let co = cartCount.length
+    const co = cartCount.length
 
     console.log(co)
-    let counting = document.getElementById("cartcount");
+    const counting = document.getElementById("cartcount");
     counting.innerHTML = cartCount.length;
 
- //local storage
+    //local storage
 
- let product_item = JSON.parse(localStorage.getItem("product_details")) ?? [];
-        let incrementBtn = document.querySelector(".btn-increment")
-        let product_name = document.querySelector("#name_of_product").innerText;
-        let product_quantity = document.getElementById("quantity_of_product").innerText;
-        let product_price = document.getElementById("price").value;
-        incrementBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            let rechange = product_quantity
+    const product_item = JSON.parse(localStorage.getItem("product_details")) ?? [];
+    const incrementBtn = document.querySelector(".btn-increment")
+    const product_name = document.querySelector("#name_of_product").innerText;
+    const product_quantity = document.getElementById("quantity_of_product").innerText;
+    const product_price = document.getElementById("price").value;
+    incrementBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const rechange = product_quantity
 
+      const incrementedObj = {
+        "name_of_product": product_name,
+        "quantity_of_product": rechange,
+        "price": product_price
+      }
+      product_item.push(incrementedObj)
+      localStorage.setItem("product_details", JSON.stringify(product_item))
 
-
-            let incrementedObj = {
-                "name_of_product": product_name,
-                "quantity_of_product": rechange,
-                "price": product_price
-            }
-            product_item.push(incrementedObj)
-            localStorage.setItem("product_details", JSON.stringify(product_item))
-
-        })
-
-
+    })
   </script>
 
 </body>
