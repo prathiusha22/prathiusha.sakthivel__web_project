@@ -103,7 +103,7 @@ input:focus ~ i {
     color: #2f7d15;
 }
 
-button.submit {
+button.submit1 {
     color: #fff;
     padding: 14px 64px;
     margin: 32px auto;
@@ -115,7 +115,7 @@ button.submit {
     transition: opacity 0.4s;
 }
 
-button.submit:hover {
+button.submit1:hover {
     opacity: 0.9;
 }
 

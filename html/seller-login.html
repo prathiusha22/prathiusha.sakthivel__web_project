@@ -11,36 +11,39 @@
 </head>
 
 <body>\
-        <section class="side">
-            <img src="../assets/image/seller-login-bg.png" alt="">
-        </section>
+    <section class="side">
+        <img src="../assets/image/seller-login-bg.png" alt="">
+    </section>
 
-        <section class="main">
-            <div class="login-container">
-                <p class="title">Welcome back</p>
-                <div class="separator"></div>
-                <p class="welcome-message">Please, provide login credential to proceed to become a seller</p>
+    <section class="main">
+        <div class="login-container">
+            <p class="title">Welcome back</p>
+            <div class="separator"></div>
+            <p class="welcome-message">Please, provide login credential to proceed to become a seller</p>
 
-                <form class="login-form">
-                    <div class="form-control">
-                        <input type="text" placeholder="Sellername" id="username" required>
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="form-control">
-                        <input type="email" placeholder="Email" id="email" required>
-                        <i class="fas fa-lock"></i>
-                    </div>
+            <form class="login_form">
+                <div class="form-control">
+                    <input type="text" placeholder="Sellername" id="username" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-control">
+                    <input type="email" placeholder="Email" id="email" required>
+                    <i class="fas fa-lock"></i>
+                </div>
 
-                    <button class="submit"><a href="../html/seller_register-2.html">Login</a></button>
-                </form>
-            </div>
-        </section>
-   
+                <button type="submit" class="submit1">Login</button>
+            </form>
+        </div>
+    </section>
+
 
     <script>
-        const checksellerlogin = document.getElementById("login-form");
+        const checksellerlogin = document.querySelector(".login_form");
 
-        checksellerlogin.onsubmit = e => {
+        checksellerlogin.addEventListener("submit",(e)=>{
+
+            
+      
             e.preventDefault();
 
             const username = document.getElementById("username").value;
@@ -50,7 +53,7 @@
 
             let success;
             sellerdata.find(el => {
-                if ((el.email === email) && (el.username === username)) {
+                if ((el.date === email) && (el.name === username)) {
                     const activeseller = el;
                     console.log(activeseller);
                     localStorage.setItem("activeseller", JSON.stringify(activeseller))
@@ -58,15 +61,20 @@
                 }
                 return success = 0;
             })
-            if (sucess) {
+            if (success==1) {
                 alert("login successful");
                 localStorage.setItem('data', email)
-                window.location.href = "../html/seller_register-2.html";
+                window.location.href = "./create.html";
             } else {
                 alert("Invalid email or sellername");
             }
 
-        }
+            
+        })
+        
+        
+        
+        
 
 
 

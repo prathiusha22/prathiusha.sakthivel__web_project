@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="inputBox">
-                        <span >Mobile Number:</span>
+                        <span>Mobile Number:</span>
                         <input id="mobilenumber" type="number" required="true">
                     </div>
 
@@ -99,14 +99,14 @@
         </form>
 
     </div>
-    <!-- <div class="store"> -->
+    <div class="store">
         <!-- <div class="box_div">
             <img src="../assets/image/tomato.jpg" alt="image">
             <h1>FreshorganicTomato</h1>
             <h2>₹ 50</h2>
         </div> -->
 
-    <!-- </div> -->
+    </div>
 
     <script>
         const getdetails = document.getElementById("payment_details");
@@ -125,8 +125,8 @@
         const name = urls.get("name")
         console.log(name)//"FreshOrganicTomato"
 
-        
-       
+
+
 
 
 
@@ -166,38 +166,46 @@
         }
 
 
-        //  let result;
+        let result;
 
         // if (name == (name)) {
-        //     create_product = products.find((el) => {
+        products.find((el) => {
 
-        //         if (el.product_id == name) {
-        //             return (result = el);
-        //         }
-        //         return (result = 0);
-        //     });
+            if (el.titlename == name) {
 
-
-        //     let div = document.createElement("div");
-        //     div.setAttribute("class", "box_div");
+                let div = document.createElement("div");
+                div.setAttribute("class", "box_div");
 
 
-        //     let image_veg = document.createElement("img");
-        //     image_veg.setAttribute("class", "tomato");
-        //     image_veg.setAttribute("src", result.image);
-        //     div.append(image_veg);
+                let image_veg = document.createElement("img");
+                image_veg.setAttribute("class", "tomato");
+                image_veg.setAttribute("src", el.image);
+                div.append(image_veg);
 
-        //     let heading1 = document.createElement("h1");
-        //     heading1.setAttribute("class", "product_name");
-        //     heading1.innerText = result.titlename;
-        //     div.append(heading1);
+                let heading1 = document.createElement("h1");
+                heading1.setAttribute("class", "product_name");
+                heading1.innerText = el.titlename;
+                div.append(heading1);
 
-        //     let heading2 = document.createElement("h2");
-        //     heading2.setAttribute("class", "product_name");
-        //     heading2.innerText = `₹${result.price}`;
-        //     div.append(heading2);
+                let heading2 = document.createElement("h2");
+                heading2.setAttribute("class", "product_name");
+                heading2.innerText = `₹${el.price}`;
+                div.append(heading2);
 
-        //     document.querySelector(".store").append(div);
+                document.querySelector(".store").append(div);
+
+
+
+               
+                // return (result = el);
+            }
+            // else{
+            //     alert("not working")
+            // }
+            // return (result = 0);
+        });
+
+
 
         // }
     </script>

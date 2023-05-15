@@ -694,28 +694,32 @@
 
         addCart.push(item)
         localStorage.setItem("cart", JSON.stringify(addCart))
-        alert("Your product added to cart")
+        window.location.reload();
+        // alert("Your product added to cart")
 
       }
     })
 
     // cartCount
-
     const cart_sample = JSON.parse(localStorage.getItem("cart"));
     const user = JSON.parse(localStorage.getItem("active_user"));
+   
 
     const cartCount = [];
     cart_sample.forEach((e) => {
       if (e.email == user.email) {
         cartCount.push(e);
+        
       }
     });
 
     const co = cartCount.length
+    
 
     console.log(co)
     const counting = document.getElementById("cartcount");
     counting.innerHTML = cartCount.length;
+    
 
     //local storage
 

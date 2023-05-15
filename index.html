@@ -42,9 +42,15 @@
 
         <a class="register" href="./html/signup.html">Sign-in</a>
 
+    
         <a href="./html/orderhistory.html">
           <i id="icon" class="fa-sharp fa-solid fa-bars"></i>
         </a>
+
+        <a href="../html/cart.html">
+          <i id="cart_icon" class="fa-solid fa-cart-shopping fa-fade"></i>
+        </a>
+        <p id="cartcount">0</p>
 
       </div>
     </div>
@@ -287,7 +293,7 @@
         profile.innerText = "My Profile"
         profile.position = "relative";
         profile.style.width = "120px";
-        profile.style.left = "-60px";
+        profile.style.left = "-150px";
         profile.style.top = "-60px";
         // profile.style.font-weight="700px";
         profile.addEventListener("click", () => {
@@ -306,12 +312,31 @@
       const item_card = document.getElementById("vegetable_button");
         item_card.addEventListener("click", (el) => {
           if (login_detail == "false") {
-            alert("please login");
+            alert("To view and buy products you have to Login");
           } 
           else {
             window.location.href="./html/veges.html"
               }
             })
+        
+       //cartcount
+
+    const cart_sample = JSON.parse(localStorage.getItem("cart"));
+    const user = JSON.parse(localStorage.getItem("active_user"));
+
+    const cartCount = [];
+    cart_sample.forEach((e) => {
+      if (e.email == user.email) {
+        cartCount.push(e);
+      }
+    });
+
+    const co = cartCount.length
+
+    console.log(co)
+    const counting = document.getElementById("cartcount");
+    counting.innerHTML = cartCount.length;
+
 
     </script>
 

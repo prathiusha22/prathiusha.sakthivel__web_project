@@ -41,6 +41,9 @@
 
 
     <div class="main_container">
+        <div class="get">
+            <p>Your Cart is Empty</p>
+        </div>
 
         <!-- <div class="container">
             <div class="cart">
@@ -193,7 +196,10 @@
 
         let total = 0;
 
+
         // cart_sample.find(e => {
+      
+
         for (let i = 0; i < cart_sample.length; i++) {
             if (user.email == cart_sample[i].email) {
 
@@ -215,6 +221,7 @@
 
                 const cost = document.createElement("p")
                 cost.setAttribute("class", "price")
+                cost.setAttribute("data-keyword", cart_sample[i].price)
                 cost.innerText = cart_sample[i].price;
                 product_div.append(cost)
 
@@ -253,6 +260,7 @@
                 const break_tag = document.createElement("hr")
                 break_tag.setAttribute("id", "break")
                 product_div.append(break_tag)
+                
 
                 delete_icon.addEventListener("click", (e) => {
                     for (let j = 0; j < cart_sample.length; j++) {
@@ -267,6 +275,15 @@
 
             }
         }
+    
+    
+
+    
+        const last_user_details1 = JSON.parse(localStorage.getItem("user_records"));
+        const last_email1 = localStorage.getItem("data");
+
+        last_user_details1.filter(item=>{
+                if(last_email1==item.email){
         // Create the horizontal line
         const hr = document.createElement('hr');
 
@@ -315,7 +332,9 @@
         const shippingInput = document.createElement('input');
         shippingInput.setAttribute("class", "shippingInput")
         shippingInput.setAttribute('type', 'text');
-        shippingInput.setAttribute('placeholder', 'Delivery Address');
+        shippingInput.setAttribute('disabled', '');
+        shippingInput.setAttribute('placeholder', item.communication.address);
+        // shippingInput.innerText=
 
         const promoCodeTitle = document.createElement('h2');
         promoCodeTitle.innerText = ' Mobile number';
@@ -324,7 +343,8 @@
         promoCodeInput.setAttribute('type', 'number')
         promoCodeInput.setAttribute('minlength', '10')
         promoCodeInput.setAttribute('maxlength', '10')
-        promoCodeInput.setAttribute('placeholder', 'Enter Your Mobile number');
+        promoCodeInput.setAttribute('disabled', '');
+        promoCodeInput.setAttribute('placeholder', item.communication.mobile_number);
 
         const button_1 = document.createElement("button");
         button_1.setAttribute("class", "first-btn")
@@ -373,7 +393,8 @@
         container.append(summary)
 
         document.querySelector(".main_container").append(container);
-
+                }
+            });
         //cart increment function
 
         const product_item = JSON.parse(localStorage.getItem("cart")) ?? [];
@@ -480,13 +501,41 @@
         //calculation
         const input_qty = document.querySelectorAll(".price")
         const input_total = document.querySelectorAll(".btn-input")
+        const price = document.querySelectorAll(".price")
+        const btn = document.querySelectorAll(".btn-increment")
         const head = document.getElementById("totalB")
 
         for (let i = 0; i < input_qty.length; i++) {
-            input_qty[i].addEventListener("change", function () {
-                input_total[i].value = parseFloat(input_qty[i].value) * parseFloat(head[i].innerHTML)
+            btn[i].addEventListener("click", function () {
+
+                let keyword = price[i].dataset.keyword
+                console.log(input_qty[i].value);
+
+                price[i].dataset.keyword = parseFloat(input_total[i].value) * parseFloat(price[i].innerHTML)
+
+                let total_price = 0
+                for (let j = 0; j < btn.length; j++) {
+                    let key = price[j].dataset.keyword
+                    total_price = total_price + parseFloat(key)
+                }
+
+                head.innerHTML = total_price
             })
         }
+
+        //empty cart
+
+        let get_element = JSON.parse(localStorage.getItem("cart")) ?? [];
+        let css = document.querySelector(".get");
+        let contain = document.querySelector(".container")
+
+        if (get_element == "") {
+            css.style.display = "block"
+        }
+        else {
+            css.style.display = "none"
+        }
+
 
     </script>
 

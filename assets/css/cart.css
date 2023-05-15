@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -39,8 +41,8 @@ header {
     font-size: 22px;
     position: relative;
     top: 0px;
-    
-} 
+
+}
 
 
 header a {
@@ -68,6 +70,7 @@ header a {
     text-decoration: none;
     color: white;
 }
+
 .container {
     display: flex;
     margin: 3rem 150px;
@@ -111,16 +114,29 @@ table {
     width: 25%;
     margin-left: 20px;
     height: 600px;
-    
-}
-.summary hr{
-   display: none;
+
 }
 
-.summary::-webkit-scrollbar{
+.summary hr {
     display: none;
 }
 
+.summary::-webkit-scrollbar {
+    display: none;
+}
+
+.get {
+    display: none;
+    position: relative;
+    top: 300px;
+    left: 450px;
+    
+}
+.get p{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
 .detail {
     margin: 10px 6;
     padding: 0 10px;
@@ -145,7 +161,7 @@ input {
 button {
     border: none;
     background-color: red;
-    padding: 8px 30px ;
+    padding: 8px 30px;
     color: white;
     border-radius: 3px;
     cursor: pointer;
@@ -165,7 +181,8 @@ button:hover,
 .checkout:hover {
     background-color: #333;
 }
-.img-box{
+
+.img-box {
     margin: 5px;
     width: 100px;
     height: 100px;
@@ -179,91 +196,108 @@ button:hover,
     /* top: -50px; */
     left: 20px;
 }
+
 /* .img{
     max-width: 52px;
     max-height: 52px;
     border-radius: 50%;
 
 } */
-.fa-trash{
+.fa-trash {
     color: rgb(108, 145, 53);
 }
-.fa-trash:hover{
+
+.fa-trash:hover {
     color: #333;
 }
-.title{
+
+.title {
     font-size: 18px;
     position: relative;
     top: -60px;
     left: 150px;
 }
-.price{
+
+.price {
     font-size: 18px;
     position: relative;
     top: -79px;
     left: 370px;
 }
-#bin-icon{
+
+#bin-icon {
     color: #333;
     font-size: 30px;
     position: relative;
-    top:-195px ;
+    top: -195px;
     left: 900px;
 }
-#bin-icon:hover{
+
+#bin-icon:hover {
     color: rgb(108, 145, 53);
 }
-.quanty{
+
+.quanty {
     position: relative;
-    top:-100px ;
+    top: -100px;
     left: 470px;
 }
-.btn-input{
+
+.btn-input {
     width: 100px;
     height: 40px;
 }
+
 .btn1 {
     position: relative;
     left: 580px;
     top: -145px;
     margin: 0px 0px 10px 10px;
 }
-.btn-input{
+
+.btn-input {
     position: relative;
     left: 585px;
     top: -145px;
 }
-.product_image hr{
+
+.product_image hr {
     position: relative;
     top: -80px;
 
 }
-.shippingInput{
+
+.shippingInput {
     height: 100px;
 }
-#headimage{
+
+#headimage {
     position: relative;
     left: 40px;
     font-size: 19px;
 }
-#headname{
+
+#headname {
     position: relative;
     left: 40px;
     font-size: 19px;
 
 }
-#headprice{
+
+#headprice {
     position: relative;
     left: -160px;
     font-size: 19px;
 }
-#headquantity{
+
+#headquantity {
     position: relative;
     left: -140px;
     font-size: 19px;
 
 }
-#headdelete{
+
+#headdelete {
     position: relative;
     left: 50px;
     font-size: 19px;
