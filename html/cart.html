@@ -108,6 +108,8 @@
 
     </div>
 
+    
+
     <script>
         // Create the main container
         const mainContainer = document.createElement('div');
@@ -198,7 +200,7 @@
 
 
         // cart_sample.find(e => {
-      
+
 
         for (let i = 0; i < cart_sample.length; i++) {
             if (user.email == cart_sample[i].email) {
@@ -260,7 +262,7 @@
                 const break_tag = document.createElement("hr")
                 break_tag.setAttribute("id", "break")
                 product_div.append(break_tag)
-                
+
 
                 delete_icon.addEventListener("click", (e) => {
                     for (let j = 0; j < cart_sample.length; j++) {
@@ -275,126 +277,128 @@
 
             }
         }
-    
-    
 
-    
+
+
+
         const last_user_details1 = JSON.parse(localStorage.getItem("user_records"));
         const last_email1 = localStorage.getItem("data");
 
-        last_user_details1.filter(item=>{
-                if(last_email1==item.email){
-        // Create the horizontal line
-        const hr = document.createElement('hr');
+        last_user_details1.filter(item => {
+            if (last_email1 == item.email) {
+                // Create the horizontal line
+                const hr = document.createElement('hr');
 
-        cart.appendChild(hr);
+                cart.appendChild(hr);
 
-        // Create the summary section
-        const summary = document.createElement('div');
-        summary.classList.add('summary');
+                // Create the summary section
+                const summary = document.createElement('div');
+                summary.classList.add('summary');
 
-        // Create the top section of the summary
-        const summaryTopSection = document.createElement('div');
-        summaryTopSection.classList.add('top');
+                // Create the top section of the summary
+                const summaryTopSection = document.createElement('div');
+                summaryTopSection.classList.add('top');
 
-        const orderSummaryTitle = document.createElement('h2');
-        orderSummaryTitle.innerText = 'Order Summary';
+                const orderSummaryTitle = document.createElement('h2');
+                orderSummaryTitle.innerText = 'Order Summary';
 
-        summaryTopSection.appendChild(orderSummaryTitle);
+                summaryTopSection.appendChild(orderSummaryTitle);
 
-        summary.appendChild(summaryTopSection);
+                summary.appendChild(summaryTopSection);
 
-        // Create the detail section of the summary
-        const detail = document.createElement('div');
-        detail.classList.add('detail');
+                // Create the detail section of the summary
+                const detail = document.createElement('div');
+                detail.classList.add('detail');
 
-        const itemBTitle = document.createElement('h2');
-        itemBTitle.id = 'itemB';
-        itemBTitle.innerText = '';
+                const itemBTitle = document.createElement('h2');
+                itemBTitle.id = 'itemB';
+                itemBTitle.innerText = '';
 
-        const totalATitle = document.createElement('h2');
-        totalATitle.id = 'totalA';
-        totalATitle.innerText = '';
+                const totalATitle = document.createElement('h2');
+                totalATitle.id = 'totalA';
+                totalATitle.innerText = '';
 
-        detail.appendChild(itemBTitle);
-        detail.appendChild(totalATitle);
+                detail.appendChild(itemBTitle);
+                detail.appendChild(totalATitle);
 
-        summary.appendChild(detail);
+                summary.appendChild(detail);
 
-        // Create the shipping and promo code section
-        const shippingAndPromo = document.createElement('div');
-        shippingAndPromo.style.marginTop = '30px';
-        shippingAndPromo.style.padding = '0 30px';
+                // Create the shipping and promo code section
+                const shippingAndPromo = document.createElement('div');
+                shippingAndPromo.style.marginTop = '30px';
+                shippingAndPromo.style.padding = '0 30px';
 
-        const shippingTitle = document.createElement('h2');
-        shippingTitle.innerText = 'Shipping';
+                const shippingTitle = document.createElement('h2');
+                shippingTitle.innerText = 'Shipping';
 
-        const shippingInput = document.createElement('input');
-        shippingInput.setAttribute("class", "shippingInput")
-        shippingInput.setAttribute('type', 'text');
-        shippingInput.setAttribute('disabled', '');
-        shippingInput.setAttribute('placeholder', item.communication.address);
-        // shippingInput.innerText=
+                const shippingInput = document.createElement('input');
+                shippingInput.setAttribute("class", "shippingInput")
+                shippingInput.setAttribute("id", "edit_address")
+                shippingInput.setAttribute('type', 'text');
+                shippingInput.setAttribute('disabled', '');
+                shippingInput.setAttribute('placeholder', item.communication.address);
+                // shippingInput.innerText=
 
-        const promoCodeTitle = document.createElement('h2');
-        promoCodeTitle.innerText = ' Mobile number';
+                const promoCodeTitle = document.createElement('h2');
+                promoCodeTitle.innerText = ' Mobile number';
 
-        const promoCodeInput = document.createElement('input');
-        promoCodeInput.setAttribute('type', 'number')
-        promoCodeInput.setAttribute('minlength', '10')
-        promoCodeInput.setAttribute('maxlength', '10')
-        promoCodeInput.setAttribute('disabled', '');
-        promoCodeInput.setAttribute('placeholder', item.communication.mobile_number);
+                const promoCodeInput = document.createElement('input');
+                promoCodeInput.setAttribute("id", "apply")
+                promoCodeInput.setAttribute('type', 'number')
+                promoCodeInput.setAttribute('minlength', '10')
+                promoCodeInput.setAttribute('maxlength', '10')
+                promoCodeInput.setAttribute('disabled', '');
+                promoCodeInput.setAttribute('placeholder', item.communication.mobile_number);
 
-        const button_1 = document.createElement("button");
-        button_1.setAttribute("class", "first-btn")
-        button_1.setAttribute("id", "promo")
-        button_1.setAttribute("onclick", "promo()")
-        button_1.innerText = "Edit"
+                const button_1 = document.createElement("button");
+                button_1.setAttribute("class", "first-btn")
+                button_1.setAttribute("id", "promo")
+                // button_1.setAttribute("onclick", "promo()")
+                button_1.innerText = "Edit"
 
-        const button = document.createElement("button");
-        button.setAttribute("class", "first-btn")
-        button.setAttribute("id", "promo")
-        button.setAttribute("onclick", "promo()")
-        button.innerText = "Apply"
+                const button = document.createElement("button");
+                button.setAttribute("class", "first-btn")
+                button.setAttribute("id", "promo")
+                button.setAttribute("onclick", "promo()")
+                button.innerText = "Apply"
 
-        const hr_2 = document.createElement("hr")
+                const hr_2 = document.createElement("hr")
 
-        shippingAndPromo.append(shippingTitle, shippingInput, promoCodeTitle, promoCodeInput, button_1, button, hr);
-        summary.append(shippingAndPromo)
+                shippingAndPromo.append(shippingTitle, shippingInput, promoCodeTitle, promoCodeInput, button_1, button, hr);
+                summary.append(shippingAndPromo)
 
-        const div = document.createElement("div")
-        div.setAttribute("class", "top")
+                const div = document.createElement("div")
+                div.setAttribute("class", "top")
 
-        const heading_2 = document.createElement("h2")
-        heading_2.innerText = "Total"
+                const heading_2 = document.createElement("h2")
+                heading_2.innerText = "Total"
 
-        const heading_3 = document.createElement("h2")
-        heading_3.setAttribute("id", "totalB")
-        heading_3.innerText = "₹ 30"
-        div.append(heading_2, heading_3)
+                const heading_3 = document.createElement("h2")
+                heading_3.setAttribute("id", "totalB")
+                heading_3.innerText = "₹ 30"
+                div.append(heading_2, heading_3)
 
-        const style = document.createElement("div")
-        style.style.marginBottom = '20px';
-        style.style.padding = '0 10px';
+                const style = document.createElement("div")
+                style.style.marginBottom = '20px';
+                style.style.padding = '0 10px';
 
-        const anchor = document.createElement("a");
-        anchor.setAttribute("href", "../html/buynow.html")
-        style.append(anchor);
+                const anchor = document.createElement("a");
+                anchor.setAttribute("id", "checkout")
+                style.append(anchor);
 
-        const button_2 = document.createElement("button")
-        button_2.setAttribute("class", "checkout")
-        button_2.innerText = "Check out"
+                const button_2 = document.createElement("button")
+                button_2.setAttribute("class", "checkout")
+                button_2.innerText = "Check out"
 
-        anchor.append(button_2)
-        summary.append(div, style)
+                anchor.append(button_2)
+                summary.append(div, style)
 
-        container.append(cart)
-        container.append(summary)
+                container.append(cart)
+                container.append(summary)
 
-        document.querySelector(".main_container").append(container);
-                }
-            });
+                document.querySelector(".main_container").append(container);
+            }
+        });
         //cart increment function
 
         const product_item = JSON.parse(localStorage.getItem("cart")) ?? [];
@@ -531,10 +535,49 @@
 
         if (get_element == "") {
             css.style.display = "block"
+
         }
         else {
             css.style.display = "none"
         }
+
+        //edit
+        let apply_button = document.getElementById("apply");
+
+        let edit = document.getElementById("edit_address");
+
+        let inputbox = document.querySelectorAll("input")
+
+        edit.addEventListener("click", () => {
+
+        })
+        let promo = document.getElementById("promo")
+        promo.addEventListener("click", () => {
+            document.querySelector("#edit_address").removeAttribute("disabled", "")
+
+            document.querySelector("#apply").removeAttribute("disabled", "")
+        })
+       
+        apply_button.addEventListener("click",(e)=>{
+            e.preventDefault()
+        })
+
+
+
+
+        let checkout = document.getElementById("checkout")
+        checkout.addEventListener("click", function(){
+
+            get_element.find(el => {
+
+                if(el.email === user.email){
+                    window.location.href = "buynow.html?name=" + el.email
+                }
+
+            })
+
+
+        })
 
 
     </script>

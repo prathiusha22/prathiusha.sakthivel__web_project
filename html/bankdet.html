@@ -21,59 +21,57 @@
             <form id="form">
                 <div class="info">
                     <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required>UPI
-                    <img class="labelimg" src="../assets/image/google-pay.png" height="50px" width="50px"
-                        alt="img">
-<br>
-<br>
+                    <img class="labelimg" src="../assets/image/google-pay.png" height="50px" width="50px" alt="img">
+                    <br>
+                    <br>
                     <hr>
                     <input type="radio" class="payment_option" id="postpaid" name="rdo" value="wallet"
                         required>Wallet/Postpaid
                     <img class="labelimg" src="../assets/image/purse.png" height="30px" width="30px" alt="img">
-<br>
-<br>
+                    <br>
+                    <br>
                     <hr>
                     <input type="radio" class="payment_option" id="credit" name="rdo" value="debit"
                         required>Credit/Debit/ATM
                     Card
                     <img class="labelimg" src="../assets/image/credit-card (2).png" height="40px" width="40px"
                         alt="img">
-<br>
-<br>
+                    <br>
+                    <br>
                     <hr>
                     <input type="radio" class="payment_option" id="netbanking" name="rdo" value="net_banking"
                         required>Net
                     Banking
                     <img class="labelimg" src="../assets/image/cashless-payment.png" height="35px" width="40px"
                         alt="img">
-<br>
-<br>
+                    <br>
+                    <br>
                     <hr>
                     <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
                         required>Cash on Delivery
-                    <img class="labelimg" src="../assets/image/cash-payment.png" height="38px" width="40px"
-                        alt="img">
-<br>
-<br>
+                    <img class="labelimg" src="../assets/image/cash-payment.png" height="38px" width="40px" alt="img">
+                    <br>
+                    <br>
                 </div>
                 <hr>
                 <!-- image -->
                 <div class="img">
                     <img src="../assets/image/original.png" height="60px" width="60px" alt="img">
-<br>
+                    <br>
                     Authentic Products<br>
                     <img src="../assets/image/payment-secured.png" height="60px" width="60px" alt="img">
-<br>
+                    <br>
                     Secure Payments
                 </div>
-         </div>
-          <div class="cancel">
-             <button class="but">
-<a href="buynow.html">Cancel</a>
-</button>
-             <!-- <a href="../html/orderplaced.html"></a> -->
-             <button class="but" type="submit">Place Order</button>
-          </div>
-       </form>
+        </div>
+        <div class="cancel">
+            <button class="but">
+                <a href="buynow.html">Cancel</a>
+            </button>
+            <!-- <a href="../html/orderplaced.html"></a> -->
+            <button class="but" type="submit">Place Order</button>
+        </div>
+        </form>
         <!-- button -->
 
     </main>
@@ -121,7 +119,7 @@
         const month = objectdate.getUTCMonth() + 1;
         const day = objectdate.getUTCDate();
         const year = objectdate.getUTCFullYear();
-        ondate = `${day  }/${  month  }/${  year}`;
+        ondate = `${day}/${month}/${year}`;
         console.log(ondate);
 
         // orderid
@@ -141,44 +139,44 @@
         let product;
         products.find((e) => {             //arr=[{0},{1},{2}] ; e={0};e={1}
 
-    if (e.titlename == name) {
-        product = e;
-        return (result = e);
-        // console.log(e);
-    }
-    
-        return (result = 0);
-    
-});
+            if (e.titlename == name) {
+                product = e;
+                return (result = e);
+                // console.log(e);
+            }
+
+            return (result = 0);
+
+        });
 
         console.log(product);
 
         const form = document.getElementById("form");
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
+        // form.addEventListener("submit", (e) => {
+        //     e.preventDefault();
 
-            const payment_option = document.querySelector(
-        ".payment_option:checked").value;
+        //     const payment_option = document.querySelector(
+        //         ".payment_option:checked").value;
 
-            const user = JSON.parse(localStorage.getItem("active_user"));
-            const order = JSON.parse(localStorage.getItem("order")) ?? [];
+        //     const user = JSON.parse(localStorage.getItem("active_user"));
+        //     const order = JSON.parse(localStorage.getItem("order")) ?? [];
 
-            const arr = {}
+        //     const arr = {}
 
-            arr.image = product.image;
-            arr.price = product.price;
-            arr.titlename = product.titlename;
-            arr.product_id = product.product_id;
-            arr.order_id = order_id;
-            arr.order_date = ondate;
-            arr.payment_option = payment_option;
-            arr.email = user.email;
+        //     arr.image = product.image;
+        //     arr.price = product.price;
+        //     arr.titlename = product.titlename;
+        //     arr.product_id = product.product_id;
+        //     arr.order_id = order_id;
+        //     arr.order_date = ondate;
+        //     arr.payment_option = payment_option;
+        //     arr.email = user.email;
 
-            order.push(arr);
-            localStorage.setItem("order", JSON.stringify(order));
-            window.location.href = "../html/orderplaced.html";
+        //     order.push(arr);
+        //     localStorage.setItem("order", JSON.stringify(order));
+        //     window.location.href = "../html/orderplaced.html";
 
-        })
+        // })
     </script>
 
 </body>

@@ -27,24 +27,24 @@
                     <button id="edit">Edit-Profile</button>
                 </div>
                 <br>
-<br>
+                <br>
                 <!-- Save -->
                 <div>
                     <button type="submit" id="save_button">Save</button>
                 </div>
                 <br>
-<br>
+                <br>
                 <div>
                     <button type="submit" id="save_button">
-<a href="../index.html">Home</a>
-</button>
+                        <a href="../index.html">Home</a>
+                    </button>
                 </div>
                 <br>
-<br>
+                <br>
                 <div>
                     <button onclick="logout()" id="next">
-<a href="#">Log-out</a>
-</button>
+                        <a href="#">Log-out</a>
+                    </button>
                 </div>
             </div>
 
@@ -57,13 +57,13 @@
 
                     <div class="fname_container">
                         <label>Firstname</label>
-<br>
+                        <br>
                         <input disabled type="text" id="firstname" pattern="[A-Za-z]{1,35}" required="true">
                     </div>
 
                     <div class="lname_container">
                         <label>Last name</label>
-<br>
+                        <br>
                         <input disabled type="text" id="lastname" pattern="[A-Za-z]{1,35}" required="true">
                     </div>
                 </div>
@@ -72,7 +72,7 @@
 
                 <div class="email_container">
                     <label>Email</label>
-<br>
+                    <br>
                     <input disabled type="email" id="email" disabled>
                 </div>
 
@@ -82,13 +82,13 @@
 
                     <div class="city_container">
                         <label>City</label>
-<br>
+                        <br>
                         <input type="text" id="city" required="true">
                     </div>
 
                     <div class="country_container">
                         <label>Country</label>
-<br>
+                        <br>
                         <input disabled type="text" id="country" required="true">
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 <!-- address -->
                 <div class="address_container">
                     <label>Address</label>
-<br>
+                    <br>
                     <input disabled type="text" id="address" required="true">
                 </div>
 
@@ -106,13 +106,13 @@
 
                     <div class="occupation_container">
                         <label>Occupation</label>
-<br>
+                        <br>
                         <input disabled type="text" id="occupation" required="true">
                     </div>
 
                     <div class="number_container">
                         <label>MobileNumber</label>
-<br>
+                        <br>
                         <input disabled type="telephone" id="number" maxlength="10" minlength="10" required="true">
                     </div>
                 </div>
@@ -222,14 +222,14 @@
 
         const userRecords = JSON.parse(localStorage.getItem("user_records"));
         const user_logged = JSON.parse(localStorage.getItem("active_user"));
-       
+
         for (let i = 0; i < userRecords.length; i++) {
             if (user_logged["email"] == userRecords[i]["email"]) {
                 const savedImage = userRecords[i];
-                
+
                 if (savedImage && savedImage.image_url) {
                     imageShow.src = savedImage.image_url;
-                   
+
                 }
                 else {
                     imageShow.src = "https://iili.io/HkW7U4S.jpg"
@@ -239,12 +239,12 @@
         }
 
         const user_logged1 = JSON.parse(localStorage.getItem("active_user"));
-        const logout=document.getElementById("next")
-        logout.addEventListener("click",(e) =>{
-            let deletefalse=delete user_logged1
+        const logout = document.getElementById("next")
+        logout.addEventListener("click", (e) => {
+            let deletefalse = delete user_logged1
 
-            localStorage.setItem("active_user",deletefalse)
-       window.location.href="../index.html";
+            localStorage.setItem("active_user", deletefalse)
+            window.location.href = "../index.html";
 
         })
         // function logout(email) {

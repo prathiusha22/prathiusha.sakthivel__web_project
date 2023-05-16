@@ -655,7 +655,7 @@
     buy_now.setAttribute("id", "buybutton")
 
     const anchor1 = document.createElement("a");
-    anchor1.setAttribute("href", `../html/buynow.html?name=${  name}`);
+    anchor1.setAttribute("href", `../html/buynow.html?name=${  result.product_id}`);
     anchor1.innerText = "Buy Now";
     buy_now.append(anchor1);
     heading1_div.append(buy_now)
@@ -723,24 +723,24 @@
 
     //local storage
 
-    const product_item = JSON.parse(localStorage.getItem("product_details")) ?? [];
-    const incrementBtn = document.querySelector(".btn-increment")
-    const product_name = document.querySelector("#name_of_product").innerText;
-    const product_quantity = document.getElementById("quantity_of_product").innerText;
-    const product_price = document.getElementById("price").value;
-    incrementBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const rechange = product_quantity
+    // const product_item = JSON.parse(localStorage.getItem("product_details")) ?? [];
+    // const incrementBtn = document.querySelector(".btn-increment")
+    // const product_name = document.querySelector("#name_of_product").innerText;
+    // const product_quantity = document.getElementById("quantity_of_product").innerText;
+    // const product_price = document.getElementById("price").value;
+    // incrementBtn.addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   const rechange = product_quantity
 
-      const incrementedObj = {
-        "name_of_product": product_name,
-        "quantity_of_product": rechange,
-        "price": product_price
-      }
-      product_item.push(incrementedObj)
-      localStorage.setItem("product_details", JSON.stringify(product_item))
+    //   const incrementedObj = {
+    //     "name_of_product": product_name,
+    //     "quantity_of_product": rechange,
+    //     "price": product_price
+    //   }
+    //   product_item.push(incrementedObj)
+    //   localStorage.setItem("product_details", JSON.stringify(product_item))
 
-    })
+    // })
   </script>
 
 </body>

@@ -9,10 +9,96 @@
   text-transform: capitalize;
   transition: all .2s linear;
 }
+body{
+  overflow-x: hidden;
+}
+
+/* header */
+header {
+
+  background-color: rgb(108, 145, 53);
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+}
+
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+
+}
+
+.menu-bar .main {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+
+}
+
+.menu-bar {
+  margin-left: 300px;
+  margin-top: 40px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  font-weight: 700;
+}
+
+.menu-bar .main a {
+  padding-left: 70px;
+}
+
+.logo {
+  border: 2px solid white;
+  border-radius: 20px;
+  height: 60px;
+  width: 160px;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.navi {
+  text-decoration: none;
+  color: white;
+}
+
+.navi:hover {
+  font-size: 35px;
+  color: black;
+}
+
+.img1 {
+  margin-top: -90px;
+  background-image: url("../image/background1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+  width: 100%;
+}
+
+.hd1 {
+  float: right;
+  color: white;
+  word-spacing: 35px;
+  font-size: 25px;
+  margin-right: 150px;
+  margin-top: 40px;
+
+}
 
 .container{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   padding:25px;
   min-height: 100vh;
@@ -20,10 +106,11 @@
 }
 
 .container form{
-  padding:20px;
+  margin-top: 150px;
+  padding:50px;
   width:900px;
   background: #fff;
-  box-shadow: 5px 10px 5px 10px rgba(0,0,0,.1);
+  box-shadow: -10px 10px 30px 10px rgba(0,0,0,.1);
 }
 #branchname{
   position: relative;
@@ -58,7 +145,7 @@
 
 .container form .row .col .inputBox span{
   margin-bottom: 10px;
-  display: block;
+  display: grid;
 }
 
 .container form .row .col .inputBox input{
@@ -89,32 +176,43 @@
 }
 
 .container form .submit-btn{
-  width:860px;
+  width:800px;
   padding:12px;
   font-size: 17px;
   background:  rgb(108, 145, 53);;
   color:#fff;
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer;
   text-align: center;
 }
 .store{
   border: 2px solid white;
-  box-shadow: -10px 10px 30px 10px rgb(186, 192, 188);
-  height: 400px;
-  width: 400px;
+  box-shadow: -10px 10px 30px 10px rgb(213, 219, 215);
+  height: 500px;
+  width: 450px;
+  position: relative;
+  left:980px;
+  top: -715px;
+  padding-left: 30px;
 }
 a{
   color: white;
   text-decoration: none;
 }
+
 .mobile{
   position: relative;
   top: 20px;
 }
 .tomato{
-  height: 200px;
-  width: 250px;
+  height: 100px;
+  width: 150px;
+  position: relative;
+  left: 140px;
+}
+.product1{
+  position: relative;
+  top: 50px;
 }
 .labelimg3{
   position: relative;
@@ -126,6 +224,15 @@ a{
   left: 230px;
   top: 3px;
 }
+.name1{
+  position: relative;
+  top: 20px;
+}
+.amount{
+  font-size: 17px;
+  position: relative;
+  left: 150px;
+}
 .labelimg1{
   position: relative;
   left: 130px;
@@ -135,10 +242,15 @@ a{
   position: relative;
   left: 300px;
 }
+.price{
+  position: relative;
+  top: 25px;
+}
 .span2{
   position: relative;
   left: 200px;
 }
+
 .span1{
   position: relative;
   left: 100px;
@@ -155,6 +267,25 @@ a{
   position: relative;
   left: 70px;
 }
+.ordersummary{
+  font-size: 20px;
+  text-align: center;
+}
+.titlename{
+  font-size: 15px;
+  position: relative;
+  left: 150px;
+}
+.box_div{
+  border: 1px solid white;
+  box-shadow: -10px 10px 30px 10px rgb(229, 233, 231);
+  width: 370px;
+  height: 250px;
+  margin-left: 5px;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
 @media screen and (max-width:400px) {
   .container form{
     height: 1150px;

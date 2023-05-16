@@ -14,6 +14,35 @@
 </head>
 
 <body>
+    <header>
+
+        <img class="logo" src="../assets/image/mainlogo.png" height="80px" width="250px" alt="img">
+
+        <div class="menu-bar">
+
+            <div class="main">
+                <a href="../index.html">Home </a>
+
+                <!-- <a href="../html/about.html">About </a> -->
+
+                <div class="dropdown">
+
+                    <a class="product" href="../html/veges.html">Products</a>
+
+                    <!-- <div class="dropdown-content">
+                  <a href="html/login.html">Fresh Fruits</a>
+                  <a href="html/login2.html">Fresh Vegetables</a>
+                </div> -->
+                </div>
+
+                <a href="../html/sellerpage.html">Seller</a>
+
+                <a href="../html/profilepage.html">Profile</a>
+
+            </div>
+        </div>
+
+    </header>
 
     <div class="container">
 
@@ -70,23 +99,32 @@
                 <div class="col">
 
                     <h3 class="title">payment</h3>
-
+                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required>UPI
+                    <img class="labelimg1" src="../assets/image/google-pay.png" height="50px" width="50px" alt="img">
                     <div class="inputBox">
                         <span>cards accepted :</span>
                         <img src="../assets/image/card_img.png" alt="">
                     </div>
                     <div class="inputBox">
                         <span>name on card :</span>
-                        <input id="name_on_card" type="text" required="true">
+                        <input id="name_on_card" class="payment_option" type="text">
                     </div>
                     <div class="inputBox">
                         <span>credit card number :</span>
-                        <input id="creditcard" type="number" required="true">
+                        <input id="creditcard" type="number">
                     </div>
                     <div class="inputBox">
                         <span class="mobile">Branch Name:</span>
-                        <input id="branchname" type="text" required="true">
+                        <input id="branchname" type="text">
                     </div>
+                    <div class="inputBox">
+                        <span class="mobile">CVV Number:</span>
+                        <input id="branchname" type="text">
+                    </div>
+                    <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
+                        required>Cash on Delivery
+                    <img class="labelimg2" src="../assets/image/cash-payment.png" height="38px" width="40px" alt="img">
+
 
                 </div>
 
@@ -100,20 +138,40 @@
 
     </div>
     <div class="store">
+
+        <h1 class="ordersummary">Order Summary</h1>
         <!-- <div class="box_div">
-            <img src="../assets/image/tomato.jpg" alt="image">
-            <h1>FreshorganicTomato</h1>
-            <h2>₹ 50</h2>
+            <p class="product1">Product:</p>
+            <img class="tomato" src="../assets/image/tomato.jpg" alt="image">
+            <p class="name1">Product Name:</p>
+            <h1 class="titlename">FreshorganicTomato</h1>
+            <p class="price">Product Price:</p>
+            <h2 class="amount">₹ 50</h2>
+          
         </div> -->
 
     </div>
 
     <script>
         const getdetails = document.getElementById("payment_details");
-        getdetails.addEventListener("submit", (e) => {
-            e.preventDefault();
+        getdetails.addEventListener("submit", (ele) => {
+            ele.preventDefault();
             getdata()
         })
+
+
+        let ondate;
+        const objectdate = new Date();
+        const month = objectdate.getUTCMonth() + 1;
+        const day = objectdate.getUTCDate();
+        const year = objectdate.getUTCFullYear();
+        ondate = `${day}/${month}/${year}`;
+        console.log(ondate);
+
+        // orderid
+        const order_id = Date.now();
+        console.log(order_id);
+
 
         const products = JSON.parse(localStorage.getItem('create_product'));
 
@@ -124,14 +182,6 @@
         console.log(urls)//"name":"FreshOrganicTomato"
         const name = urls.get("name")
         console.log(name)//"FreshOrganicTomato"
-
-
-
-
-
-
-
-
 
         const get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
 
@@ -162,52 +212,179 @@
             })
 
             localStorage.setItem("buyerdetails", JSON.stringify(get_buyerdetails));
-            window.location.href = `../html/bankdet.html?name=${name}`;
+            // window.location.href = `../html/bankdet.html?name=${name}`;
+
+            const payment_option = document.querySelector(".payment_option:checked").value
+
+            const user = JSON.parse(localStorage.getItem("active_user"));
+            const order = JSON.parse(localStorage.getItem("order")) ?? [];
+
+
+            if (name == Number(name)) {
+
+                products.find((el) => {
+
+                    if (el.product_id === Number(name)) {
+
+                        console.log("working")
+                        const arr = {}
+
+                        arr.image = el.image;
+                        arr.price = el.price;
+                        arr.titlename = el.titlename;
+                        arr.product_id = el.product_id;
+                        arr.order_id = order_id;
+                        arr.order_date = ondate;
+                        arr.payment_option = payment_option;
+                        arr.email = user.email;
+
+                        order.push(arr);
+                        localStorage.setItem("order", JSON.stringify(order));
+                        window.location.href = "../html/orderplaced.html";
+
+                    }
+
+
+                })
+
+            }
+            else {
+                const cart_sample = JSON.parse(localStorage.getItem("cart"));
+                const user = JSON.parse(localStorage.getItem("active_user"));
+
+                cart_sample.find((e) => {
+                    if (e.email == user.email) {
+                        const arr = {}
+
+                        arr.image = e.image;
+                        arr.price = e.price;
+                        arr.titlename = e.titlename;
+                        arr.product_id = e.product_id;
+                        arr.order_id = order_id;
+                        arr.order_date = ondate;
+                        arr.payment_option = payment_option;
+                        arr.email = user.email;
+
+                        order.push(arr);
+                        localStorage.setItem("order", JSON.stringify(order));
+                        window.location.href = "../html/orderplaced.html";
+                    }
+                })
+            }
         }
 
 
-        let result;
 
-        // if (name == (name)) {
-        products.find((el) => {
+        if (name == Number(name)) {
 
-            if (el.titlename == name) {
+            let result;
+            products.find((el) => {
 
-                let div = document.createElement("div");
-                div.setAttribute("class", "box_div");
+                if (el.product_id === Number(name)) {
+
+                    let div = document.createElement("div");
+                    div.setAttribute("class", "box_div");
+
+                    let para_1 = document.createElement("p");
+                    para_1.setAttribute("class", "product1");
+                    para_1.innerText = "Product:";
+                    div.append(para_1)
+
+                    let image_veg = document.createElement("img");
+                    image_veg.setAttribute("class", "tomato");
+                    image_veg.setAttribute("src", el.image);
+                    div.append(image_veg);
+
+                    let para_2 = document.createElement("p");
+                    para_2.setAttribute("class", "name1");
+                    para_2.innerText = "Product Name:";
+                    div.append(para_2)
+
+                    let heading1 = document.createElement("h1");
+                    heading1.setAttribute("class", "titlename");
+                    heading1.innerText = el.titlename;
+                    div.append(heading1);
+
+                    let para_3 = document.createElement("p");
+                    para_3.setAttribute("class", "price");
+                    para_3.innerText = "Product Price:";
+                    div.append(para_3)
+
+                    let heading2 = document.createElement("h2");
+                    heading2.setAttribute("class", "amount");
+                    heading2.innerText = `₹${el.price}`;
+                    div.append(heading2);
+
+                    document.querySelector(".store").append(div);
+
+                }
+
+            });
 
 
-                let image_veg = document.createElement("img");
-                image_veg.setAttribute("class", "tomato");
-                image_veg.setAttribute("src", el.image);
-                div.append(image_veg);
+        }
+        else {
 
-                let heading1 = document.createElement("h1");
-                heading1.setAttribute("class", "product_name");
-                heading1.innerText = el.titlename;
-                div.append(heading1);
+            const cart_sample = JSON.parse(localStorage.getItem("cart"));
+            const user = JSON.parse(localStorage.getItem("active_user"));
 
-                let heading2 = document.createElement("h2");
-                heading2.setAttribute("class", "product_name");
-                heading2.innerText = `₹${el.price}`;
-                div.append(heading2);
+            cart_sample.find((e) => {
+                if (e.email == user.email) {
 
-                document.querySelector(".store").append(div);
+                    let div = document.createElement("div");
+                    div.setAttribute("class", "box_div");
+
+                    let para_1 = document.createElement("p");
+                    para_1.setAttribute("class", "product1");
+                    para_1.innerText = "Product:";
+                    div.append(para_1)
+
+                    let image_veg = document.createElement("img");
+                    image_veg.setAttribute("class", "tomato");
+                    image_veg.setAttribute("src", e.image);
+                    div.append(image_veg);
+
+                    let para_2 = document.createElement("p");
+                    para_2.setAttribute("class", "name1");
+                    para_2.innerText = "Product Name:";
+                    div.append(para_2)
+
+                    let heading1 = document.createElement("h1");
+                    heading1.setAttribute("class", "titlename");
+                    heading1.innerText = e.titlename;
+                    div.append(heading1);
+
+                    let para_3 = document.createElement("p");
+                    para_3.setAttribute("class", "price");
+                    para_3.innerText = "Product Price:";
+                    div.append(para_3)
+
+                    let heading2 = document.createElement("h2");
+                    heading2.setAttribute("class", "amount");
+                    heading2.innerText = `₹${e.price}`;
+                    div.append(heading2);
+
+                    document.querySelector(".store").append(div);
+
+                }
+            })
 
 
 
-               
-                // return (result = el);
-            }
-            // else{
-            //     alert("not working")
-            // }
-            // return (result = 0);
+
+
+        }
+
+
+
+
+        const form = document.getElementById("payment_details");
+
+        form.addEventListener("submit", (el) => {
+            el.preventDefault();
+
+
         });
-
-
-
-        // }
     </script>
 
 </body>
