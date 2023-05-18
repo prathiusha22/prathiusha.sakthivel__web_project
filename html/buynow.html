@@ -99,18 +99,19 @@
                 <div class="col">
 
                     <h3 class="title">payment</h3>
-                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required>UPI
+                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required><span class="span1">UPI</span>
                     <img class="labelimg1" src="../assets/image/google-pay.png" height="50px" width="50px" alt="img">
                     <div class="inputBox">
-                        <span>cards accepted :</span>
+                        <span class="span2"><input type="radio" id="expand" name="rdo">cards accepted :</span>
                         <img src="../assets/image/card_img.png" alt="">
                     </div>
-                    <div class="inputBox">
+                    <div class="hidden">
+                        <!-- <div class="inputBox">
                         <span>name on card :</span>
                         <input id="name_on_card" class="payment_option" type="text">
                     </div>
                     <div class="inputBox">
-                        <span>credit card number :</span>
+                        <span>Card number :</span>
                         <input id="creditcard" type="number">
                     </div>
                     <div class="inputBox">
@@ -118,11 +119,17 @@
                         <input id="branchname" type="text">
                     </div>
                     <div class="inputBox">
+                        <label>Card Expiry (MM/YYYY)
+                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
+                       </label>
+                    </div>
+                    <div class="inputBox">
                         <span class="mobile">CVV Number:</span>
                         <input id="branchname" type="text">
+                    </div> -->
                     </div>
                     <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
-                        required>Cash on Delivery
+                        required><span class="span3">Cash on Delivery</span>
                     <img class="labelimg2" src="../assets/image/cash-payment.png" height="38px" width="40px" alt="img">
 
 
@@ -192,9 +199,9 @@
             const city = document.getElementById("city").value;
             const state = document.getElementById("state").value;
             const pincode = document.getElementById("pincode").value;
-            const name_on_card = document.getElementById("name_on_card").value;
-            const creditcard = document.getElementById("creditcard").value;
-            const branchname = document.getElementById("branchname").value;
+            // const name_on_card = document.getElementById("name_on_card").value;
+            // const creditcard = document.getElementById("creditcard").value;
+            // const branchname = document.getElementById("branchname").value;
             const mobilenumber = document.getElementById("mobilenumber").value;
             const active_user = JSON.parse(localStorage.getItem("active_user"))
 
@@ -205,9 +212,9 @@
                 city,
                 state,
                 pincode,
-                name_on_card,
-                creditcard,
-                branchname,
+                // name_on_card,
+                // creditcard,
+                // branchname,
                 mobilenumber
             })
 
@@ -368,15 +375,7 @@
 
                 }
             })
-
-
-
-
-
         }
-
-
-
 
         const form = document.getElementById("payment_details");
 
@@ -385,6 +384,44 @@
 
 
         });
+        // payment
+        const pay = document.getElementById("upi")
+        const expand = document.getElementById("expand");
+        const hidden = document.querySelector(".hidden");
+        const cash = document.getElementById("cashondelivery");
+        expand.addEventListener("click", function () {
+            hidden.innerHTML = ` <div class="inputBox">
+                        <span>name on card :</span>
+                        <input id="name_on_card" class="payment_option" type="text">
+                    </div>
+                    <div class="inputBox">
+                        <span>Card number :</span>
+                        <input id="creditcard" type="number">
+                    </div>
+                    <div class="inputBox">
+                        <span class="mobile">Branch Name:</span>
+                        <input id="branchname" type="text">
+                    </div><br>
+                    <div class="inputBox">
+                        <label>Card Expiry (MM/YYYY)
+                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
+                       </label>
+                    </div>
+                    <div class="inputBox">
+                        <span class="mobile">CVV Number:</span>
+                        <input id="branchname" type="text">
+                    </div> `
+        })
+        cash.addEventListener("click", function () {
+            hidden.innerHTML = ""
+
+        })
+        pay.addEventListener("click", function () {
+            hidden.innerHTML = ""
+
+        })
+
+
     </script>
 
 </body>

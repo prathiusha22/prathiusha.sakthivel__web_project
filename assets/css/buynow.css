@@ -106,7 +106,8 @@ a {
 }
 
 .container form{
-  margin-top: 150px;
+  margin-top: 100px;
+  margin-left: 70px;
   padding:50px;
   width:900px;
   background: #fff;
@@ -125,7 +126,7 @@ a {
 .container form .row{
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap:30px;
 }
 
 .container form .row .col{
@@ -188,12 +189,15 @@ a {
 .store{
   border: 2px solid white;
   box-shadow: -10px 10px 30px 10px rgb(213, 219, 215);
-  height: 500px;
-  width: 450px;
+  height: 600px;
+  width: 400px;
   position: relative;
-  left:980px;
-  top: -715px;
+  left:1050px;
+  top: -700px;
   padding-left: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden; 
+
 }
 a{
   color: white;
@@ -214,14 +218,10 @@ a{
   position: relative;
   top: 50px;
 }
-.labelimg3{
-  position: relative;
-  left: 750px;
-  top: -35px;
-}
+
 .labelimg2{
   position: relative;
-  left: 230px;
+  left: 30px;
   top: 3px;
 }
 .name1{
@@ -235,12 +235,12 @@ a{
 }
 .labelimg1{
   position: relative;
-  left: 130px;
+  left: 60px;
   top: 18px;
 }
 .span3{
   position: relative;
-  left: 300px;
+  left: 20px;
 }
 .price{
   position: relative;
@@ -248,24 +248,25 @@ a{
 }
 .span2{
   position: relative;
-  left: 200px;
+  left: 33px;
 }
 
 .span1{
   position: relative;
-  left: 100px;
+  left: 20px;
 }
 #cashondelivery{
   position: relative;
-  left: 280px;
+  left: 5px;
 }
-#postpaid{
+#expand{
   position: relative;
-  left: 180px;
+  left: -218px;
+  top: 18px;
 }
 #upi{
   position: relative;
-  left: 70px;
+  left: 0px;
 }
 .ordersummary{
   font-size: 20px;
@@ -281,8 +282,10 @@ a{
   box-shadow: -10px 10px 30px 10px rgb(229, 233, 231);
   width: 370px;
   height: 250px;
-  margin-left: 5px;
-  margin-top: 20px;
+  position: relative;
+  left: -25px;
+  top: 20px;
+  margin: 30px 10px 10px 10px;
   padding-left: 10px;
 }
 

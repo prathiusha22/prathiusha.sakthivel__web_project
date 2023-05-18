@@ -32,7 +32,7 @@ header {
 }
 
 .menu-bar {
-    margin-left: 100px;
+    margin-left: 80px;
     margin-top: 40px;
 }
 
@@ -104,7 +104,7 @@ a {
 
 #icon {
     position: relative;
-    left: 220px;
+    left: 200px;
     font-size: 28px;
     color: white;
 }
@@ -508,6 +508,7 @@ button {
     margin-left: 500px;
     object-fit: cover;
 }
+
 
 @keyframes slider {
     0% {

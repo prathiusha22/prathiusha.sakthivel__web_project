@@ -47,7 +47,7 @@
           <i id="icon" class="fa-sharp fa-solid fa-bars"></i>
         </a>
 
-        <a href="../html/cart.html">
+        <a href="./html/cart.html">
           <i id="cart_icon" class="fa-solid fa-cart-shopping fa-fade"></i>
         </a>
         <p id="cartcount">0</p>
@@ -282,7 +282,7 @@
       //toggling signin navbar
 
       const loginUser = JSON.parse(localStorage.getItem("active_user"));
-      console.log(loginUser);
+      // console.log(loginUser);
       const loginbtn = document.querySelector(".register")
       if (loginUser == null) {
       }
@@ -308,7 +308,7 @@
 
       //validation
       const login_detail = localStorage.getItem("active_user");
-      console.log(login_detail);
+      // console.log(login_detail);
       const item_card = document.getElementById("vegetable_button");
         item_card.addEventListener("click", (el) => {
           if (login_detail == "false") {
@@ -334,11 +334,25 @@
 
     const co = cartCount.length
 
-    console.log(co)
+    // console.log(co)
     const counting = document.getElementById("cartcount");
     counting.innerHTML = cartCount.length;
 
+   //cart validation
 
+   const cartdetail_display = localStorage.getItem("active_user");
+   
+      // console.log(kkk);
+      const item_cart = document.getElementById("cart_icon");
+      item_cart.addEventListener("click", (e) => {
+
+          if (cartdetail_display.status == false) {
+            alert("Hii");
+          } 
+          else {
+            window.location.href="../html/cart.html"
+              }
+            })
     </script>
 
 </body>

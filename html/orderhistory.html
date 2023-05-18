@@ -56,6 +56,11 @@
                         <p id="order">Order Price : 10</p>
                         <p id="total_count1">Total:10</p>
                     </div>
+                    
+                    <div class="cancel">
+                      <button id="cancelbutton">Cancel Order</button>
+                    </div>
+
                 </div>
 
             </div>
@@ -85,67 +90,92 @@
         </div>
     </main>
 
-    <script>    
-    const user = JSON.parse(localStorage.getItem("active_user"));   
-     const orderget = JSON.parse(localStorage.getItem("order"));
+    <script>
+        const user = JSON.parse(localStorage.getItem("active_user"));
+        const orderget = JSON.parse(localStorage.getItem("order"));
+        const cartget = JSON.parse(localStorage.getItem("cart"))
+        console.log(cartget);
 
         orderget.find((el) => {
-            if(user.email === el.email){
-            const border_div = document.createElement("div")
-            border_div.setAttribute("class", "borderbox")
-            document.querySelector(".outer_div").append(border_div);
+            for (let i = 0; i < 1; i++) {
+                if (user.email === el.email) {
+                    const border_div = document.createElement("div")
+                    border_div.setAttribute("class", "borderbox")
+                    document.querySelector(".outer_div").append(border_div);
 
-            const next_div = document.createElement("div")
-            next_div.setAttribute("class", "tomato")
-            border_div.append(next_div);
+                    const next_div = document.createElement("div")
+                    next_div.setAttribute("class", "tomato")
+                    border_div.append(next_div);
 
-            const product_image = document.createElement("img")
-            product_image.setAttribute("class", "tomato1")
-            product_image.setAttribute("src", el.image)
-            next_div.append(product_image);
+                    const product_image = document.createElement("img")
+                    product_image.setAttribute("class", "tomato1")
+                    product_image.setAttribute("src", el.image)
+                    next_div.append(product_image);
 
-            const h2 = document.createElement("h2")
-            h2.innerHTML = el.titlename
-            next_div.append(h2);
+                    const h2 = document.createElement("h2")
+                    h2.innerHTML = el.titlename
+                    next_div.append(h2);
 
-            const h3 = document.createElement("h3")
-            h3.innerHTML = "Quantity : 1"
-            next_div.append(h3);
+                    const h3 = document.createElement("h3")
+                    h3.innerText = "Quantity :" + cartget[0]["quanty"]
+                    next_div.append(h3);
 
-            const h4 = document.createElement("h4")
-            h4.innerHTML = `₹${el.price} ` + `Per kg`
-            next_div.append(h4);
+                    const h4 = document.createElement("h4")
+                    h4.innerHTML = ``
+                    next_div.append(h4);
 
-            const productdetails_div = document.createElement("div")
-            productdetails_div.setAttribute("class", "price")
-            border_div.append(productdetails_div);
+                    const productdetails_div = document.createElement("div")
+                    productdetails_div.setAttribute("class", "price")
+                    border_div.append(productdetails_div);
 
-            const heading2 = document.createElement("h2")
-            heading2.setAttribute("id", "product")
-            heading2.innerHTML = "Price Details:-"
-            productdetails_div.append(heading2);
+                    const heading2 = document.createElement("h2")
+                    heading2.setAttribute("id", "product")
+                    heading2.innerHTML = "Price Details:-"
+                    productdetails_div.append(heading2);
 
-            const order_detail = document.createElement("div")
-            order_detail.setAttribute("class", "order")
-            productdetails_div.append(order_detail);
+                    const order_detail = document.createElement("div")
+                    order_detail.setAttribute("class", "order")
+                    productdetails_div.append(order_detail);
 
-            const order_para = document.createElement("p")
-            order_para.setAttribute("id", "order")
-            order_para.innerHTML = `₹${el.price} ` + `Per kg`
-            order_detail.append(order_para);
+                    const order_para = document.createElement("p")
+                    order_para.setAttribute("id", "order")
+                    order_para.innerHTML = `₹${el.price} ` + `Per kg`
+                    order_detail.append(order_para);
 
-            const total_para = document.createElement("p")
-            total_para.setAttribute("id", "total_count1")
-            total_para.innerHTML = `₹${el.price}`
-            order_detail.append(total_para)
+                    const total_para = document.createElement("p")
+                    total_para.setAttribute("id", "total_count1")
+                    total_para.innerHTML = ``
+                    order_detail.append(total_para)
+
+                    const cancel_button = document.createElement("button")
+                    cancel_button.setAttribute("id", "cancelbutton")
+                    cancel_button.innerText = "Cancel Order";
+                    order_detail.append(cancel_button)
+
+                    // const cancelled = document.createElement("button")
+                    // cancelled.setAttribute("id", "cancelled")
+                    // cancelled.innerText = "Cancelled";
+                    // order_detail.append(cancelled)
+
+                    cancel_button.addEventListener("click", (e) => {
+                        for (let j = 0;j<orderget.length; j++){
+                            if(user.email==orderget[i].email&&orderget[i].titlename==orderget[j].titlename){
+                                orderget.splice(i,1);
+                                localStorage.setItem("order",JSON.stringify(orderget));
+                                location.reload()
+                            }
+                        }
+                })
+              }
             }
-        });
-        
+          }
+        );
+
         const profile_userdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? []
 
         const last_user_details = JSON.parse(localStorage.getItem("user_records"));
         const last_email = localStorage.getItem("data");
-      
+
 
         //profile//
         last_user_details.filter(item => {
@@ -212,6 +242,8 @@
             }
 
         });
+
+
     </script>
 
 </body>

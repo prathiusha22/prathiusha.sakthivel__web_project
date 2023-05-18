@@ -35,8 +35,8 @@
                 <br>
                 <br>
                 <div>
-                    <button type="submit" id="save_button">
-                        <a href="../index.html">Home</a>
+                    <button type="submit" id="home">
+                        <a>Home</a>
                     </button>
                 </div>
                 <br>
@@ -168,6 +168,8 @@
             })
         });
 
+        let commun_obj;
+
         profile_form.addEventListener("submit", (e) => {
 
             e.preventDefault();
@@ -180,7 +182,7 @@
                     obj["lastname"] = document.getElementById("lastname").value;
                     obj["email"] = document.getElementById("email").value;
 
-                    let commun_obj = {
+                    commun_obj = {
 
                         "city": document.getElementById("city").value,
                         "country": document.getElementById("country").value,
@@ -256,6 +258,18 @@
         //         }
         //     })
         // }
+
+        let home_button=document.getElementById("home");
+        console.log(home_button);
+        home_button.addEventListener("click",(e)=>{
+            if( commun_obj==null){
+                alert("Please fill the address details")
+            }
+            else{
+                window.location.href="../index.html"
+            }
+
+        })
 
     </script>
 
