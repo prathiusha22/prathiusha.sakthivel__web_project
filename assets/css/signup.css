@@ -4,7 +4,8 @@
 }
 
 body {
-    background-image: url(../image/loginbg.jpeg);
+    background-image: url(../image/various-vegetables-black-table-with-space-message.jpg);
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +16,7 @@ body {
 .container {
     background-color: white;
     border-radius: 50px;
-    box-shadow: 20px 20px 20px rgb(218, 224, 220);
+    box-shadow: -8px 8px 40px rgb(212, 219, 215);
     overflow: hidden;
     max-width: 100%;
     width: 450px;
@@ -114,7 +115,7 @@ body {
 }
 
 .form button {
-    background-color: rgb(35, 129, 35);
+    background-color: #1d242e;
     border: none;
     color: white;
     display: block;

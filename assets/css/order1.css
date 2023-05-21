@@ -89,7 +89,7 @@ main {
 
 .box {
     border: 2px solid white;
-    height: 800px;
+    height: 850px;
     width: 1200px;
     box-shadow: -10px 10px 30px 10px rgb(218, 224, 220);
     border-radius: 0px;
@@ -113,18 +113,18 @@ main {
 }
 
 h2 {
-    font-size: 40px;
-    color: rgb(45, 102, 103);
+    font-size: 30px;
+    color: rgb(26, 66, 67);
     position: relative;
     left: 5px;
-    top:-10px;
+    top:20px;
 }
 
 h4 {
-    font-size: 35px;
-    color: rgb(129, 64, 18);
+    font-size: 30px;
+    color: rgb(121, 70, 33);
     position: relative;
-    left: 10px;
+    left: 8px;
     top: -10px;
   
 }
@@ -168,7 +168,7 @@ h4 {
     color: white;
     position: relative;
     top: -10px;
-    right: 204px;
+    left: -280px;
 
 }
 
@@ -223,9 +223,12 @@ i {
 }
 
 h3 {
-    text-align: center;
-    color: red;
-    font-size: 35px;
+    /* text-align: center; */
+    color: rgb(51, 17, 202);
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+    
 }
 
 li {
@@ -350,6 +353,35 @@ i{
     width:20px;
     bottom:65px;
 }
+input {
+     /* border: none; */
+    outline: none; 
+    width: 100px;
+    height: 40px;
+    margin: 15px 0;
+    position: relative;
+    top: -23px;
+    left: -15px;
+    /* padding: 7px; */
+}
+button {
+    border: none;
+    background-color: red;
+    padding: 8px 30px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin: 10px 10px -10px 40px;
+    position: relative;
+    left: -30px;
+    top: -25px;
+
+}
+button:hover {
+    background-color: #333;
+}
+
    
 @media screen and (max-width:400px) {
     header {

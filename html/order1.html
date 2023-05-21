@@ -588,22 +588,47 @@
     heading2.innerText = result.titlename
     heading1_div.append(heading2)
 
+    //gram
+    const heading_gram=document.createElement("h3");
+    heading_gram.setAttribute("id","gram")
+    heading_gram.setAttribute("class","gramquantity")
+    heading_gram.innerText="Quantity:"+"  "+"200"+"g"
+    heading1_div.append(heading_gram)
+
     //price//
     const heading3 = document.createElement("h4");
     heading3.setAttribute("id", "quantity_of_product")
-    heading3.innerText = ` ₹` + ` ${result.price}`
+    heading3.innerText ="Price:"+ ` ₹` + `${result.price}`
     heading1_div.append(heading3)
 
-    // product_quantity = document.createElement("p");
-    // product_quantity.innerText ="Starts from "+  250 + "g";
-    // heading1_div.append(product_quantity);
+    const decrement = document.createElement("button");
+    decrement.setAttribute("class", "btn1 btn-decrement");
+    decrement.setAttribute("id", "decrement")
+    decrement.innerText = "-"
+    heading1_div.append(decrement)
+
+    const adding = document.createElement("input");
+    adding.setAttribute("class", "btn-input")
+    adding.setAttribute("data-keyword",result["price"])
+    adding.setAttribute("id", "quantity")
+    adding.setAttribute("type", "text")
+    adding.setAttribute("value", "1")
+    heading1_div.append(adding)
+
+    const increment = document.createElement("button")
+    increment.setAttribute("id", "increment")
+    increment.setAttribute("class", "btn1 btn-increment")
+    increment.innerText = "+"
+    heading1_div.append(increment)
+
+
 
     //star//
-    let star = "";
-    for (let j = 0; j < result.ratings; j++) {
-      star += "⭐";
-    }
-    heading1_div.append(star);
+    // let star = "";
+    // for (let j = 0; j < result.ratings; j++) {
+    //   star += "⭐";
+    // }
+    // heading1_div.append(star);
 
     ratings_div = document.createElement("div");
     ratings_div.setAttribute("class", "product-ratings");
@@ -623,20 +648,20 @@
 
     let description_1 = document.createElement("p");
     description_1.setAttribute("class", "description");
-    description_1.innerText =` Nutrient-rich: Vegetables are packed with essential vitamins, minerals, and nutrients that are
+    description_1.innerText = ` Nutrient-rich: Vegetables are packed with essential vitamins, minerals, and nutrients that are
     necessary for the proper functioning of our bodies. They are particularly high in vitamins A, C,
     and K, as well as potassium, fiber, and antioxidants.`
     heading1_div.append(description_1)
 
     let description_2 = document.createElement("p");
     description_2.setAttribute("class", "description");
-    description_2.innerText =`   Low in calories: Most vegetables are low in calories and high in fiber, which makes them an
+    description_2.innerText = `   Low in calories: Most vegetables are low in calories and high in fiber, which makes them an
     excellent choice for weight management. They can help you feel full for longer periods of time,
     without adding a lot of calories to your diet.`
     heading1_div.append(description_2)
 
 
-          
+
 
     // add to cart//
 
@@ -655,7 +680,7 @@
     buy_now.setAttribute("id", "buybutton")
 
     const anchor1 = document.createElement("a");
-    anchor1.setAttribute("href", `../html/buynow.html?name=${  result.product_id}`);
+    anchor1.setAttribute("href","#");
     anchor1.innerText = "Buy Now";
     buy_now.append(anchor1);
     heading1_div.append(buy_now)
@@ -703,44 +728,136 @@
     // cartCount
     const cart_sample = JSON.parse(localStorage.getItem("cart"));
     const user = JSON.parse(localStorage.getItem("active_user"));
-   
+
 
     const cartCount = [];
     cart_sample.forEach((e) => {
       if (e.email == user.email) {
         cartCount.push(e);
-        
+
       }
     });
 
     const co = cartCount.length
-    
+
 
     console.log(co)
     const counting = document.getElementById("cartcount");
     counting.innerHTML = cartCount.length;
+
+
+
+    let increment1 = document.getElementById("increment")
+    let pricelist = document.getElementById("quantity_of_product");
+    let gramquantity=document.querySelector("gramquantity")
+    console.log(increment1)
+    let decrement1 = document.getElementById("decrement");
+
+
+    let maxbtn = document.getElementById("increment")
+    let minbtn = document.getElementById("decrement")
+    let input = document.querySelector("input")
+    let price = document.getElementById("quantity_of_product")
+    let gram = document.getElementById("gram")
+    let id = input.dataset.keyword
+
+
+
+    maxbtn.addEventListener("click",function () {
+      
+
+        let qty = parseFloat(input.value);
+        qty = qty + 1
+        input.value = qty
+        let gram_value = 250 * input.value
+
+        
+        price.innerText = `Price : ₹${id * input.value}`
+        if(gram_value >= 250){
+          gram.innerText = ` Quantity: ${gram_value}g`
+        }
+        if(gram_value >= 1000){
+          gram.innerText = `Quantity: ${gram_value/1000}kg`
+        }
+
+
+    })
+     //this event for decrease quantity value
+        minbtn.addEventListener("click",function () {
+            if (input.value !== "1") {
+         let qty = parseFloat(input.value);
+         qty = qty - 1
+         input.value = qty
+         let gram_value = 250 * input.value
+
+         price.innerText = `Price : ₹${id * input.value}`
+
+         if(gram_value >= 250){
+          gram.innerText = ` Quantity: ${gram_value}g`
+        }
+        if(gram_value >= 1000){
+          gram.innerText = `Quantity: ${gram_value/1000}kg`
+        }
+            }
+            
+            
+        })
+
+        //local storage
+
+        // const product_item=JSON.parse(localStorage.getItem("product_details"))??[];
+        // const buynow_button=document.getElementById("buybutton")
+        // buynow_button.addEventListener("click",(e)=>{
+        //   e.preventDefault();
+        //   storedetails();
+        // })
+
+        // function storedetails(){
+        //   const productname=document.getElementById("name_of_product").value;
+        //   const quantity=document.getElementById("gram").value;
+        //   const price=document.getElementById("quantity_of_product").value;
+
+
+
+        //   product_item.push({
+        //     "name_of_product":productname,
+        //     "gram":quantity,
+        //     "quantity_of_product":price
+        //   })
+        //   localStorage.setItem("product_details",JSON.stringify(product_item));
+        
+        // }
+        
+    // local storage
+    const buynowbutton=document.getElementById("buybutton")
+
+
+    buynowbutton.addEventListener("click", (e) => {
+      e.preventDefault();
+      // const rechange = product_quantity
+
+
+
+      
+    const product_item = JSON.parse(localStorage.getItem("product_details")) ?? [];
+    const incrementBtn = document.querySelector(".btn-increment")
+    const product_name = document.querySelector("#name_of_product").innerText;
+    const product_quantity = document.getElementById("gram").innerText;
+    const product_price = document.getElementById("quantity_of_product").innerText;
     
+      product_item.push({
+        "name_of_product": product_name,
+        "quantity_of_product": product_quantity,
+        "price": product_price
+      })
+      // product_item.push(incrementedObj)
+      localStorage.setItem("product_details", JSON.stringify(product_item))
+      window.location.href="../html/buynow.html?name=" + result.product_id;
+    })
 
-    //local storage
 
-    // const product_item = JSON.parse(localStorage.getItem("product_details")) ?? [];
-    // const incrementBtn = document.querySelector(".btn-increment")
-    // const product_name = document.querySelector("#name_of_product").innerText;
-    // const product_quantity = document.getElementById("quantity_of_product").innerText;
-    // const product_price = document.getElementById("price").value;
-    // incrementBtn.addEventListener("click", (e) => {
-    //   e.preventDefault();
-    //   const rechange = product_quantity
 
-    //   const incrementedObj = {
-    //     "name_of_product": product_name,
-    //     "quantity_of_product": rechange,
-    //     "price": product_price
-    //   }
-    //   product_item.push(incrementedObj)
-    //   localStorage.setItem("product_details", JSON.stringify(product_item))
 
-    // })
   </script>
 
 </body>

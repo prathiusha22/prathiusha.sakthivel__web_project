@@ -1,5 +1,5 @@
 body {
-    background-image: url(../image/loginbg.jpeg);
+    background-image: url(../image/various-vegetables-black-table-with-space-message.jpg);
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,6 +8,7 @@ body {
 .outer_container {
     background-color: white;
     border: 1px solid white;
+    box-shadow: -8px 5px 30px rgb(236, 241, 236);
     height: 750px;
     width: 1200px;
     margin-left: 140px;

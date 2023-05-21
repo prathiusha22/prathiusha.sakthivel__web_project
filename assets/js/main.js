@@ -2,7 +2,7 @@ const create_product = [
   {
     image: "https://iili.io/HNNp0k7.jpg",
     titlename: "FreshorganicTomato",
-    price: "25",
+    price: "20",
     ratings: "4",
     product_id: 0,
     status: true,
@@ -10,7 +10,7 @@ const create_product = [
   {
     image: "https://iili.io/HNOFWga.jpg",
     titlename: "FreshorganicBeetroot",
-    price: "30",
+    price: "45",
     ratings: "4",
     product_id: 1,
     status: true,
@@ -18,7 +18,7 @@ const create_product = [
   {
     image: "https://iili.io/HNOKxkv.jpg",
     titlename: "FreshorganicPotato",
-    price: "40",
+    price: "30",
     ratings: "4",
     product_id: 2,
     status: true,
@@ -26,7 +26,7 @@ const create_product = [
   {
     image: "https://iili.io/HNOKAQI.jpg",
     titlename: "FreshorganicKohlrabi",
-    price: "60",
+    price: "28",
     ratings: "4",
     product_id: 3,
     status: true,
@@ -34,7 +34,7 @@ const create_product = [
   {
     image: "https://iili.io/HNOK7EX.jpg",
     titlename: "FreshorganicBrinjal",
-    price: "40",
+    price: "30",
     ratings: "4",
     product_id: 4,
     status: true,
@@ -66,7 +66,7 @@ const create_product = [
   {
     image: "https://iili.io/HNOqIsI.png",
     titlename: "FreshorganicCabbage",
-    price: "40",
+    price: "60",
     ratings: "4",
     product_id: 9,
     status: true,
@@ -74,7 +74,7 @@ const create_product = [
   {
     image: "https://iili.io/HNOqA0X.jpg",
     titlename: "FreshorganicBrocholi",
-    price: "80",
+    price: "90",
     ratings: "4",
     product_id: 10,
     status: true,

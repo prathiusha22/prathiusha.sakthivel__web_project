@@ -277,11 +277,16 @@ a{
   position: relative;
   left: 150px;
 }
+.quantity{
+  font-size: 15px;
+  position: relative;
+  left: 150px;
+}
 .box_div{
   border: 1px solid white;
   box-shadow: -10px 10px 30px 10px rgb(229, 233, 231);
   width: 370px;
-  height: 250px;
+  height: 300px;
   position: relative;
   left: -25px;
   top: 20px;

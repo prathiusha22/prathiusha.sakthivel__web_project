@@ -90,7 +90,7 @@
                     </div>
                     <div class="inputBox">
                         <span>Mobile Number:</span>
-                        <input id="mobilenumber" type="number" required="true">
+                        <input id="mobilenumber" type="tel" required="true">
                     </div>
 
 
@@ -99,7 +99,8 @@
                 <div class="col">
 
                     <h3 class="title">payment</h3>
-                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required><span class="span1">UPI</span>
+                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required><span
+                        class="span1">UPI</span>
                     <img class="labelimg1" src="../assets/image/google-pay.png" height="50px" width="50px" alt="img">
                     <div class="inputBox">
                         <span class="span2"><input type="radio" id="expand" name="rdo">cards accepted :</span>
@@ -120,12 +121,12 @@
                     </div>
                     <div class="inputBox">
                         <label>Card Expiry (MM/YYYY)
-                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
+                        <input type="tel" id="cc_exp" placeholder="•• / ••••" data-payment='cc-exp'>
                        </label>
                     </div>
                     <div class="inputBox">
                         <span class="mobile">CVV Number:</span>
-                        <input id="branchname" type="text">
+                        <input id="cvv" type="text">
                     </div> -->
                     </div>
                     <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
@@ -193,16 +194,16 @@
         const get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
 
         function getdata() {
-            // let name1 = document.getElementById("fullname").value;
-            // let email = document.getElementById("email").value;
             const address = document.getElementById("address").value;
             const city = document.getElementById("city").value;
             const state = document.getElementById("state").value;
             const pincode = document.getElementById("pincode").value;
-            // const name_on_card = document.getElementById("name_on_card").value;
-            // const creditcard = document.getElementById("creditcard").value;
-            // const branchname = document.getElementById("branchname").value;
             const mobilenumber = document.getElementById("mobilenumber").value;
+            // const name_on_card=document.getElementById("name_on_card").value;
+            // const creditcard=document.getElementById("creditcard").value;
+            // const branchname=document.getElementById("branchname").value;
+            // const cc_exp=document.getElementById("cc_exp").value;
+            // const cvv=document.getElementById("cvv").value;
             const active_user = JSON.parse(localStorage.getItem("active_user"))
 
             get_buyerdetails.push({
@@ -212,20 +213,20 @@
                 city,
                 state,
                 pincode,
+                mobilenumber
                 // name_on_card,
                 // creditcard,
                 // branchname,
-                mobilenumber
+                // cc_exp,
+                // cvv
             })
 
             localStorage.setItem("buyerdetails", JSON.stringify(get_buyerdetails));
-            // window.location.href = `../html/bankdet.html?name=${name}`;
 
             const payment_option = document.querySelector(".payment_option:checked").value
 
             const user = JSON.parse(localStorage.getItem("active_user"));
             const order = JSON.parse(localStorage.getItem("order")) ?? [];
-
 
             if (name == Number(name)) {
 
@@ -244,6 +245,7 @@
                         arr.order_date = ondate;
                         arr.payment_option = payment_option;
                         arr.email = user.email;
+                        arr.status=true;
 
                         order.push(arr);
                         localStorage.setItem("order", JSON.stringify(order));
@@ -322,6 +324,33 @@
                     heading2.innerText = `₹${el.price}`;
                     div.append(heading2);
 
+                    let para_4 = document.createElement("p");
+                    para_4.setAttribute("class", "price");
+                    para_4.innerText = "Product Quantity:";
+                    div.append(para_4)
+
+                    let heading3 = document.createElement("h2");
+                    heading3.setAttribute("class", "quantity");
+                    heading3.innerText = `₹${el.quantity}` ;
+                    div.append(heading3);
+                    // let decrement = document.createElement("button");
+                    // decrement.setAttribute("class", "btn1 btn-decrement");
+                    // decrement.innerText = "-"
+                    // div.append(decrement)
+
+                    // let adding = document.createElement("input");
+                    // adding.setAttribute("class", "btn-input")
+                    // adding.setAttribute("id", "quantity")
+                    // adding.setAttribute("type", "text")
+                    // adding.setAttribute("value", "1")
+                    // div.append(adding)
+
+                    // let increment = document.createElement("button")
+                    // increment.setAttribute("id", "increment")
+                    // increment.setAttribute("class", "btn1 btn-increment")
+                    // increment.innerText = "+"
+                    // div.append(increment)
+
                     document.querySelector(".store").append(div);
 
                 }
@@ -330,6 +359,7 @@
 
 
         }
+        
         else {
 
             const cart_sample = JSON.parse(localStorage.getItem("cart"));
@@ -371,6 +401,16 @@
                     heading2.innerText = `₹${e.price}`;
                     div.append(heading2);
 
+                    let para_4 = document.createElement("p");
+                    para_4.setAttribute("class", "price");
+                    para_4.innerText = "Product Quantity:";
+                    div.append(para_4)
+
+                    let heading3 = document.createElement("h2");
+                    heading3.setAttribute("class", "quantity");
+                    heading3.innerText = `₹${e.quanty}` ;
+                    div.append(heading3);
+
                     document.querySelector(".store").append(div);
 
                 }
@@ -381,7 +421,6 @@
 
         form.addEventListener("submit", (el) => {
             el.preventDefault();
-
 
         });
         // payment
@@ -404,12 +443,12 @@
                     </div><br>
                     <div class="inputBox">
                         <label>Card Expiry (MM/YYYY)
-                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
+                        <input type="tel" id="cc_exp" placeholder="•• / ••••" data-payment='cc-exp'>
                        </label>
                     </div>
                     <div class="inputBox">
                         <span class="mobile">CVV Number:</span>
-                        <input id="branchname" type="text">
+                        <input id="cvv" type="text">
                     </div> `
         })
         cash.addEventListener("click", function () {
@@ -420,7 +459,6 @@
             hidden.innerHTML = ""
 
         })
-
 
     </script>
 

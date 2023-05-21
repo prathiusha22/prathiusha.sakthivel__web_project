@@ -265,6 +265,7 @@
 
 
                 delete_icon.addEventListener("click", (e) => {
+                    alert("Are you sure do you want to remove the product from cart")
                     for (let j = 0; j < cart_sample.length; j++) {
                         if (user.email == cart_sample[i].email && cart_sample[i].titlename == cart_sample[j].titlename) {
                             cart_sample.splice(i, 1);
@@ -414,6 +415,7 @@
                 e.target.parentElement.children[5].value = Number(e.target.parentElement.children[5].value) + valueCount;
                 console.log(e.target.parentElement.children[5].value);
                 console.log(e.target.parentElement.children[1].innerText)
+                console.log(e.target.parentElement);
 
                 let check = Number(e.target.parentElement.children[5].value) * 250;
                 e.target.parentElement.children[3].innerText = `${check}g`;
@@ -530,7 +532,6 @@
 
         if (get_element == "") {
             css.style.display = "block"
-
         }
         else {
             css.style.display = "none"
@@ -557,9 +558,6 @@
             e.preventDefault()
         })
 
-
-
-
         let checkout = document.getElementById("checkout")
         checkout.addEventListener("click", function(){
 
@@ -570,10 +568,9 @@
                 }
 
             })
-
-
         })
 
+        
 
     </script>
 
