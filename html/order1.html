@@ -725,26 +725,7 @@
       }
     })
 
-    // cartCount
-    const cart_sample = JSON.parse(localStorage.getItem("cart"));
-    const user = JSON.parse(localStorage.getItem("active_user"));
-
-
-    const cartCount = [];
-    cart_sample.forEach((e) => {
-      if (e.email == user.email) {
-        cartCount.push(e);
-
-      }
-    });
-
-    const co = cartCount.length
-
-
-    console.log(co)
-    const counting = document.getElementById("cartcount");
-    counting.innerHTML = cartCount.length;
-
+   
 
 
     let increment1 = document.getElementById("increment")
@@ -855,6 +836,26 @@
       window.location.href="../html/buynow.html?name=" + result.product_id;
     })
 
+
+     // cartCount
+     const cart_sample = JSON.parse(localStorage.getItem("cart"));
+    const user = JSON.parse(localStorage.getItem("active_user"));
+
+
+    const cartCount = [];
+    cart_sample.forEach((e) => {
+      if (e.email == user.email) {
+        cartCount.push(e);
+
+      }
+    });
+
+    const co = cartCount.length
+
+
+    console.log(co)
+    const counting = document.getElementById("cartcount");
+    counting.innerHTML = cartCount.length;
 
 
 
