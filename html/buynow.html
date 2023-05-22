@@ -245,7 +245,7 @@
                         arr.order_date = ondate;
                         arr.payment_option = payment_option;
                         arr.email = user.email;
-                        arr.status=true;
+                        arr.status = true;
 
                         order.push(arr);
                         localStorage.setItem("order", JSON.stringify(order));
@@ -281,15 +281,25 @@
                 })
             }
         }
-
-
+        let quant
+        // let productdetails=JSON.parse(localStorage)
+        let product_detail = JSON.parse(localStorage.getItem("product_details"))
 
         if (name == Number(name)) {
+
+
 
             let result;
             products.find((el) => {
 
                 if (el.product_id === Number(name)) {
+
+                    product_detail.find(ee => {
+                        if (el.titlename == ee.name_of_product) {
+                           quant = ee.quantity_of_product
+                        }
+                    })
+
 
                     let div = document.createElement("div");
                     div.setAttribute("class", "box_div");
@@ -331,7 +341,7 @@
 
                     let heading3 = document.createElement("h2");
                     heading3.setAttribute("class", "quantity");
-                    heading3.innerText = `₹${el.quantity}` ;
+                    heading3.innerText = `₹${quant}`;
                     div.append(heading3);
                     // let decrement = document.createElement("button");
                     // decrement.setAttribute("class", "btn1 btn-decrement");
@@ -359,7 +369,7 @@
 
 
         }
-        
+
         else {
 
             const cart_sample = JSON.parse(localStorage.getItem("cart"));
@@ -408,7 +418,7 @@
 
                     let heading3 = document.createElement("h2");
                     heading3.setAttribute("class", "quantity");
-                    heading3.innerText = `₹${e.quanty}` ;
+                    heading3.innerText = `₹${e.quanty}`;
                     div.append(heading3);
 
                     document.querySelector(".store").append(div);
