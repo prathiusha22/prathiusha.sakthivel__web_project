@@ -273,6 +273,8 @@
                         arr.order_date = ondate;
                         arr.payment_option = payment_option;
                         arr.email = user.email;
+                        arr.status = true;
+
 
                         order.push(arr);
                         localStorage.setItem("order", JSON.stringify(order));
@@ -297,10 +299,10 @@
                     product_detail.find(ee => {
                         if (el.titlename == ee.name_of_product) {
                            quant = ee.quantity_of_product
+                           productprice=ee.price
                         }
                     })
-
-
+                    
                     let div = document.createElement("div");
                     div.setAttribute("class", "box_div");
 
@@ -331,7 +333,7 @@
 
                     let heading2 = document.createElement("h2");
                     heading2.setAttribute("class", "amount");
-                    heading2.innerText = `₹${el.price}`;
+                    heading2.innerText = `₹${productprice}`;
                     div.append(heading2);
 
                     let para_4 = document.createElement("p");

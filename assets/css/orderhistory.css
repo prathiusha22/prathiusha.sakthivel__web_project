@@ -214,6 +214,7 @@ h4 {
     position: relative;
     left: -70px;
     top: -140px;
+    display: none;
 
 }
 #cancelled{

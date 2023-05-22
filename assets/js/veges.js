@@ -489,9 +489,8 @@ search.addEventListener("keyup", (e) => {
   });
 });
 
-// cart count
 
-// cartCount
+// cart count
 
 const cart_sample = JSON.parse(localStorage.getItem("cart"));
 const user = JSON.parse(localStorage.getItem("active_user"));

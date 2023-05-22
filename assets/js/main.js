@@ -79,14 +79,22 @@ const create_product = [
     product_id: 10,
     status: true,
   },
-  // {
-  //   image: "https://iili.io/HNOCUHg.jpg",
-  //   titlename: "FreshorganicCarrot",
-  //   price: "30",
-  //   ratings: "4",
-  //   product_id: 11,
-  //   status: true,
-  // },
+  {
+    image: "https://iili.io/HNOCUHg.jpg",
+    titlename: "FreshorganicCarrot",
+    price: "30",
+    ratings: "4",
+    product_id: 11,
+    status: true,
+  },
+  {
+    image: "https://iili.io/HNOCUHg.jpg",
+    titlename: "FreshorganicCarrot",
+    price: "30",
+    ratings: "4",
+    product_id: 12,
+    status: true,
+  },
 ];
 
 if (localStorage.getItem("create_product")) {
