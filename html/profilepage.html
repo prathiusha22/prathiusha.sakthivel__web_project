@@ -130,6 +130,17 @@
 
         let profile_arr = localStorage.getItem('data');
 
+        let active_user;
+
+        function get_user() {
+
+            active_user = user_data.find((obj) => profile_arr === obj.email);
+
+        }
+
+        get_user();
+
+
         user_data.find(function (obj) {
 
             if (obj.email == profile_arr) {
@@ -192,12 +203,14 @@
                     }
 
                     obj["communication"] = commun_obj;
+
+                    localStorage.setItem("user_records", JSON.stringify(user_data));
+
+                    alert("Profile Updated");
                 }
             })
 
-            localStorage.setItem("user_records", JSON.stringify(user_data));
 
-            alert("Profile Updated");
         })
 
         //profile image
@@ -259,17 +272,25 @@
         //     })
         // }
 
-        let home_button=document.getElementById("home");
+        let home_button = document.getElementById("home");
         console.log(home_button);
-        home_button.addEventListener("click",(e)=>{
-            if( commun_obj==null){
+        home_button.addEventListener("click", (e) => {
+
+            if (active_user["communication"] == null || active_user["communication"] == undefined) {
+
                 alert("Please fill the address details")
+
+                get_user();
             }
-            else{
-                window.location.href="../index.html"
+            else {
+                window.location.href = "../index.html"
             }
 
         })
+
+
+
+
 
     </script>
 

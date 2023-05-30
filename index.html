@@ -42,7 +42,7 @@
 
         <a class="register" href="./html/signup.html">Sign-in</a>
 
-    
+
         <a href="./html/orderhistory.html">
           <i id="icon" class="fa-sharp fa-solid fa-bars"></i>
         </a>
@@ -310,49 +310,49 @@
       const login_detail = localStorage.getItem("active_user");
       // console.log(login_detail);
       const item_card = document.getElementById("vegetable_button");
-        item_card.addEventListener("click", (el) => {
-          if (login_detail == "false") {
-            alert("To view and buy products you have to Login");
-          } 
-          else {
-            window.location.href="./html/veges.html"
-              }
-            })
-        
-       //cartcount
+      item_card.addEventListener("click", (el) => {
+        if (login_detail == "false") {
+          alert("To view and buy products you have to Login");
+        }
+        else {
+          window.location.href = "./html/veges.html"
+        }
+      })
 
-       
-    const cart_sample = JSON.parse(localStorage.getItem("cart"));
-    const user = JSON.parse(localStorage.getItem("active_user"));
+      //cartcount
 
-    const cartCount = [];
-    cart_sample.forEach((e) => {
-      if (e.email == user.email) {
-        cartCount.push(e);
-      }
-    });
 
-    const co = cartCount.length
+      const cart_sample = JSON.parse(localStorage.getItem("cart"));
+      const user = JSON.parse(localStorage.getItem("active_user"));
 
-    // console.log(co)
-    const counting = document.getElementById("cartcount");
-    counting.innerHTML = cartCount.length;
+      const cartCount = [];
+      cart_sample.forEach((e) => {
+        if (e.email == user.email) {
+          cartCount.push(e);
+        }
+      });
 
-   //cart validation
+      const co = cartCount.length
 
-   const cartdetail_display = localStorage.getItem("active_user");
-   
+      // console.log(co)
+      const counting = document.getElementById("cartcount");
+      counting.innerHTML = cartCount.length;
+
+      //cart validation
+
+      const cartdetail_display = localStorage.getItem("active_user");
+
       // console.log(kkk);
       const item_cart = document.getElementById("cart_icon");
       item_cart.addEventListener("click", (e) => {
 
-          if (cartdetail_display.status == false) {
-            alert("Hii");
-          } 
-          else {
-            window.location.href="../html/cart.html"
-              }
-            })
+        if (cartdetail_display.status == false) {
+          alert("Hii");
+        }
+        else {
+          window.location.href = "../html/cart.html"
+        }
+      })
     </script>
 
 </body>

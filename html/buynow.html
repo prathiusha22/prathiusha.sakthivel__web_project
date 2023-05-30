@@ -207,8 +207,8 @@
             const active_user = JSON.parse(localStorage.getItem("active_user"))
 
             get_buyerdetails.push({
-                "fullname": active_user.Firstname,
-                "email": active_user.email,
+                // "fullname": active_user.Firstname,
+                // "email": active_user.email,
                 address,
                 city,
                 state,
@@ -250,13 +250,10 @@
                         order.push(arr);
                         localStorage.setItem("order", JSON.stringify(order));
                         window.location.href = "../html/orderplaced.html";
-
                     }
-
-
                 })
-
             }
+
             else {
                 const cart_sample = JSON.parse(localStorage.getItem("cart"));
                 const user = JSON.parse(localStorage.getItem("active_user"));
@@ -283,13 +280,27 @@
                 })
             }
         }
+
+
+        // const cart_item = JSON.parse(localStorage.getItem("cart"));
+        // const activeuser = JSON.parse(localStorage.getItem("active_user"));
+
+        // let cart_object = cart_item.filter(function (obj) {
+        //     if (obj["email"] === activeuser["email"]) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // });
+        // localStorage.setItem("cart", JSON.stringify(cart_object));
+
+
+
         let quant
         // let productdetails=JSON.parse(localStorage)
         let product_detail = JSON.parse(localStorage.getItem("product_details"))
 
         if (name == Number(name)) {
-
-
 
             let result;
             products.find((el) => {
@@ -298,11 +309,11 @@
 
                     product_detail.find(ee => {
                         if (el.titlename == ee.name_of_product) {
-                           quant = ee.quantity_of_product
-                           productprice=ee.price
+                            quant = ee.quantity_of_product
+                            productprice = ee.price
                         }
                     })
-                    
+
                     let div = document.createElement("div");
                     div.setAttribute("class", "box_div");
 
@@ -424,7 +435,9 @@
                     document.querySelector(".store").append(div);
 
                 }
+
             })
+
         }
 
         const form = document.getElementById("payment_details");
