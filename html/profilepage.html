@@ -236,6 +236,7 @@
         });
 
         const userRecords = JSON.parse(localStorage.getItem("user_records"));
+
         const user_logged = JSON.parse(localStorage.getItem("active_user"));
 
         for (let i = 0; i < userRecords.length; i++) {
@@ -258,7 +259,8 @@
         logout.addEventListener("click", (e) => {
             let deletefalse = delete user_logged1
 
-            localStorage.setItem("active_user", deletefalse)
+            localStorage.setItem("active_user", deletefalse);
+            
             window.location.href = "../index.html";
 
         })
@@ -273,7 +275,7 @@
         // }
 
         let home_button = document.getElementById("home");
-        console.log(home_button);
+
         home_button.addEventListener("click", (e) => {
 
             if (active_user["communication"] == null || active_user["communication"] == undefined) {
@@ -286,7 +288,7 @@
                 window.location.href = "../index.html"
             }
 
-        })
+        });
 
 
 
